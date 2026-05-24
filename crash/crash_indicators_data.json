@@ -340,6 +340,167 @@
       "regulatory_note": "New FINRA intraday margin requirements effective June 4, 2026"
     }
   },
+  "private_credit_indicators": {
+    "overview": {
+      "name": "Private Credit Market",
+      "market_size_trillion": 2.1,
+      "as_of_date": "2026-03-31",
+      "risk_level": "High",
+      "interpretation": "The $2.1 trillion private credit market is navigating its most challenging period since 2008. Rising defaults, liquidity mismatches, and deep interconnections with traditional banking create significant systemic risk. Opacity in valuations and shadow defaults mask the true extent of stress.",
+      "source": "FSB, Fitch Ratings, Moody's Analytics, CNBC",
+      "growth_from_2020": "$1.0T → $2.1T (110% growth)",
+      "projected_2029": "$5.0T"
+    },
+    "default_rates": {
+      "name": "Private Credit Default Rate",
+      "current_value": 5.8,
+      "unit": "%",
+      "as_of_date": "2026-01-31",
+      "risk_level": "High",
+      "interpretation": "Fitch-reported trailing 12-month default rate of 5.8%. When distressed liability management exercises (LMEs) are included, the true default rate approaches 9.2%. Headline rates understate actual credit deterioration.",
+      "source": "Fitch Ratings, KBRA DLD Index",
+      "historical_average": 2.5,
+      "normal_range": "1-3%",
+      "breakdown": {
+        "headline_default_rate": 5.8,
+        "including_lmes": 9.2,
+        "software_sector_projected": 15.0,
+        "small_issuers_under_25m_ebitda": 10.9,
+        "automotive_sector": 10.6
+      },
+      "trend": "Rising sharply since mid-2025"
+    },
+    "borrower_health": {
+      "name": "Borrower Cash Flow Health",
+      "negative_fcf_pct": 40,
+      "unit": "% with negative free cash flow",
+      "as_of_date": "2026-01-01",
+      "risk_level": "High",
+      "interpretation": "40% of private credit borrowers have negative free cash flow, up from 25% in 2021. Many companies survive solely due to lender forbearance, PIK interest, and covenant holidays.",
+      "source": "IMF, Moody's Analytics",
+      "prior_value_2021": 25,
+      "interest_coverage_ratio": 2.0,
+      "public_borrower_icr": 4.0
+    },
+    "pik_usage": {
+      "name": "Payment-in-Kind (PIK) Interest",
+      "risk_level": "Elevated",
+      "as_of_date": "2026-03-31",
+      "interpretation": "PIK interest — where borrowers pay interest with more debt instead of cash — is rising steadily. When PIK exceeds 10% of total BDC income, it signals hard defaults are imminent. PIK usage masks true corporate distress and defers technical default triggers.",
+      "source": "BDC filings, Reed Smith analysis",
+      "warning_threshold": "10% of total income",
+      "trend": "Rising as share of investment income through Q1 2026",
+      "mechanisms": [
+        "Defers cash interest payments as additional debt",
+        "Masks performance deterioration",
+        "Allows borrowers to sidestep default tests",
+        "Widens gap between reported and economic reality"
+      ]
+    },
+    "liquidity_risk": {
+      "name": "Fund Liquidity & Redemption Risk",
+      "risk_level": "High",
+      "as_of_date": "2026-03-31",
+      "interpretation": "Major private credit funds are gating withdrawals as redemption requests surge. The structural mismatch between quarterly liquidity promises and illiquid 5-year loan holdings is a fundamental flaw being exposed under stress.",
+      "source": "FinancialContent, Fair Observer",
+      "gated_funds": [
+        "Blackstone BCRED",
+        "BlackRock HPS Corporate Lending Fund",
+        "Morgan Stanley",
+        "Cliffwater"
+      ],
+      "evergreen_fund_aum": "$644B (as of June 2025, +28% from end 2024)",
+      "risks": [
+        "Quarterly liquidity promises vs illiquid 5-year loans",
+        "Forced selling at distressed prices",
+        "Secondary market discounts widening",
+        "Retail investor exposure via evergreen funds"
+      ]
+    },
+    "bank_interconnectedness": {
+      "name": "Bank Exposure to Private Credit",
+      "total_ndfi_exposure_trillion": 1.14,
+      "as_of_date": "2025-06-30",
+      "risk_level": "Elevated",
+      "interpretation": "Banks have become primary financiers of private credit funds via subscription lines and NAV loans. Total bank exposure to non-depository financial institutions exceeds $1.14 trillion, up from $250B in 2010. This creates 'leverage on leverage' where defaults flow back to banks.",
+      "source": "Forbes, Federal Reserve FR Y-14Q",
+      "bank_commitments_to_pc_funds": "$445B",
+      "growth_since_2010": "$250B → $1.14T (356%)",
+      "major_exposures": {
+        "wells_fargo": { "ndfi_portfolio": "$210.2B", "private_credit": "$36.2B", "pct_total_loans": 21 },
+        "jpmorgan": { "ndfi_exposure": "$330B", "private_credit": "$50B" },
+        "citigroup": { "ndfi_loans": "$118B", "private_credit_warehouse": "$22B" },
+        "goldman_sachs": { "target_pc_platform": "$300B", "other_collateral_lending": "$105B", "yoy_growth": "28%" }
+      },
+      "regulatory_response": "Federal Reserve FR Y-14Q reporting mandates for granular interconnection data"
+    },
+    "shadow_defaults": {
+      "name": "Shadow Defaults",
+      "risk_level": "Elevated",
+      "as_of_date": "2026-03-31",
+      "interpretation": "Shadow defaults — where companies show clear economic distress but avoid technical breaches — are rising. Mechanisms include maturity extensions, PIK provisions, covenant holidays, and amend-and-extend transactions. The gap between reported performance and economic reality is widening.",
+      "source": "Reed Smith",
+      "mechanisms": [
+        "Maturity extensions to avoid refinancing failures",
+        "PIK interest provisions to defer cash obligations",
+        "Covenant holidays and waivers",
+        "Amend-and-extend transactions",
+        "Sponsor equity injections to delay reckoning"
+      ]
+    },
+    "sector_vulnerabilities": {
+      "name": "Sector-Specific Vulnerabilities",
+      "risk_level": "High",
+      "sectors": [
+        {
+          "name": "Software / SaaS",
+          "exposure_pct": 26,
+          "risk": "AI disruption eroding competitive moats. JPMorgan preemptively devalued software loans in March 2026. 2021-2022 vintage loans face maturity wall in 2027-2028.",
+          "projected_default_rate": "15%",
+          "distressed_loans": "$46.9B in tech-related loans at distressed levels"
+        },
+        {
+          "name": "Healthcare Roll-ups",
+          "exposure_pct": null,
+          "risk": "Highly leveraged acquisition strategies with integration risks. Vulnerable to regulatory changes and reimbursement pressure."
+        },
+        {
+          "name": "Automotive",
+          "exposure_pct": null,
+          "risk": "Leveraged loan default rate at 10.6% — five times historical average. EV transition costs and supply chain disruption."
+        },
+        {
+          "name": "Commercial Real Estate",
+          "exposure_pct": null,
+          "risk": "Office sector stress continues. Deutsche Bank maintains exposure to struggling U.S. office markets."
+        }
+      ]
+    },
+    "systemic_risk_assessment": {
+      "overall_risk": "High",
+      "crash_transmission_channels": [
+        "Bank losses from NDFI exposure trigger credit tightening",
+        "Fund redemption gates cause retail investor panic",
+        "NAV loan margin calls force asset fire sales",
+        "Valuation markdowns cascade through interconnected funds",
+        "Shadow defaults suddenly materialize as hard defaults",
+        "AI disruption accelerates SaaS borrower failures"
+      ],
+      "mitigating_factors": [
+        "Private credit funds generally less leveraged than 2008 banks",
+        "Institutional investor base is longer-duration and less redemption-sensitive",
+        "Private credit AUM is still ~9% of total corporate borrowing",
+        "Tighter covenants allow earlier lender intervention than public markets"
+      ],
+      "comparison_to_2008": "Unlike 2008's sudden collapse via complex structured products, private credit risks accumulate beneath the surface and emerge when liquidity constraints bind or valuations are stress-tested. The risk is a slow burn rather than a sudden explosion.",
+      "regulatory_gaps": [
+        "Limited regulatory oversight vs traditional banks",
+        "No standardized capital requirements for private credit funds",
+        "Valuation opacity — NAV based on internal models, not market prices",
+        "Data collection challenges hinder effective monitoring"
+      ]
+    }
+  },
   "overall_assessment": {
     "generated_at": "2026-05-24T03:03:32Z",
     "analysis_date": "2026-05-22",
@@ -390,6 +551,16 @@
           "Yield Curve: Moderate"
         ],
         "summary": "Flat yield curve signals slowing growth. Not inverted currently but compressed."
+      },
+      "private_credit": {
+        "level": "High",
+        "indicators": [
+          "Default Rate: 5.8% (9.2% incl. LMEs)",
+          "40% borrowers negative FCF",
+          "Bank NDFI exposure: $1.14T",
+          "Fund redemption gating"
+        ],
+        "summary": "$2.1T private credit market under severe stress. Rising defaults, liquidity traps, and bank interconnectedness create systemic crash transmission channels."
       }
     },
     "key_warnings": [
@@ -397,7 +568,8 @@
       "HIGH: Margin debt near record highs ($1.22T) at 4.1% of GDP creates systemic risk and forced liquidation potential",
       "ELEVATED: S&P 500 40% above 200-day MA - major technical extension vulnerable to mean reversion",
       "MODERATE: Sentiment in 'Greed' zone (Fear/Greed 59) with low VIX (16.70) suggests complacency",
-      "MODERATE: RSI at 70.92 (overbought) signals short-term pullback risk"
+      "MODERATE: RSI at 70.92 (overbought) signals short-term pullback risk",
+      "HIGH: Private credit defaults surging to 5.8% (9.2% incl. LMEs) with 40% of borrowers cash-flow negative. Bank exposure to NDFI exceeds $1.14T creating contagion risk"
     ],
     "mitigating_factors": [
       "Market breadth is healthy (56-57% above key MAs) - not narrow leadership",
@@ -449,7 +621,9 @@
         "Track margin debt monthly - rapid decline is crash trigger",
         "Monitor breadth - divergence (S&P up, breadth down) is major warning",
         "Watch yield curve for inversion",
-        "Track Fed policy and liquidity conditions"
+        "Track Fed policy and liquidity conditions",
+        "Monitor private credit fund redemption gating and PIK interest levels in BDC filings",
+        "Watch bank NDFI exposure and NAV loan markdowns for contagion signals"
       ],
       "timeframe_considerations": {
         "short_term_1_3m": "Moderate risk - overbought technicals, potential pullback",
