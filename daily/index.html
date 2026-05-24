@@ -7,24 +7,27 @@
 <style>
   body { font-family: Georgia, 'Times New Roman', serif; background: #f5f5f0; color: #222; margin: 0; padding: 0; }
   .container { max-width: 720px; margin: 30px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.10); overflow: hidden; }
-  .header { background: #1a3a5c; color: #fff; padding: 32px 36px 20px; }
-  .header h1 { margin: 0 0 4px; font-size: 2em; letter-spacing: 1px; }
-  .header .date { font-size: 1.05em; color: #b8d0e8; margin-top: 4px; }
-  .section { padding: 24px 36px; border-bottom: 1px solid #e8e8e8; }
-  .section:last-of-type { border-bottom: none; }
-  .section-title { font-size: 1.2em; font-weight: bold; color: #1a3a5c; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 2px solid #1a3a5c; display: flex; align-items: center; gap: 8px; }
-  .weather-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+  .header { background: #1a3a5c; color: #fff; padding: 32px 36px 24px; }
+  .header h1 { margin: 0 0 6px; font-size: 2em; letter-spacing: 1px; }
+  .header .date { font-size: 1.05em; color: #b8d0e8; }
+  .section { padding: 24px 36px; border-bottom: 1px solid #e8e8e0; }
+  .section:last-child { border-bottom: none; }
+  .section-title { font-size: 1.18em; font-weight: bold; color: #1a3a5c; margin: 0 0 14px; display: flex; align-items: center; gap: 8px; }
+  .section-title .icon { font-size: 1.3em; }
+  .weather-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
   .weather-item { background: #eef4fb; border-radius: 6px; padding: 10px 14px; }
   .weather-item .label { font-size: 0.78em; color: #555; text-transform: uppercase; letter-spacing: 0.5px; }
-  .weather-item .value { font-size: 1.15em; font-weight: bold; color: #1a3a5c; margin-top: 2px; }
-  .alert-box { background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 4px; padding: 10px 14px; margin-top: 10px; font-size: 0.95em; color: #7a5000; }
-  ul { margin: 0; padding: 0 0 0 18px; }
-  ul li { margin-bottom: 9px; line-height: 1.5; }
-  a { color: #1a5c9a; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .source { font-size: 0.82em; color: #777; margin-left: 6px; }
-  .subsection-title { font-size: 1em; font-weight: bold; color: #2a5c3a; margin: 16px 0 8px; }
-  .lang-note { font-size: 0.85em; color: #666; font-style: italic; margin-bottom: 10px; }
+  .weather-item .value { font-size: 1.15em; font-weight: bold; color: #1a3a5c; }
+  .weather-note { font-size: 0.92em; color: #555; margin-top: 8px; }
+  ul.news-list { list-style: none; padding: 0; margin: 0; }
+  ul.news-list li { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f0ea; }
+  ul.news-list li:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  ul.news-list li a { color: #1a5c8a; text-decoration: none; font-weight: 600; font-size: 0.97em; }
+  ul.news-list li a:hover { text-decoration: underline; }
+  .source { font-size: 0.80em; color: #888; margin-top: 3px; }
+  .subsection-title { font-size: 1.0em; font-weight: bold; color: #2a5a2a; margin: 18px 0 10px; border-left: 3px solid #2a5a2a; padding-left: 10px; }
+  .subsection-title:first-of-type { margin-top: 0; }
+  .neutral-label { display: inline-block; background: #f0f0e0; color: #666; font-size: 0.75em; border-radius: 3px; padding: 1px 6px; margin-left: 6px; vertical-align: middle; }
   .footer { background: #f0f0ea; padding: 16px 36px; font-size: 0.82em; color: #888; text-align: center; }
 </style>
 </head>
@@ -34,235 +37,195 @@
   <!-- HEADER -->
   <div class="header">
     <h1>📰 Daily Morning Briefing</h1>
-    <div class="date">Saturday, May 23, 2026 &nbsp;|&nbsp; Austin, TX</div>
+    <div class="date">Saturday, May 23, 2026 &nbsp;|&nbsp; Austin, TX &nbsp;|&nbsp; Compiled at 6:00 AM CT</div>
   </div>
 
   <!-- SECTION 1: WEATHER -->
   <div class="section">
-    <div class="section-title">⛈️ Weather — Austin, TX (78759)</div>
+    <div class="section-title"><span class="icon">🌤️</span> Weather – Austin, TX (ZIP 78759)</div>
     <div class="weather-grid">
       <div class="weather-item">
-        <div class="label">Current Temp</div>
-        <div class="value">20°C</div>
-      </div>
-      <div class="weather-item">
-        <div class="label">Feels Like</div>
-        <div class="value">17–19°C</div>
-      </div>
-      <div class="weather-item">
-        <div class="label">Today's High</div>
-        <div class="value">28–30°C</div>
-      </div>
-      <div class="weather-item">
-        <div class="label">Tonight's Low</div>
-        <div class="value">19–21°C</div>
-      </div>
-      <div class="weather-item">
-        <div class="label">Humidity</div>
-        <div class="value">81–83%</div>
-      </div>
-      <div class="weather-item">
-        <div class="label">Wind</div>
-        <div class="value">SE ~8 km/h</div>
-      </div>
-      <div class="weather-item">
-        <div class="label">Precipitation Chance</div>
-        <div class="value">60–98%</div>
+        <div class="label">Current Temperature</div>
+        <div class="value">25°C (76°F)</div>
       </div>
       <div class="weather-item">
         <div class="label">Conditions</div>
-        <div class="value">⛈️ Thunderstorms</div>
+        <div class="value">⛅ Partly Cloudy</div>
+      </div>
+      <div class="weather-item">
+        <div class="label">Today's High / Low</div>
+        <div class="value">32°C / 19°C</div>
+      </div>
+      <div class="weather-item">
+        <div class="label">Humidity</div>
+        <div class="value">79–80%</div>
+      </div>
+      <div class="weather-item">
+        <div class="label">Precipitation Chance</div>
+        <div class="value">🌧️ 30% (storms possible)</div>
+      </div>
+      <div class="weather-item">
+        <div class="label">Wind</div>
+        <div class="value">ESE 7–9 mph</div>
       </div>
     </div>
-    <p style="margin:8px 0 4px;font-size:0.95em;">Showers and thunderstorms likely, especially after 4 PM. Potential for heavy rain, hail, and localized damaging wind gusts. Air quality: Fair.</p>
-    <div class="alert-box">⚠️ <strong>Flood Watch</strong> in effect from May 23, 6:08 AM CDT through May 25, 7:00 PM CDT. Flash flooding possible.</div>
+    <div class="weather-note">⚠️ <strong>Tonight:</strong> Chance of showers and thunderstorms before 1 AM, low near 19°C (66°F). <strong>Sunday:</strong> Clouds giving way to sun, thunderstorm possible late afternoon, high 32°C (89°F). Air quality: Fair — sensitive groups should limit prolonged outdoor exposure.</div>
   </div>
 
   <!-- SECTION 2: POSITIVE RUSSIA NEWS -->
   <div class="section">
-    <div class="section-title">🌟 Positive Russia News</div>
-    <ul>
+    <div class="section-title"><span class="icon">🟢</span> Positive Russia News</div>
+    <ul class="news-list">
       <li>
-        <a href="https://www.reuters.com/business/putin-says-measures-taken-boost-russian-economy-are-working-2026-05-15/" target="_blank">Putin says measures taken to boost Russian economy are working</a>
-        <span class="source">— Reuters, May 15, 2026</span>
+        <a href="https://www.cnbc.com/2026/05/21/china-russia-putin-xi-jinping-ties-deals-energy-siberia-pipeline-trump-visits-.html" target="_blank">Russia and China Sign 40+ Deals on Trade, Education, Technology and Nuclear Security at Beijing Summit</a>
+        <div class="source">CNBC &nbsp;·&nbsp; May 21, 2026</div>
       </li>
       <li>
-        <a href="https://tass.com/economy/2088969" target="_blank">Russia's 2026 harvest may surpass previous year's levels due to favorable soil moisture reserves</a>
-        <span class="source">— TASS</span>
+        <a href="https://www.reuters.com/business/putin-says-measures-taken-boost-russian-economy-are-working-2026-05-15/" target="_blank">Putin Says Government Measures to Boost Russian Economy Are Working, Recession Avoided</a>
+        <div class="source">Reuters &nbsp;·&nbsp; May 15, 2026</div>
       </li>
       <li>
-        <a href="https://www.reuters.com/world/putin-declares-may-8-9-ceasefire-with-ukraine-mark-wwii-anniversary-agencies-say-2026-05-04/" target="_blank">Putin declares May 8–9 ceasefire with Ukraine to mark WWII anniversary</a>
-        <span class="source">— Reuters, May 4, 2026</span>
+        <a href="https://russiaspivottoasia.com/russias-economy-2026-2029-forecast-by-the-ministry-of-economic-development/" target="_blank">Russia Holds World's 4th-Largest Economy by Purchasing Power Parity, Ministry Forecasts Gradual Recovery Through 2029</a>
+        <div class="source">Russia's Pivot to Asia &nbsp;·&nbsp; May 2026</div>
       </li>
       <li>
-        <a href="https://tass.com/economy/2135217" target="_blank">Russian oil and gas revenues projected to rise 39% year-on-year in May, reaching ~700 billion rubles</a>
-        <span class="source">— TASS</span>
+        <a href="https://nigeria.news-pravda.com/russia/2026/05/22/6906.html" target="_blank">St. Petersburg Hosts International Russia-Africa Friendship Football Tournament on Africa Day, Featuring 16 Nations</a>
+        <div class="source">Pravda Nigeria &nbsp;·&nbsp; May 22, 2026</div>
       </li>
       <li>
-        <a href="https://www.aljazeera.com/where/russia/" target="_blank">Russia and China agree on bilateral cooperation, emphasizing a "multipolar world" at Beijing summit</a>
-        <span class="source">— Al Jazeera</span>
-      </li>
-      <li>
-        <a href="https://lenta.ru/tags/geo/sankt-peterburg/" target="_blank">St. Petersburg International Economic Forum (SPIEF 2026) set for early June, with Egypt and international participants confirmed</a>
-        <span class="source">— Lenta.ru</span>
-      </li>
-      <li>
-        <a href="https://iz.ru/tag/sankt-peterburg" target="_blank">Auto lending in St. Petersburg increased 1.4× in Q1 2026 compared to the previous year</a>
-        <span class="source">— Izvestia</span>
+        <a href="https://www.aljazeera.com/where/russia/" target="_blank">Russia and China Declare "Unyielding" Bonds, Extend 2001 Treaty of Good-Neighborliness and Adopt Declaration on Multipolar World</a>
+        <div class="source">Al Jazeera &nbsp;·&nbsp; May 23, 2026</div>
       </li>
     </ul>
   </div>
 
   <!-- SECTION 3: NEUTRAL RUSSIA NEWS -->
   <div class="section">
-    <div class="section-title">📋 Neutral Russia News <span style="font-size:0.75em;font-weight:normal;color:#666;">(Factual / Balanced Coverage)</span></div>
-    <ul>
+    <div class="section-title"><span class="icon">⚪</span> Neutral Russia News <span class="neutral-label">Factual Coverage</span></div>
+    <ul class="news-list">
       <li>
-        <a href="https://www.aljazeera.com/where/russia/" target="_blank">Putin visits Beijing; meets Xi Jinping to discuss Power of Siberia 2 pipeline and bilateral energy cooperation</a>
-        <span class="source">— Al Jazeera</span>
+        <a href="https://www.theguardian.com/world/2026/may/23/ukraine-war-briefing-putin-promises-revenge-after-blaming-kyiv-for-luhansk-attack-he-says-killed-six" target="_blank">Putin Vows Retaliation After Blaming Ukraine for Luhansk Dormitory Strike; Ukraine Denies Targeting Civilians</a>
+        <div class="source">The Guardian &nbsp;·&nbsp; May 23, 2026</div>
       </li>
       <li>
-        <a href="https://www.reuters.com/world/russia-says-it-successfully-tested-its-new-sarmat-strategic-nuclear-missile-2026-05-12/" target="_blank">Russia announces successful test of new Sarmat strategic nuclear missile, described as "most powerful in the world"</a>
-        <span class="source">— Reuters, May 12, 2026</span>
+        <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-23-2026/" target="_blank">ISW Assessment: Ukrainian Forces Conduct Mechanized Counterattack in Borova Direction, Penetrating Up to 5 km</a>
+        <div class="source">Institute for the Study of War (ISW) &nbsp;·&nbsp; May 23, 2026</div>
       </li>
       <li>
-        <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-21-2026/" target="_blank">Russia and Belarus complete combined nuclear exercises on May 21, 2026; Putin and Lukashenko monitor drills</a>
-        <span class="source">— Institute for the Study of War (ISW)</span>
+        <a href="https://kyivindependent.com/" target="_blank">Ukraine Strikes Metafrax Chemicals Plant in Perm Krai, Over 1,700 km from Frontline, Halting Production</a>
+        <div class="source">Kyiv Independent &nbsp;·&nbsp; May 23, 2026</div>
       </li>
       <li>
-        <a href="https://www.theguardian.com/world/2026/may/23/ukraine-war-briefing-putin-promises-revenge-after-blaming-kyiv-for-luhansk-attack-he-says-killed-six" target="_blank">Ukrainian drone attack sparks fire at Novorossiysk oil export hub; Russia reports two injured</a>
-        <span class="source">— The Guardian, May 23, 2026</span>
+        <a href="https://www.aljazeera.com/where/russia/" target="_blank">Russia Calls Emergency UN Security Council Meeting After Luhansk Vocational School Attack; Ukraine Calls Claims "Propaganda"</a>
+        <div class="source">Al Jazeera &nbsp;·&nbsp; May 23, 2026</div>
       </li>
       <li>
-        <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-22-2026/" target="_blank">Ukrainian drones strike Syzran Oil Refinery in Samara Oblast, over 800 km from Ukrainian border</a>
-        <span class="source">— ISW, May 22, 2026</span>
+        <a href="https://www.russiamatters.org/news" target="_blank">Russian Forces Experienced Net Loss of 116 sq km of Ukrainian Territory in April 2026 — First Monthly Net Loss Since August 2024</a>
+        <div class="source">Russia Matters &nbsp;·&nbsp; May 20, 2026</div>
       </li>
       <li>
-        <a href="https://www.aljazeera.com/news/2026/5/22/russia-falters-in-ukraine" target="_blank">Russia's gold reserves decline for fourth consecutive month in April 2026, reaching lowest since March 2022</a>
-        <span class="source">— Al Jazeera, May 22, 2026</span>
-      </li>
-      <li>
-        <a href="https://tass.com/economy/2135217" target="_blank">Bank of Russia sets official dollar exchange rate at 71.209 rubles for May 23–25, 2026</a>
-        <span class="source">— TASS</span>
-      </li>
-      <li>
-        <a href="https://www.aljazeera.com/where/russia/" target="_blank">Russia joins US and Iran in voting against UN Climate Change Resolution</a>
-        <span class="source">— Al Jazeera</span>
+        <a href="https://japan.news-pravda.com/en/russia/2026/05/24/22753.html" target="_blank">Czech President Urges NATO to "Show Its Teeth" Against Russia, Proposes Cutting Internet and Banking Access</a>
+        <div class="source">Pravda Japan &nbsp;·&nbsp; May 23, 2026</div>
       </li>
     </ul>
   </div>
 
   <!-- SECTION 4: ST. PETERSBURG NEWS -->
   <div class="section">
-    <div class="section-title">🏛️ St. Petersburg News</div>
-    <p class="lang-note">This section contains articles in both English and Russian (в этом разделе статьи на английском и русском языках).</p>
-
-    <div class="subsection-title">🇬🇧 English</div>
-    <ul>
+    <div class="section-title"><span class="icon">🏛️</span> St. Petersburg News <span style="font-size:0.75em;color:#888;font-weight:normal;">(English &amp; Russian)</span></div>
+    <ul class="news-list">
       <li>
-        <a href="https://ground.news/interest/saint-petersburg-russia_f26fb9" target="_blank">ATESH partisan group claims burning of locomotive in St. Petersburg, disrupting key rail routes in Russia's northwestern logistics network</a>
-        <span class="source">— Ground News</span>
+        <a href="https://nigeria.news-pravda.com/russia/2026/05/22/6906.html" target="_blank">International Russia-Africa Friendship Football Tournament Held in St. Petersburg for Africa Day — 16 Nations Participating, Free Admission</a>
+        <div class="source">Pravda Nigeria &nbsp;·&nbsp; May 22, 2026 &nbsp;·&nbsp; 🇬🇧 English</div>
       </li>
       <li>
-        <a href="https://www.globaltimes.cn/page/202605/1361140.shtml" target="_blank">"Night of Museums" event draws visitors to over 140 venues across St. Petersburg, May 16–17, 2026</a>
-        <span class="source">— Global Times</span>
+        <a href="https://www.newsnow.com/us/World/Asia/Russia/St.+Petersburg" target="_blank">Trump White House Ballroom Commissioner Rodney Mims Cook Jr. to Attend St. Petersburg Economic Forum Starting June 3 — State Dept. Cleared</a>
+        <div class="source">NewsNow &nbsp;·&nbsp; May 23, 2026 &nbsp;·&nbsp; 🇬🇧 English</div>
       </li>
       <li>
-        <a href="https://ground.news/interest/saint-petersburg-russia_f26fb9" target="_blank">St. Petersburg International Economic Forum (SPIEF 2026) scheduled for early June; former Trump White House official expected to attend Putin's speech</a>
-        <span class="source">— Ground News</span>
+        <a href="https://www.fontanka.ru/2026/05/22/76434090/" target="_blank">Над Ленинградской областью и Санкт-Петербургом сбито 3 украинских дрона — губернатор Дрозденко подтвердил, жертв нет</a>
+        <div class="source">Фонтанка.ру &nbsp;·&nbsp; 22 мая 2026 &nbsp;·&nbsp; 🇷🇺 Русский</div>
       </li>
       <li>
-        <a href="https://www.gazettextra.com/news/nation_world/russia-transport-festival/image_a2711b82-7ce8-57f5-939b-037a168a72e5.html" target="_blank">TransportFest held in St. Petersburg on May 22, featuring parade and exhibition of retro vehicles</a>
-        <span class="source">— Gazette Extra, May 22, 2026</span>
+        <a href="https://tvspb.ru/news/2026/05/22/23-maya-v-peterburge-budet-vetreno-poryvy-do-17-m-s" target="_blank">В Петербурге объявлен жёлтый уровень опасности из-за порывов ветра до 17 м/с — МЧС предупреждает водителей и пешеходов</a>
+        <div class="source">ТВ Санкт-Петербург &nbsp;·&nbsp; 22 мая 2026 &nbsp;·&nbsp; 🇷🇺 Русский</div>
       </li>
       <li>
-        <a href="https://uk.news-pravda.com/russia/2026/05/21/144935.html" target="_blank">St. Petersburg concludes early OGE (State Final Certification) period for 9th-grade students, with 56 participants</a>
-        <span class="source">— News Pravda, May 21, 2026</span>
-      </li>
-    </ul>
-
-    <div class="subsection-title">🇷🇺 Russian / Русский</div>
-    <ul>
-      <li>
-        <a href="https://www.fontanka.ru/2026/05/22/76434090/" target="_blank">Минобороны РФ сообщило о перехвате 217 украинских дронов, в том числе над Ленинградской областью и Санкт-Петербургом 22 мая</a>
-        <span class="source">— Фонтанка.ру, 22 мая 2026</span>
+        <a href="https://iz.ru/tag/sankt-peterburg" target="_blank">В Петербурге прошёл ретропарад транспорта: автобусы, троллейбусы и мотоциклы прошлых десятилетий на Исаакиевской площади</a>
+        <div class="source">Известия &nbsp;·&nbsp; 23 мая 2026 &nbsp;·&nbsp; 🇷🇺 Русский</div>
       </li>
       <li>
-        <a href="https://iz.ru/tag/sankt-peterburg" target="_blank">В Петербурге планируют создать более 100 новых зелёных зон, увеличив площадь общественных пространств на 80 гектаров</a>
-        <span class="source">— Известия</span>
+        <a href="https://www.metronews.ru/novosti/peterbourg/reviews/v-kakih-rayonah-peterburga-zakroyut-i-ogranichat-proezdy-s-23-maya-2026-goda-2188640/" target="_blank">Дорожные ограничения в нескольких районах Петербурга с 23 мая 2026 года: Выборгский, Красногвардейский, Приморский</a>
+        <div class="source">Метро Новости &nbsp;·&nbsp; 23 мая 2026 &nbsp;·&nbsp; 🇷🇺 Русский</div>
       </li>
       <li>
-        <a href="https://lenta.ru/tags/geo/sankt-peterburg/" target="_blank">В Санкт-Петербурге прошёл Международный книжный салон; Сбербанк представил книгу о выдающихся петербуржцах</a>
-        <span class="source">— Лента.ру</span>
+        <a href="https://peterburg.center/news" target="_blank">Петербург планирует открыть первую в стране линию метро без машинистов в течение четырёх лет; метро СПб обогнало московское по загрузке станций</a>
+        <div class="source">Петербург.центр &nbsp;·&nbsp; май 2026 &nbsp;·&nbsp; 🇷🇺 Русский</div>
       </li>
       <li>
-        <a href="https://www.fontanka.ru/2026/05/18/76423657/" target="_blank">Петербургский метрополитен: открыты новые станции, до 2031 года запланировано ещё восемь; обсуждается первая в стране беспилотная линия</a>
-        <span class="source">— Фонтанка.ру, 18 мая 2026</span>
-      </li>
-      <li>
-        <a href="https://iz.ru/tag/sankt-peterburg" target="_blank">Объём автокредитования в Санкт-Петербурге вырос в 1,4 раза в первом квартале 2026 года по сравнению с прошлым годом</a>
-        <span class="source">— Известия</span>
+        <a href="https://abnews.ru/szfo/news/spb/2026/5/23/peterburzhczev-zhdet-rost-tarifov-na-kommunalnye-uslugi" target="_blank">Тарифы на коммунальные услуги в Петербурге вырастут на 14,6% осенью 2026 года</a>
+        <div class="source">АБН Новости &nbsp;·&nbsp; 23 мая 2026 &nbsp;·&nbsp; 🇷🇺 Русский</div>
       </li>
     </ul>
   </div>
 
   <!-- SECTION 5: SEMICONDUCTOR & INVESTOR NEWS -->
   <div class="section">
-    <div class="section-title">💹 Semiconductor &amp; Investor News</div>
+    <div class="section-title"><span class="icon">💹</span> Semiconductor &amp; Investor News</div>
 
-    <div class="subsection-title">🔬 KLAC (KLA Corporation)</div>
-    <ul>
+    <div class="subsection-title">📊 KLAC (KLA Corporation)</div>
+    <ul class="news-list">
       <li>
-        <a href="https://ir.kla.com/news-events/press-releases/detail/515/kla-corporation-announces-ten-to-one-stock-split-and" target="_blank">KLA Corporation announces 10-for-1 forward stock split and 21% dividend increase; split-adjusted trading begins June 12, 2026</a>
-        <span class="source">— KLA Investor Relations, May 7, 2026</span>
+        <a href="https://www.fool.com/investing/2026/05/22/whats-going-on-with-klac-stock/" target="_blank">What's Going on With KLAC Stock? — Shares Close at $1,888.38, Up 2.51% on May 22; 10-for-1 Stock Split Effective June 11</a>
+        <div class="source">The Motley Fool &nbsp;·&nbsp; May 22, 2026</div>
       </li>
       <li>
-        <a href="https://stockanalysis.com/stocks/klac/" target="_blank">KLAC Q3 2026 earnings: Revenue $3.41B (+7.6% YoY), EPS $9.12 (+11.6% YoY); guidance calls for high-teen revenue growth in 2026</a>
-        <span class="source">— Stock Analysis</span>
+        <a href="https://stockanalysis.com/stocks/klac/" target="_blank">KLAC Analyst Consensus: "Buy" Rating from 30 Analysts; Average 12-Month Price Target $1,851.69; Some Targets Reach $2,100</a>
+        <div class="source">StockAnalysis.com &nbsp;·&nbsp; May 2026</div>
       </li>
       <li>
-        <a href="https://www.cnn.com/markets/stocks/KLAC" target="_blank">KLAC closes at $1,888.38 on May 22, up 2.51% on the day; stock up 149% over the past year, trading near 52-week high</a>
-        <span class="source">— CNN Markets</span>
+        <a href="https://www.indexbox.io/blog/kla-corporation-reports-strong-march-quarter-2026-results-with-revenue-of-3415-billion/" target="_blank">KLA Q3 2026 Earnings Beat: Revenue $3.415B (+11% YoY), EPS $9.40 vs. $9.17 Estimate; Advanced Packaging Revenue on Track for $1B in 2026</a>
+        <div class="source">IndexBox &nbsp;·&nbsp; May 2026</div>
       </li>
       <li>
-        <a href="https://stockanalysis.com/stocks/klac/" target="_blank">Multiple analysts raise KLAC price targets: Wells Fargo to $2,100; Citi to $2,064; TD Cowen, Needham, JPMorgan, Oppenheimer all to $2,000</a>
-        <span class="source">— Stock Analysis</span>
+        <a href="https://quartr.com/companies/kla-corporation_5111" target="_blank">KLA Targets $26B Revenue by 2030 with 13–17% CAGR; CFO Signals High Visibility into 2027 as WFE Market Projected Above $140B</a>
+        <div class="source">Quartr &nbsp;·&nbsp; May 2026</div>
       </li>
       <li>
-        <a href="https://www.cnn.com/markets/stocks/KLAC" target="_blank">KLAC included in "Strong Buy" data center stocks analysis; 65% of 31 analysts rate it Buy with median 12-month target of $1,970</a>
-        <span class="source">— CNN Markets</span>
+        <a href="https://www.tikr.com/blog/kla-corporation-jumped-5-after-jpmorgan-conference-heres-what-klac-stock-could-return" target="_blank">KLA Jumped 5% After JPMorgan Conference; TIKR Mid-Case Target ~$2,650/Share by June 2030, ~45% Total Return</a>
+        <div class="source">TIKR &nbsp;·&nbsp; May 2026</div>
       </li>
     </ul>
 
-    <div class="subsection-title">🔌 CPO (Co-Packaged Optics)</div>
-    <ul>
+    <div class="subsection-title">🔬 CPO (Co-Packaged Optics)</div>
+    <ul class="news-list">
       <li>
-        <a href="https://www.globenewswire.com/news-release/2026/05/13/3293748/28124/en/Co-Packaged-Optics-in-the-AI-Data-Center-Market-and-Technology-Forecast-Report-2026-2034-Roadmaps-of-30-Key-CPO-Firms-and-How-They-Identify-Their-Roadmaps-with-AI-and-Rebrand-CPO-a.html" target="_blank">CPO market forecast to exceed $20B by 2036, growing at 37% CAGR from 2026, driven by AI data center demand</a>
-        <span class="source">— GlobeNewswire, May 13, 2026</span>
+        <a href="https://blogs.sw.siemens.com/semiconductor-packaging/2026/02/05/five-key-trends-of-co-packaged-optics-cpo-in-2026/" target="_blank">Five Key Trends of Co-Packaged Optics in 2026: Power Reduction, UCIe Optical Interconnects, Thermal Management, and Ecosystem Maturity</a>
+        <div class="source">Siemens Semiconductor Packaging Blog &nbsp;·&nbsp; 2026</div>
       </li>
       <li>
-        <a href="https://www.coherent.com/news/press-releases/coherent-co-packaged-optics-cpo-technologies-ofc-2026" target="_blank">Coherent Corp. demonstrates multiple CPO technologies at OFC 2026, including 6.4T socketed CPO; raises CPO SAM to $15B on NVIDIA commitment</a>
-        <span class="source">— Coherent Corp.</span>
+        <a href="https://www.stocktitan.net/news/COHR/coherent-demonstrates-multiple-co-packaged-optics-cpo-technologies-9b9rcc85qq6s.html" target="_blank">Coherent Demonstrates 6.4T CPO and 400G-per-Lane InP Modulators at OFC 2026; Projects $15B CPO Serviceable Addressable Market</a>
+        <div class="source">StockTitan / Coherent (COHR) &nbsp;·&nbsp; 2026</div>
       </li>
       <li>
-        <a href="https://futurumgroup.com/insights/coherents-23-billion-growth-opportunity-lifted-by-nvidias-optical-ambitions/" target="_blank">NVIDIA commits to integrating 200 Gb/s CPO silicon photonics into Spectrum-6 switching platform; CPO to reduce link power from 30W to 9W in 1.6T networks</a>
-        <span class="source">— Futurum Group</span>
+        <a href="https://futurumgroup.com/insights/coherents-23-billion-growth-opportunity-lifted-by-nvidias-optical-ambitions/" target="_blank">NVIDIA's $2B Investment in Coherent Funds CPO Expansion; Coherent to Double Indium Phosphide Capacity in 2026 for AI Data Centers</a>
+        <div class="source">Futurum Group &nbsp;·&nbsp; May 2026</div>
       </li>
       <li>
-        <a href="https://www.edn.com/where-co-packaged-optics-cpo-technology-stands-in-2026/" target="_blank">Broadcom's Tomahawk 5-Bailly becomes industry's first volume-production CPO solution; Meta tests for 1M link hours without a single link flap</a>
-        <span class="source">— EDN, 2026</span>
+        <a href="https://www.edn.com/where-co-packaged-optics-cpo-technology-stands-in-2026/" target="_blank">Where Co-Packaged Optics Technology Stands in 2026: Broadcom's Tomahawk 5-Bailly First Volume-Production CPO; Marvell Advances 3D SiPho Engine</a>
+        <div class="source">EDN &nbsp;·&nbsp; 2026</div>
       </li>
       <li>
-        <a href="https://blogs.sw.siemens.com/semiconductor-packaging/2026/02/05/five-key-trends-of-co-packaged-optics-cpo-in-2026/" target="_blank">Five key CPO trends for 2026: AI power reduction, UCIe optical "Extended Packages," novel cooling strategies, new manufacturing flows, evolving standards</a>
-        <span class="source">— Siemens EDA Blog, Feb 2026</span>
+        <a href="https://www.idtechex.com/en/research-report/co-packaged-optics-cpo/1138" target="_blank">IDTechEx: CPO Market to Exceed $20 Billion by 2036, Growing at 37% CAGR from 2026; Network Switches Primary Revenue Driver</a>
+        <div class="source">IDTechEx &nbsp;·&nbsp; 2026</div>
       </li>
     </ul>
   </div>
 
   <!-- FOOTER -->
   <div class="footer">
-    Daily Morning Briefing &bull; Generated May 23, 2026 &bull; Austin, TX &bull; Automated briefing service<br>
-    Weather source: NWS / AccuWeather &bull; News sources: Reuters, TASS, Al Jazeera, The Guardian, ISW, Fontanka, Lenta, Izvestia, CNN Markets, KLA IR
+    Daily Morning Briefing &nbsp;·&nbsp; Compiled for A. Bourov &nbsp;·&nbsp; May 23, 2026 &nbsp;·&nbsp; Austin, TX<br>
+    All temperatures in Celsius. News sourced from public outlets within the last 24 hours. The Moscow Times excluded per editorial policy.
   </div>
 
 </div>
