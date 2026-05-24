@@ -1,0 +1,463 @@
+{
+  "metadata": {
+    "generated_at": "2026-05-24T03:03:32Z",
+    "analysis_date": "2026-05-22",
+    "data_source": "Multiple sources including CBOE, FRED, Yahoo Finance, web research",
+    "disclaimer": "This data is for informational and educational purposes only. Not financial advice.",
+    "dashboard_version": "1.0"
+  },
+  "sentiment_indicators": {
+    "vix": {
+      "name": "CBOE Volatility Index (VIX)",
+      "variant": "VIX Close",
+      "current_value": 16.7,
+      "unit": "index points",
+      "as_of_date": "2026-05-22",
+      "historical_average": 18.5,
+      "normal_range": "12-20",
+      "lookback_period": "30+ years",
+      "range_52w": {
+        "low": 13.38,
+        "high": 35.3,
+        "percentile": 15.1
+      },
+      "risk_level": "Low",
+      "interpretation": "Low volatility - calm market conditions. VIX below long-term average suggests complacency.",
+      "source": "CBOE",
+      "methodology_note": "Based on S&P 500 index options prices",
+      "freshness_days": 0
+    },
+    "put_call_ratio": {
+      "name": "CBOE Put/Call Ratio",
+      "variant": "Total Put/Call Ratio",
+      "current_value": 0.85,
+      "unit": "ratio",
+      "as_of_date": "2026-05-22",
+      "historical_average": 0.9,
+      "normal_range": "0.7-1.0",
+      "lookback_period": "10+ years",
+      "sub_metrics": {
+        "equity_put_call": 0.55,
+        "index_put_call": 1.18,
+        "etf_put_call": 0.94
+      },
+      "risk_level": "Low",
+      "interpretation": "Balanced to slightly bullish sentiment. Equity P/C at 0.55 shows bullishness, while index P/C at 1.18 shows hedging activity.",
+      "source": "CBOE Daily Market Statistics",
+      "methodology_note": "Daily put volume divided by call volume across all options",
+      "freshness_days": 0
+    },
+    "fear_greed_index": {
+      "name": "CNN Fear & Greed Index",
+      "variant": "Composite Index",
+      "current_value": 59,
+      "unit": "0-100 scale",
+      "as_of_date": "2026-05-22",
+      "historical_average": 50,
+      "normal_range": "45-55 (Neutral)",
+      "source_bands": {
+        "extreme_fear": "0-25",
+        "fear": "25-45",
+        "neutral": "45-55",
+        "greed": "55-75",
+        "extreme_greed": "75-100"
+      },
+      "current_category": "Greed",
+      "recent_history": {
+        "1_week_ago": 63,
+        "1_month_ago": 68
+      },
+      "risk_level": "Moderate",
+      "interpretation": "Greed territory - elevated risk appetite. Down from higher levels a month ago but still shows optimistic sentiment.",
+      "source": "CNN Business",
+      "methodology_note": "Composite of 7 indicators: momentum, strength, breadth, put/call, junk bond demand, volatility, safe haven demand",
+      "freshness_days": 0,
+      "components": [
+        "Market Momentum (S&P 500 vs 125-day MA)",
+        "Stock Price Strength (52-week highs/lows)",
+        "Stock Price Breadth (volume of advancing vs declining)",
+        "Put/Call Options (5-day average ratio)",
+        "Junk Bond Demand (yield spread)",
+        "Market Volatility (VIX)",
+        "Safe Haven Demand (stocks vs bonds returns)"
+      ]
+    }
+  },
+  "valuation_indicators": {
+    "shiller_cape": {
+      "name": "Shiller PE Ratio (CAPE)",
+      "variant": "Cyclically Adjusted PE Ratio",
+      "current_value": 39.58,
+      "unit": "ratio",
+      "as_of_date": "2026-05-01",
+      "historical_average": 17.3,
+      "historical_median": 16.09,
+      "normal_range": "15-25",
+      "lookback_period": "155 years",
+      "historical_context": {
+        "all_time_high": 44.19,
+        "all_time_high_date": "1999-12",
+        "20_year_average": 27.5,
+        "current_vs_mean_pct": 128.7
+      },
+      "risk_level": "High",
+      "interpretation": "Extreme overvaluation. CAPE at 39.58 is 2.3x historical average and only exceeded by dot-com bubble. Implies low/negative 8-10 year returns (~2.3% annually).",
+      "source": "Robert Shiller / Yale",
+      "methodology_note": "S&P 500 price divided by 10-year average of inflation-adjusted earnings",
+      "freshness_days": 22,
+      "implied_future_return": "~2.3% annually over next decade",
+      "valuation_thresholds": {
+        "undervalued": "<15",
+        "fair_value": "15-25",
+        "overvalued": "25-35",
+        "extreme": ">35"
+      }
+    },
+    "buffett_indicator": {
+      "name": "Buffett Indicator (Market Cap / GDP)",
+      "variant": "Wilshire 5000 Total Market Cap to GDP",
+      "current_value": 219.0,
+      "unit": "percentage",
+      "as_of_date": "2026-03-31",
+      "historical_average": 120.0,
+      "normal_range": "80-120",
+      "lookback_period": "50+ years",
+      "components": {
+        "total_market_cap": 69.15,
+        "gdp_annualized": 31.57,
+        "market_cap_unit": "trillion USD",
+        "gdp_unit": "trillion USD"
+      },
+      "historical_context": {
+        "std_deviations_above_trend": 2.1,
+        "pct_above_trend": 64.84,
+        "all_time_high": 230.3,
+        "all_time_high_date": "2026-01",
+        "dot_com_peak": 146.0
+      },
+      "risk_level": "High",
+      "interpretation": "Strongly overvalued at 219% - near all-time highs. Warren Buffett warned at 200% 'you are playing with fire'. Suggests significantly elevated crash risk.",
+      "source": "Wilshire 5000 / BEA",
+      "methodology_note": "Total US stock market capitalization divided by annualized GDP",
+      "freshness_days": 54,
+      "warren_buffett_zones": {
+        "good_buy": "70-80%",
+        "fairly_valued": "80-120%",
+        "overvalued": "120-150%",
+        "bubble": ">150%",
+        "playing_with_fire": ">200%"
+      }
+    }
+  },
+  "macro_indicators": {
+    "yield_curve_10y2y": {
+      "name": "Treasury Yield Curve (10Y-2Y Spread)",
+      "variant": "10-Year minus 2-Year Constant Maturity",
+      "current_value": 0.43,
+      "unit": "percentage points",
+      "as_of_date": "2026-05-22",
+      "historical_average": 0.85,
+      "normal_range": "0.5-2.0",
+      "lookback_period": "40+ years",
+      "recent_values": {
+        "1_week_ago": 0.49,
+        "1_month_ago": 0.51,
+        "1_year_ago": 0.54
+      },
+      "inversion_check": {
+        "currently_inverted": false,
+        "was_inverted_last_12m": "Check required",
+        "note": "Curve re-steepening after prior inversion is common before recession"
+      },
+      "risk_level": "Moderate",
+      "interpretation": "Flat curve at 0.43% - below historical average. Signals slowing growth expectations. Not inverted but remains compressed.",
+      "source": "U.S. Treasury / FRED",
+      "methodology_note": "Daily difference between 10-year and 2-year Treasury yields",
+      "freshness_days": 0,
+      "recession_signal": "Inversion (negative spread) has predicted every recession since 1955, typically 6-24 months in advance"
+    }
+  },
+  "technical_indicators": {
+    "sp500_technicals": {
+      "name": "S&P 500 Technical Indicators",
+      "as_of_date": "2026-05-22",
+      "current_price": 7473.47,
+      "unit": "index points",
+      "sub_indicators": {
+        "price_vs_50dma": {
+          "name": "Price vs 50-Day Moving Average",
+          "value": 11.45,
+          "unit": "percent",
+          "ma_level": 6705.75,
+          "risk_level": "Moderate",
+          "interpretation": "11.45% above 50-DMA - extended short-term. Suggests overbought condition."
+        },
+        "price_vs_200dma": {
+          "name": "Price vs 200-Day Moving Average",
+          "value": 40.48,
+          "unit": "percent",
+          "ma_level": 5320.11,
+          "risk_level": "Elevated",
+          "interpretation": "40.48% above 200-DMA - significantly extended long-term. Major deviation from trend."
+        },
+        "rsi_14": {
+          "name": "14-Day Relative Strength Index",
+          "value": 70.92,
+          "unit": "0-100 scale",
+          "normal_range": "30-70",
+          "risk_level": "Moderate",
+          "interpretation": "RSI at 70.92 - overbought territory. Potential for near-term pullback."
+        },
+        "drawdown_52w": {
+          "name": "Drawdown from 52-Week High",
+          "value": 0.0,
+          "unit": "percent",
+          "high_level": 7473.47,
+          "risk_level": "Low",
+          "interpretation": "At 52-week high (0% drawdown) - strong momentum but no margin of safety."
+        },
+        "drawdown_ath": {
+          "name": "Drawdown from All-Time High",
+          "value": 0.0,
+          "unit": "percent",
+          "ath_level": 7473.47,
+          "risk_level": "Low",
+          "interpretation": "At all-time high - bullish but elevated crash risk from peak levels."
+        }
+      },
+      "overall_risk_level": "Moderate",
+      "overall_interpretation": "S&P 500 at all-time highs with extended technicals. RSI overbought, price far above moving averages. Suggests vulnerable to pullback.",
+      "source": "Google Finance historical data",
+      "methodology_note": "Calculated from weekly price data over 5 years",
+      "freshness_days": 0
+    }
+  },
+  "market_breadth": {
+    "sp500_above_50dma": {
+      "name": "S&P 500 Stocks Above 50-Day MA",
+      "variant": "S5FI Index",
+      "current_value": 56.77,
+      "unit": "percentage",
+      "as_of_date": "2026-05-22",
+      "historical_average": 51.1,
+      "normal_range": "40-70",
+      "lookback_period": "May 2026 average",
+      "range_monthly": {
+        "low": 42.94,
+        "high": 58.44
+      },
+      "risk_level": "Low",
+      "interpretation": "Healthy breadth at 56.77%. Majority of stocks participating in rally. Above 50 is constructive.",
+      "source": "S5FI Index",
+      "methodology_note": "Percentage of S&P 500 constituents trading above their 50-day simple moving average",
+      "freshness_days": 0,
+      "threshold_notes": {
+        "bullish": ">50",
+        "very_strong": ">70",
+        "overbought": ">80",
+        "bearish": "<30"
+      }
+    },
+    "sp500_above_200dma": {
+      "name": "S&P 500 Stocks Above 200-Day MA",
+      "variant": "S5TH Index",
+      "current_value": 56.37,
+      "unit": "percentage",
+      "as_of_date": "2026-05-22",
+      "historical_average": 58.0,
+      "normal_range": "50-80",
+      "lookback_period": "Long-term",
+      "range_52w": {
+        "low": 42.14,
+        "high": 68.58
+      },
+      "year_change": 23.0,
+      "risk_level": "Moderate",
+      "interpretation": "Mixed long-term breadth at 56.37%. Slight majority above 200-DMA but not overwhelming. Some underlying weakness.",
+      "source": "S5TH Index",
+      "methodology_note": "Percentage of S&P 500 constituents trading above their 200-day simple moving average",
+      "freshness_days": 0,
+      "threshold_notes": {
+        "very_strong": ">80",
+        "healthy": "60-80",
+        "mixed": "40-60",
+        "weak": "<40"
+      }
+    },
+    "advance_decline_ratio": {
+      "name": "NYSE Advance/Decline Ratio",
+      "variant": "$ADRN",
+      "current_value": 1.32,
+      "unit": "ratio",
+      "as_of_date": "2026-05-22",
+      "historical_average": 1.0,
+      "normal_range": "0.8-1.2",
+      "lookback_period": "Long-term",
+      "risk_level": "Low",
+      "interpretation": "Positive breadth with 1.32 ratio. More advancing than declining stocks - healthy market structure.",
+      "source": "Barchart / NYSE",
+      "methodology_note": "Number of advancing stocks divided by declining stocks on NYSE",
+      "freshness_days": 0,
+      "note": "Daily A/D ratio is volatile; A/D line (cumulative) provides better trend signal"
+    },
+    "overall_breadth_assessment": {
+      "risk_level": "Low",
+      "interpretation": "Market breadth is generally healthy with 56-57% of S&P 500 stocks above key moving averages. Advance/decline ratio positive. Some divergence concern as S&P 500 is 40% above 200-DMA but only 56% of stocks are. Participation is adequate but not exceptional."
+    }
+  },
+  "leverage_indicators": {
+    "finra_margin_debt": {
+      "name": "FINRA Margin Debt",
+      "variant": "Investor Margin Debt",
+      "current_value": 1221.0,
+      "unit": "billion USD",
+      "as_of_date": "2026-03-31",
+      "historical_context": {
+        "all_time_high": 1280.0,
+        "all_time_high_date": "2026-01",
+        "median_historical": 348.98,
+        "growth_yoy_pct": 38.69,
+        "consecutive_monthly_increases": 9
+      },
+      "relative_metrics": {
+        "margin_debt_to_gdp_pct": 4.1,
+        "margin_debt_to_gdp_50y_median": 1.5,
+        "margin_debt_to_market_cap_pct": 1.88,
+        "margin_debt_to_market_cap_50y_range": "1.5-2.0"
+      },
+      "risk_level": "High",
+      "interpretation": "Margin debt near record highs at $1.22T. Debt-to-GDP at 4.1% vs 1.5% historical median signals extreme leverage. Creates fragility and forced liquidation risk in downturn. Historical precedent: rapid debt growth preceded 2000, 2007, 2021 crashes.",
+      "source": "FINRA",
+      "methodology_note": "Total margin debt reported by FINRA member firms, released monthly with lag",
+      "freshness_days": 54,
+      "next_release": "2026-05-28",
+      "risks": [
+        "Amplified losses during downturns",
+        "Forced liquidation / margin calls",
+        "Vicious cycle of selling pressure",
+        "Interest costs eroding returns"
+      ],
+      "regulatory_note": "New FINRA intraday margin requirements effective June 4, 2026"
+    }
+  },
+  "overall_assessment": {
+    "generated_at": "2026-05-24T03:03:32Z",
+    "analysis_date": "2026-05-22",
+    "overall_crash_risk_level": "ELEVATED",
+    "confidence": 7.5,
+    "confidence_scale": "0-10 (10 = highest confidence)",
+    "risk_categories": {
+      "near_term_stress": {
+        "level": "Moderate",
+        "indicators": [
+          "VIX: Low",
+          "Put/Call: Low",
+          "Fear/Greed: Moderate",
+          "RSI: Moderate"
+        ],
+        "summary": "Sentiment shows greed with low volatility. Some complacency but not extreme panic or euphoria."
+      },
+      "valuation_vulnerability": {
+        "level": "High",
+        "indicators": [
+          "CAPE: High",
+          "Buffett: High"
+        ],
+        "summary": "Extreme overvaluation by historical standards. Both CAPE (39.58) and Buffett Indicator (219%) near record highs. Poor long-term return outlook."
+      },
+      "technical_regime": {
+        "level": "Moderate",
+        "indicators": [
+          "S&P at ATH",
+          "Price vs 50DMA: Moderate",
+          "Price vs 200DMA: Elevated",
+          "RSI: Moderate"
+        ],
+        "summary": "Strong momentum but extended. Price significantly above long-term trend. Overbought conditions."
+      },
+      "market_structure": {
+        "level": "Moderate",
+        "indicators": [
+          "Breadth 50DMA: Low",
+          "Breadth 200DMA: Moderate",
+          "Margin Debt: High"
+        ],
+        "summary": "Breadth adequate but not exceptional. Margin debt at dangerous levels creates systemic fragility."
+      },
+      "macro_environment": {
+        "level": "Moderate",
+        "indicators": [
+          "Yield Curve: Moderate"
+        ],
+        "summary": "Flat yield curve signals slowing growth. Not inverted currently but compressed."
+      }
+    },
+    "key_warnings": [
+      "CRITICAL: Valuation at extreme levels (CAPE 39.58, Buffett 219%) - historically associated with poor long-term returns and crashes",
+      "HIGH: Margin debt near record highs ($1.22T) at 4.1% of GDP creates systemic risk and forced liquidation potential",
+      "ELEVATED: S&P 500 40% above 200-day MA - major technical extension vulnerable to mean reversion",
+      "MODERATE: Sentiment in 'Greed' zone (Fear/Greed 59) with low VIX (16.70) suggests complacency",
+      "MODERATE: RSI at 70.92 (overbought) signals short-term pullback risk"
+    ],
+    "mitigating_factors": [
+      "Market breadth is healthy (56-57% above key MAs) - not narrow leadership",
+      "Put/Call ratio balanced at 0.85 - not extreme euphoria",
+      "VIX at 16.70 not showing panic but also not extreme complacency (above recent low of 13.38)",
+      "Yield curve positive (0.43%) - not inverted, recession not imminent",
+      "S&P 500 at all-time highs with positive momentum - trend remains up"
+    ],
+    "scenario_analysis": {
+      "base_case": {
+        "probability": 40,
+        "outlook": "Continued rally with increased volatility",
+        "description": "Market continues higher driven by momentum, but with larger 5-10% corrections. Valuation expansion continues despite elevated levels.",
+        "timeframe": "3-6 months"
+      },
+      "correction_case": {
+        "probability": 40,
+        "outlook": "10-20% correction/pullback",
+        "description": "Market corrects on valuation concerns, margin unwind, or macro surprise. Not a crash but healthy mean reversion from extended levels.",
+        "timeframe": "3-9 months",
+        "triggers": [
+          "Fed policy shift",
+          "Earnings disappointment",
+          "Margin calls cascade"
+        ]
+      },
+      "crash_case": {
+        "probability": 20,
+        "outlook": "20%+ crash/bear market",
+        "description": "Major sell-off triggered by credit event, geopolitical shock, or forced deleveraging. High margin debt amplifies decline. Historical parallel to 2000 or 2007.",
+        "timeframe": "6-18 months",
+        "triggers": [
+          "Credit/banking crisis",
+          "Recession",
+          "Black swan event",
+          "Margin debt unwind"
+        ]
+      }
+    },
+    "recommendation_framework": {
+      "risk_management": [
+        "Consider reducing equity exposure given extreme valuations",
+        "Implement stop-losses or hedging strategies",
+        "Monitor margin debt and breadth for deterioration",
+        "Increase cash/safe-haven allocations"
+      ],
+      "monitoring": [
+        "Watch for VIX spike above 25-30 (stress signal)",
+        "Track margin debt monthly - rapid decline is crash trigger",
+        "Monitor breadth - divergence (S&P up, breadth down) is major warning",
+        "Watch yield curve for inversion",
+        "Track Fed policy and liquidity conditions"
+      ],
+      "timeframe_considerations": {
+        "short_term_1_3m": "Moderate risk - overbought technicals, potential pullback",
+        "medium_term_6_12m": "Elevated risk - valuation stretched, margin debt high",
+        "long_term_3_10y": "High risk - CAPE suggests low/negative returns from current levels"
+      }
+    },
+    "historical_context": "Current conditions show similarities to previous market peaks: extreme valuations (like 1999-2000), record margin debt (like 2007, 2021), strong momentum masking underlying risks. However, crashes are hard to time - valuations can stay elevated for extended periods. The 'when' is uncertain, but the 'if' probability is elevated.",
+    "disclaimer": "This analysis is for informational and educational purposes only. It does not constitute financial advice. Past performance and historical patterns do not guarantee future results. Markets can remain irrational longer than investors can remain solvent. Consult a licensed financial advisor before making investment decisions."
+  }
+}
