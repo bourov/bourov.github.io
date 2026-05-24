@@ -3,204 +3,135 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Morning Briefing – May 23, 2026</title>
+<title>Daily Morning Briefing — May 23, 2026</title>
 <style>
-  body { font-family: Georgia, 'Times New Roman', serif; background: #f5f5f0; color: #222; margin: 0; padding: 0; }
-  .container { max-width: 720px; margin: 30px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.10); overflow: hidden; }
-  .header { background: #1a3a5c; color: #fff; padding: 32px 36px 24px; }
-  .header h1 { margin: 0 0 6px; font-size: 2em; letter-spacing: 1px; }
-  .header .date { font-size: 1.05em; color: #b8d0e8; }
-  .section { padding: 24px 36px; border-bottom: 1px solid #e8e8e0; }
-  .section:last-child { border-bottom: none; }
-  .section-title { font-size: 1.18em; font-weight: bold; color: #1a3a5c; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 2px solid #1a3a5c; }
-  .subsection-title { font-size: 1.02em; font-weight: bold; color: #2c5f8a; margin: 16px 0 8px; }
-  .weather-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; margin-top: 10px; }
-  .weather-item { font-size: 0.97em; }
-  .weather-item span { font-weight: bold; }
-  ul { margin: 0; padding: 0 0 0 18px; }
-  li { margin-bottom: 9px; font-size: 0.97em; line-height: 1.5; }
-  a { color: #1a6fa8; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .source { color: #888; font-size: 0.88em; margin-left: 4px; }
-  .footer { background: #f0f0ea; padding: 16px 36px; font-size: 0.88em; color: #777; text-align: center; }
-  .weather-main { font-size: 1.5em; font-weight: bold; margin-bottom: 8px; }
-  .lang-tag { font-size: 0.78em; background: #e8f0f8; color: #2c5f8a; border-radius: 3px; padding: 1px 5px; margin-left: 4px; vertical-align: middle; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background:#f5f5f5; margin:0; padding:0; color:#222; }
+  .container { max-width:750px; margin:0 auto; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+  .header { background:linear-gradient(135deg,#1a237e,#283593); color:#fff; padding:28px 30px 20px; }
+  .header h1 { margin:0 0 4px 0; font-size:1.7em; letter-spacing:0.5px; }
+  .header p { margin:0; opacity:0.85; font-size:0.95em; }
+  .section { padding:20px 30px; border-bottom:1px solid #eee; }
+  .section:last-child { border-bottom:none; }
+  .section h2 { margin:0 0 14px 0; font-size:1.15em; color:#1a237e; display:flex; align-items:center; gap:8px; }
+  .subsection h3 { margin:12px 0 8px 0; font-size:1em; color:#37474f; }
+  .footer { background:#f0f0f0; padding:14px 30px; font-size:0.8em; color:#888; text-align:center; }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <!-- HEADER -->
-  <div class="header">
-    <h1>📰 Daily Morning Briefing</h1>
-    <div class="date">Saturday, May 23, 2026 &nbsp;|&nbsp; Austin, TX &nbsp;|&nbsp; Compiled at 6:00 AM CT</div>
+<div class="header">
+  <h1>📋 Daily Morning Briefing</h1>
+  <p>May 23, 2026 &nbsp;|&nbsp; Prepared at 6:00 AM CT &nbsp;|&nbsp; Austin, TX</p>
+</div>
+
+<!-- SECTION 1: WEATHER -->
+<div class="section">
+  <h2>🌤️ Weather — Austin, TX (ZIP 78759)</h2>
+  <div style="background:#e8f4fd;border-left:4px solid #2196F3;padding:14px;border-radius:4px;">
+    <table style="width:100%;border-collapse:collapse;font-size:0.95em;">
+      <tr><td style="padding:4px 8px;width:50%;"><strong>🌡️ Current Temperature</strong></td><td style="padding:4px 8px;">25°C (feels like 26°C)</td></tr>
+      <tr style="background:#d0e8f8;"><td style="padding:4px 8px;"><strong>📉 Tonight Low</strong></td><td style="padding:4px 8px;">~21°C</td></tr>
+      <tr><td style="padding:4px 8px;"><strong>📈 Tomorrow High (Sun May 24)</strong></td><td style="padding:4px 8px;">~29°C</td></tr>
+      <tr style="background:#d0e8f8;"><td style="padding:4px 8px;"><strong>🌧️ Precipitation Chance</strong></td><td style="padding:4px 8px;">30% (showers/thunderstorms tonight)</td></tr>
+      <tr><td style="padding:4px 8px;"><strong>💧 Humidity</strong></td><td style="padding:4px 8px;">79%</td></tr>
+      <tr style="background:#d0e8f8;"><td style="padding:4px 8px;"><strong>💨 Wind</strong></td><td style="padding:4px 8px;">SE at 9 mph (14 km/h)</td></tr>
+      <tr><td style="padding:4px 8px;"><strong>☁️ Conditions</strong></td><td style="padding:4px 8px;">Mostly cloudy; partly cloudy tomorrow</td></tr>
+      <tr style="background:#d0e8f8;"><td style="padding:4px 8px;"><strong>🌅 Sunrise / 🌇 Sunset</strong></td><td style="padding:4px 8px;">6:31 AM / 8:23 PM CDT</td></tr>
+    </table>
+    <p style="margin:8px 0 0 0;font-size:0.8em;color:#555;">Source: National Weather Service / AccuWeather — May 23, 2026</p>
   </div>
+</div>
 
-  <!-- SECTION 1: WEATHER -->
-  <div class="section">
-    <div class="section-title">🌤️ Weather — Austin, TX (ZIP 78759)</div>
-    <div class="weather-main">⛅ 25°C &nbsp; Mostly Cloudy</div>
-    <div class="weather-grid">
-      <div class="weather-item">🌡️ Current Temp: <span>25°C (77°F)</span></div>
-      <div class="weather-item">🌡️ Feels Like: <span>26°C (78°F)</span></div>
-      <div class="weather-item">📈 Today's High: <span>32°C (89°F)</span></div>
-      <div class="weather-item">📉 Tonight's Low: <span>19°C (66°F)</span></div>
-      <div class="weather-item">💧 Humidity: <span>79%</span></div>
-      <div class="weather-item">🌧️ Precip. Chance: <span>30% (showers/storms)</span></div>
-      <div class="weather-item">💨 Wind: <span>ESE 11–15 km/h</span></div>
-      <div class="weather-item">👁️ Visibility: <span>16 km</span></div>
-    </div>
-    <p style="margin-top:12px; font-size:0.93em; color:#555;">⚠️ <strong>Weather Note:</strong> Chance of showers and thunderstorms before 1 AM tonight. Watch for possible flash flooding, hail, and localized damaging wind gusts. Air quality: Fair. Tomorrow (Sun May 24): High 32°C (89°F), partly cloudy with afternoon thunderstorms possible.</p>
+<!-- SECTION 2: POSITIVE RUSSIA NEWS -->
+<div class="section">
+  <h2>✅ Positive Russia News</h2>
+  <p style="margin:0 0 12px 0;font-size:0.85em;color:#666;">Uplifting and constructive developments from Russia — last 24 hours only.</p>
+  <ul style="list-style:none;padding:0;margin:0;"><li style="margin-bottom:10px;padding:8px 10px;background:#fafafa;border-radius:4px;border-left:3px solid #ddd;">
+          <a href="https://www.fontanka.ru/" style="color:#1a0dab;text-decoration:none;font-weight:500;">Film Director Andrey Zvyagintsev's 'Minotaur' Wins Grand Prix at Cannes Film Festival</a>
+          <br><span style="font-size:0.82em;color:#777;">📰 Fontanka.ru &nbsp;|&nbsp; 📅 2026-05-23</span>
+        </li><li style="margin-bottom:10px;padding:8px 10px;background:#fafafa;border-radius:4px;border-left:3px solid #ddd;">
+          <a href="https://moderndiplomacy.eu/2026/05/22/russia-expands-african-partnerships-but-falls-short-on-development/" style="color:#1a0dab;text-decoration:none;font-weight:500;">Russia Expands African Partnerships, Deepens Diplomatic Ties Ahead of Third Russia-Africa Summit in October 2026</a>
+          <br><span style="font-size:0.82em;color:#777;">📰 Modern Diplomacy &nbsp;|&nbsp; 📅 2026-05-22</span>
+        </li></ul>
+</div>
+
+<!-- SECTION 3: NEUTRAL RUSSIA NEWS -->
+<div class="section">
+  <h2>📰 Neutral Russia News</h2>
+  <p style="margin:0 0 12px 0;font-size:0.85em;color:#666;">Factual, objective coverage of Russia — last 24 hours only.</p>
+  <ul style="list-style:none;padding:0;margin:0;"><li style="margin-bottom:10px;padding:8px 10px;background:#fafafa;border-radius:4px;border-left:3px solid #ddd;">
+          <a href="https://www.aljazeera.com/news/2026/5/22/russia-falters-in-ukraine" style="color:#1a0dab;text-decoration:none;font-weight:500;">Al Jazeera: Russia Falters in Ukraine as Territorial Losses Mount in May 2026</a>
+          <br><span style="font-size:0.82em;color:#777;">📰 Al Jazeera &nbsp;|&nbsp; 📅 2026-05-22</span>
+        </li><li style="margin-bottom:10px;padding:8px 10px;background:#fafafa;border-radius:4px;border-left:3px solid #ddd;">
+          <a href="https://www.iiss.org/research-paper/2026/05/the-coming-crisis-in-russias-political-economy/" style="color:#1a0dab;text-decoration:none;font-weight:500;">IISS: The Coming Crisis in Russia's Political Economy — Analysis</a>
+          <br><span style="font-size:0.82em;color:#777;">📰 IISS &nbsp;|&nbsp; 📅 2026-05-22</span>
+        </li><li style="margin-bottom:10px;padding:8px 10px;background:#fafafa;border-radius:4px;border-left:3px solid #ddd;">
+          <a href="https://www.pbs.org/newshour/world/russia-and-ukraine-trade-blame-for-continued-fighting-that-killed-at-least-2-as-u-s-brokered-ceasefire-nears-its-end" style="color:#1a0dab;text-decoration:none;font-weight:500;">PBS: Russia and Ukraine Trade Blame for Continued Fighting as US-Brokered Ceasefire Nears End</a>
+          <br><span style="font-size:0.82em;color:#777;">📰 PBS NewsHour &nbsp;|&nbsp; 📅 2026-05-22</span>
+        </li></ul>
+</div>
+
+<!-- SECTION 4: ST. PETERSBURG NEWS -->
+<div class="section">
+  <h2>🏛️ St. Petersburg News</h2>
+  <p style="margin:0 0 12px 0;font-size:0.85em;color:#666;">Latest from Saint Petersburg, Russia — in English and Russian.</p>
+  <ul style="list-style:none;padding:0;margin:0;"><li style="margin-bottom:10px;padding:8px 10px;background:#fafafa;border-radius:4px;border-left:3px solid #ddd;">
+          <a href="https://sputnikglobe.com/event_SPIEF/" style="color:#1a0dab;text-decoration:none;font-weight:500;">Trump's White House Ballroom Commissioner to Attend Putin's Speech at St. Petersburg Economic Forum — First US Appearance in Years</a> <span style="background:#e8f4fd;border-radius:3px;padding:1px 5px;font-size:0.75em;color:#1565C0;">EN</span>
+          <br><span style="font-size:0.82em;color:#777;">📰 Sputnik Globe &nbsp;|&nbsp; 📅 2026-05-22</span>
+        </li><li style="margin-bottom:10px;padding:8px 10px;background:#fafafa;border-radius:4px;border-left:3px solid #ddd;">
+          <a href="https://interfax.com/newsroom/top-stories/113088/" style="color:#1a0dab;text-decoration:none;font-weight:500;">SPIEF 2026: Over 24,000 Participants from 140 Countries Expected at St. Petersburg Economic Forum (June 3–6)</a> <span style="background:#e8f4fd;border-radius:3px;padding:1px 5px;font-size:0.75em;color:#1565C0;">EN</span>
+          <br><span style="font-size:0.82em;color:#777;">📰 Interfax &nbsp;|&nbsp; 📅 2026-05-22</span>
+        </li><li style="margin-bottom:10px;padding:8px 10px;background:#fafafa;border-radius:4px;border-left:3px solid #ddd;">
+          <a href="https://serbia.news-pravda.com/en/russia/2026/05/22/22767.html" style="color:#1a0dab;text-decoration:none;font-weight:500;">Documentary 'Petersburg! Life in the City...' Broadcast on Serbian Television After Belgrade Premiere</a> <span style="background:#e8f4fd;border-radius:3px;padding:1px 5px;font-size:0.75em;color:#1565C0;">EN</span>
+          <br><span style="font-size:0.82em;color:#777;">📰 Pravda Serbia &nbsp;|&nbsp; 📅 2026-05-22</span>
+        </li><li style="margin-bottom:10px;padding:8px 10px;background:#fafafa;border-radius:4px;border-left:3px solid #ddd;">
+          <a href="https://tvspb.ru/news/2026/05/21/novosti-peterburga-k-1500-1318" style="color:#1a0dab;text-decoration:none;font-weight:500;">Hermitage Museum Opens Exhibition Dedicated to Catherine I, Russia's First Female Ruler</a> <span style="background:#e8f4fd;border-radius:3px;padding:1px 5px;font-size:0.75em;color:#1565C0;">EN</span>
+          <br><span style="font-size:0.82em;color:#777;">📰 TV Saint Petersburg &nbsp;|&nbsp; 📅 2026-05-22</span>
+        </li><li style="margin-bottom:10px;padding:8px 10px;background:#fafafa;border-radius:4px;border-left:3px solid #ddd;">
+          <a href="https://abnews.ru/szfo/news/spb/2026/5/23/v-peterburge-perenesli-otkrytie-novogo-sezona-proekta-poyushhie-mosty" style="color:#1a0dab;text-decoration:none;font-weight:500;">В Петербурге перенесли открытие нового сезона проекта «Поющие мосты» из-за непогоды</a> <span style="background:#e8e8e8;border-radius:3px;padding:1px 5px;font-size:0.75em;color:#555;">RU</span>
+          <br><span style="font-size:0.82em;color:#777;">📰 АБН Новости &nbsp;|&nbsp; 📅 2026-05-23</span>
+        </li><li style="margin-bottom:10px;padding:8px 10px;background:#fafafa;border-radius:4px;border-left:3px solid #ddd;">
+          <a href="https://tvspb.ru/news/2026/05/5/novosti-peterburga-itogi-dnya-703" style="color:#1a0dab;text-decoration:none;font-weight:500;">В Петербурге прошёл парад ретро-транспорта в рамках VII Международного TransportFest</a> <span style="background:#e8e8e8;border-radius:3px;padding:1px 5px;font-size:0.75em;color:#555;">RU</span>
+          <br><span style="font-size:0.82em;color:#777;">📰 ТВ Санкт-Петербург &nbsp;|&nbsp; 📅 2026-05-23</span>
+        </li></ul>
+</div>
+
+<!-- SECTION 5: SEMICONDUCTOR & INVESTOR NEWS -->
+<div class="section">
+  <h2>💹 Semiconductor &amp; Investor News</h2>
+  <div class="subsection">
+    <h3>🔬 KLAC (KLA Corporation)</h3>
+    <ul style="list-style:none;padding:0;margin:0;"><li style="margin-bottom:10px;padding:8px 10px;background:#fafafa;border-radius:4px;border-left:3px solid #ddd;">
+          <a href="https://www.marketbeat.com/stocks/NASDAQ/KLAC/forecast/" style="color:#1a0dab;text-decoration:none;font-weight:500;">Sanford C. Bernstein Boosts KLAC Price Target to $1,975 — 'Outperform' Rating Maintained (May 20, 2026)</a>
+          <br><span style="font-size:0.82em;color:#777;">📰 MarketBeat &nbsp;|&nbsp; 📅 2026-05-22</span>
+        </li><li style="margin-bottom:10px;padding:8px 10px;background:#fafafa;border-radius:4px;border-left:3px solid #ddd;">
+          <a href="https://www.cnbc.com/quotes/KLAC" style="color:#1a0dab;text-decoration:none;font-weight:500;">KLA Corporation: Tech Stock Paying Growing Dividend with AI Tailwinds — Analysts Bullish Ahead of June Stock Split</a>
+          <br><span style="font-size:0.82em;color:#777;">📰 CNBC &nbsp;|&nbsp; 📅 2026-05-23</span>
+        </li><li style="margin-bottom:10px;padding:8px 10px;background:#fafafa;border-radius:4px;border-left:3px solid #ddd;">
+          <a href="https://www.tradingkey.com/news/market-movers/261923224-market-movers-klac-20260522" style="color:#1a0dab;text-decoration:none;font-weight:500;">KLA Corp Stock (KLAC) Up 3.14% on May 22: Strong Q3 Results and 10-for-1 Stock Split Announced for June 12</a>
+          <br><span style="font-size:0.82em;color:#777;">📰 TradingKey &nbsp;|&nbsp; 📅 2026-05-22</span>
+        </li><li style="margin-bottom:10px;padding:8px 10px;background:#fafafa;border-radius:4px;border-left:3px solid #ddd;">
+          <a href="https://finance.yahoo.com/news/investors-may-respond-kla-klac-200625876.html" style="color:#1a0dab;text-decoration:none;font-weight:500;">Jefferies Raises KLAC Price Target to $2,000 — AI-Driven Wafer Fab Equipment Uplift Expected H2 2026</a>
+          <br><span style="font-size:0.82em;color:#777;">📰 Yahoo Finance &nbsp;|&nbsp; 📅 2026-05-22</span>
+        </li><li style="margin-bottom:10px;padding:8px 10px;background:#fafafa;border-radius:4px;border-left:3px solid #ddd;">
+          <a href="https://ir.kla.com/news-events" style="color:#1a0dab;text-decoration:none;font-weight:500;">KLA to Attend BofA Securities 2026 Global Technology Conference on June 3</a>
+          <br><span style="font-size:0.82em;color:#777;">📰 KLA Investor Relations &nbsp;|&nbsp; 📅 2026-05-22</span>
+        </li></ul>
   </div>
-
-  <!-- SECTION 2: POSITIVE RUSSIA NEWS -->
-  <div class="section">
-    <div class="section-title">✅ Positive Russia News</div>
-    <ul>
-      <li>
-        <a href="https://www.aljazeera.com/news/2026/5/10/putin-suggests-russias-war-on-ukraine-coming-to-an-end">Putin suggests Russia's war on Ukraine 'coming to an end,' expresses willingness to meet Zelensky for peace talks</a>
-        <span class="source">— Al Jazeera, May 10, 2026</span>
-      </li>
-      <li>
-        <a href="https://mali.news-pravda.com/en/russia/2026/05/22/7573.html">St. Petersburg hosts International Russia-Africa Friendship Football Tournament on Africa Day, strengthening diplomatic ties through sport</a>
-        <span class="source">— Pravda Mali, May 22, 2026</span>
-      </li>
-      <li>
-        <a href="https://www.bignewsnetwork.com/category/st-petersburg-russia-news">Russia and China announce Power of Siberia 2 pipeline agreement and expanded bilateral cooperation framework</a>
-        <span class="source">— Big News Network, May 23, 2026</span>
-      </li>
-      <li>
-        <a href="https://neva.today/news/2026/5/23/747363">Colombian defender Kevin Andrade transfers to Zenit St. Petersburg, boosting the club's international roster</a>
-        <span class="source">— Neva Today, May 23, 2026</span>
-      </li>
-      <li>
-        <a href="https://www.dp.ru/a/2026/05/23/holodnaja-chast-ciklona-zamedlit">St. Petersburg city legislative assembly considers bill to increase total area of public green spaces by 80 hectares</a>
-        <span class="source">— Delovoy Peterburg, May 23, 2026</span>
-      </li>
-    </ul>
+  <div class="subsection" style="margin-top:16px;">
+    <h3>💡 CPO (Co-Packaged Optics)</h3>
+    <ul style="list-style:none;padding:0;margin:0;"><li style="margin-bottom:10px;padding:8px 10px;background:#fafafa;border-radius:4px;border-left:3px solid #ddd;">
+          <a href="https://www.networkworld.com/article/4098942/what-is-co-packaged-optics-a-solution-for-surging-capacity-in-ai-data-center-networks.html" style="color:#1a0dab;text-decoration:none;font-weight:500;">What Is Co-Packaged Optics? A Solution for Surging Capacity in AI Data Center Networks</a>
+          <br><span style="font-size:0.82em;color:#777;">📰 Network World &nbsp;|&nbsp; 📅 2026-05-22</span>
+        </li></ul>
   </div>
+</div>
 
-  <!-- SECTION 3: NEUTRAL RUSSIA NEWS -->
-  <div class="section">
-    <div class="section-title">📋 Neutral Russia News <span style="font-size:0.8em; font-weight:normal; color:#888;">(Factual / Balanced Coverage)</span></div>
-    <ul>
-      <li>
-        <a href="https://www.reuters.com/world/europe/death-toll-student-dorm-strike-rises-10-russian-installed-official-says-2026-05-23/">Russia reports death toll from Starobilsk dormitory strike rises to 18; Putin orders military to prepare retaliatory response</a>
-        <span class="source">— Reuters, May 23, 2026</span>
-      </li>
-      <li>
-        <a href="https://www.cnn.com/2026/05/23/europe/putin-ukraine-strike-starobilsk-intl">Kyiv experiences ballistic missile attack following escalation over Luhansk dormitory strike; Oreshnik IRBM reportedly used</a>
-        <span class="source">— CNN, May 23, 2026</span>
-      </li>
-      <li>
-        <a href="https://www.nbcnews.com/world/russia/russia-blames-ukraine-vows-retaliation-killed-strike-student-dorm-rcna346628">Ukrainian drone attack sparks fire at Novorossiysk Black Sea oil terminal; two injured, infrastructure damaged</a>
-        <span class="source">— NBC News, May 23, 2026</span>
-      </li>
-      <li>
-        <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-22-2026/">ISW: Ukraine conducts mechanized counterattack in Borova direction, advancing up to 5 km into Russian defenses</a>
-        <span class="source">— Institute for the Study of War, May 22, 2026</span>
-      </li>
-      <li>
-        <a href="https://www.bbc.com/news/articles/c5y74lwx395o">Russia requests UN Security Council emergency meeting over Luhansk vocational school attack; Ukraine denies targeting civilians</a>
-        <span class="source">— BBC News, May 23, 2026</span>
-      </li>
-      <li>
-        <a href="https://www.russiamatters.org/news/russia-ukraine-war-report-card/russia-ukraine-war-report-card-may-20-2026">Russia-Ukraine War Report Card: Russia sees net territorial loss of 69 sq miles in April–May 2026 period</a>
-        <span class="source">— Russia Matters, May 20, 2026</span>
-      </li>
-    </ul>
-  </div>
-
-  <!-- SECTION 4: ST. PETERSBURG NEWS -->
-  <div class="section">
-    <div class="section-title">🏛️ St. Petersburg News <span style="font-size:0.8em; font-weight:normal; color:#888;">(English &amp; Russian)</span></div>
-    <ul>
-      <li>
-        <a href="https://mali.news-pravda.com/en/russia/2026/05/22/7573.html">St. Petersburg hosts International Russia-Africa Friendship Football Tournament at MSA Petrovsky on Africa Day</a> <span class="lang-tag">EN</span>
-        <span class="source">— Pravda Mali, May 22, 2026</span>
-      </li>
-      <li>
-        <a href="https://www.newsnow.com/us/World/Asia/Russia/St.+Petersburg">St. Petersburg State University orders staff and students to use Russia's state-backed messaging application</a> <span class="lang-tag">EN</span>
-        <span class="source">— NewsNow, May 23, 2026</span>
-      </li>
-      <li>
-        <a href="https://www.newsnow.com/us/World/Asia/Russia/St.+Petersburg">Trump's White House ballroom commissioner Rodney Mims Cook Jr. to attend Putin's speech at St. Petersburg Economic Forum (SPIEF 2026, June 3)</a> <span class="lang-tag">EN</span>
-        <span class="source">— NewsNow, May 23, 2026</span>
-      </li>
-      <li>
-        <a href="https://neva.today/news/2026/5/23/747363">Зенит подписал колумбийского защитника Кевина Андраде из «Балтики»</a> <span class="lang-tag">RU</span>
-        <span class="source">— Neva Today, 23 мая 2026</span>
-      </li>
-      <li>
-        <a href="https://www.spb.kp.ru/">В Петербурге выделено 962 млн рублей на обработку данных с камер на детских площадках для повышения безопасности</a> <span class="lang-tag">RU</span>
-        <span class="source">— КП Санкт-Петербург, 23 мая 2026</span>
-      </li>
-      <li>
-        <a href="https://www.fontanka.ru/2026/05/23/76437288/">В Петербурге отменили фестиваль «Синие ночи» после визита силовиков</a> <span class="lang-tag">RU</span>
-        <span class="source">— Фонтанка.ру, 23 мая 2026</span>
-      </li>
-      <li>
-        <a href="https://www.spb.kp.ru/">Оплата проезда в петербургском транспорте по геолокации запустится в тестовом режиме в начале лета</a> <span class="lang-tag">RU</span>
-        <span class="source">— КП Санкт-Петербург, 23 мая 2026</span>
-      </li>
-      <li>
-        <a href="https://iz.ru/tag/sankt-peterburg">В Петербурге запущено полноцикловое производство кроссовера Esteo MX на заводе AGR Holding в Шушарах</a> <span class="lang-tag">RU</span>
-        <span class="source">— Известия, 23 мая 2026</span>
-      </li>
-    </ul>
-  </div>
-
-  <!-- SECTION 5: SEMICONDUCTOR & INVESTOR NEWS -->
-  <div class="section">
-    <div class="section-title">💹 Semiconductor &amp; Investor News</div>
-
-    <div class="subsection-title">📊 KLAC (KLA Corporation)</div>
-    <ul>
-      <li>
-        <a href="https://finance.yahoo.com/quote/KLAC/">KLA Corporation announces 10-for-1 forward stock split effective June 12, 2026; stock closed at $1,888.38 on May 22</a>
-        <span class="source">— Yahoo Finance, May 22, 2026</span>
-      </li>
-      <li>
-        <a href="https://www.tikr.com/blog/kla-corporation-jumped-5-after-jpmorgan-conference-heres-what-klac-stock-could-return">KLAC jumps 5% after JPMorgan conference; analysts raise price targets — Wells Fargo to $2,100, JPMorgan to $2,000, Citi to $2,064</a>
-        <span class="source">— TIKR, May 2026</span>
-      </li>
-      <li>
-        <a href="https://www.indexbox.io/blog/kla-corporation-reports-strong-march-quarter-2026-results-with-revenue-of-3415-billion/">KLA Corporation Q3 2026 revenue hits $3.415B (+11% YoY); EPS of $9.40 beats consensus; guides for high-teen growth in 2026</a>
-        <span class="source">— IndexBox, May 2026</span>
-      </li>
-      <li>
-        <a href="https://stockinvest.us/stock/KLAC">KLAC technical analysis: Buy signals from short- and long-term moving averages; stock up 149% over past year</a>
-        <span class="source">— StockInvest.us, May 23, 2026</span>
-      </li>
-    </ul>
-
-    <div class="subsection-title">🔬 CPO (Co-Packaged Optics)</div>
-    <ul>
-      <li>
-        <a href="https://www.semiconductor-today.com/news_items/2025/dec/idtechex-291225.shtml">IDTechEx: Co-packaged optics market to grow at 37% CAGR, exceeding $20 billion by 2036, driven by AI data center demand</a>
-        <span class="source">— Semiconductor Today, Dec 2025 / May 2026</span>
-      </li>
-      <li>
-        <a href="https://blogs.sw.siemens.com/semiconductor-packaging/2026/02/05/five-key-trends-of-co-packaged-optics-cpo-in-2026/">Five key CPO trends in 2026: UCIe optical interconnects, thermal management, AI power reduction, standards maturation, and silicon photonics scaling</a>
-        <span class="source">— Siemens EDA Blog, Feb 2026</span>
-      </li>
-      <li>
-        <a href="https://www.edn.com/where-co-packaged-optics-cpo-technology-stands-in-2026/">Where CPO technology stands in 2026: Broadcom, Marvell, Coherent, NVIDIA, and Ayar Labs lead deployments; large-scale rollout expected 2028–2030</a>
-        <span class="source">— EDN, 2026</span>
-      </li>
-      <li>
-        <a href="https://futurumgroup.com/insights/coherents-23-billion-growth-opportunity-lifted-by-nvidias-optical-ambitions/">Coherent's $23B growth opportunity: NVIDIA investment, CPO revenue expected H2 2026, indium phosphide capacity doubling</a>
-        <span class="source">— Futurum Group, 2026</span>
-      </li>
-    </ul>
-  </div>
-
-  <!-- FOOTER -->
-  <div class="footer">
-    Daily Morning Briefing &bull; Compiled automatically for A. Bourov &bull; May 23, 2026<br>
-    Weather source: NWS / AccuWeather &bull; All temperatures in Celsius &bull; News freshness window: last 24 hours<br>
-    <em>The Moscow Times excluded from all sections per editorial policy.</em>
-  </div>
+<div class="footer">
+  Daily Morning Briefing &nbsp;|&nbsp; May 23, 2026 &nbsp;|&nbsp; Delivered to A.bourov@msn.com<br>
+  All news sourced from the last 24 hours. The Moscow Times excluded. Deduplicated against 30-day history.
+</div>
 
 </div>
 </body>
