@@ -1,274 +1,258 @@
 {
-  "crash_probability": {
-    "5_day": {
-      "probability_pct": 1.5,
-      "confidence": 7,
-      "key_drivers": [
-        "VIX at 15.32 — well below historical crash-preceding levels (>25)",
-        "S&P 500 at all-time high with positive momentum",
-        "No imminent catalytic event in next 5 trading days"
-      ],
-      "interpretation": "Very low short-term crash probability. VIX complacency and record highs suggest calm markets. Historical base rate for 5-day 20%+ drawdowns from ATH is ~0.1%; modestly elevated due to stretched valuations and record margin debt."
-    },
-    "20_day": {
-      "probability_pct": 3.5,
-      "confidence": 6,
-      "key_drivers": [
-        "CAPE ratio above 40 for only 2nd time in 100 years",
-        "Buffett Indicator at all-time high of 236%",
-        "Margin debt at record $1.3 trillion (+53% YoY)",
-        "Breadth divergence: index highs with declining participation"
-      ],
-      "interpretation": "Low but non-trivial risk. Extreme valuations and record leverage create conditions for a rapid unwind if a catalyst emerges (geopolitical shock, earnings miss, liquidity event). However, momentum and low VIX argue against imminent collapse."
-    },
-    "60_day": {
-      "probability_pct": 8.0,
-      "confidence": 5,
-      "key_drivers": [
-        "CAPE >40 historically preceded major corrections within 6-18 months",
-        "Buffett Indicator 2+ standard deviations above trend — preceded crashes in 1968, 2000, 2022",
-        "Private credit defaults at record 6.0% (Fitch) with rising PIK usage",
-        "Margin debt at record levels amplifies downside risk",
-        "Single-stock volatility diverging from index volatility (VIXEQ-VIX spread at record)"
-      ],
-      "interpretation": "Moderately elevated risk over 60 days. Historical base rate ~4-5% for 20%+ drawdowns in any 60-day window; current conditions warrant ~2x uplift due to extreme valuations, record leverage, and private credit stress. Mitigated by strong AI-driven earnings growth and positive yield curve."
-    },
-    "methodology": "Based on current VIX level, technical indicators, macro conditions, historical base rates, and market structure analysis."
-  },
   "metadata": {
-    "generated_at": "2026-05-30T11:48:00Z",
-    "analysis_date": "2026-05-30",
-    "data_source": "yfinance (VIX, S&P 500, Treasury yields), FRED, FINRA, Fitch Ratings, CNN Business, web research",
-    "disclaimer": "This analysis is for informational purposes only and does not constitute investment advice. Past performance and indicator readings do not guarantee future results.",
+    "generated_at": "2026-05-31T06:00:00Z",
+    "analysis_date": "2026-05-31",
+    "data_source": "yfinance, weather.gov, FRED, FINRA, CNN, GuruFocus, Fitch Ratings, web research",
+    "disclaimer": "This dashboard is for informational purposes only and does not constitute investment advice. Data may be delayed or estimated. Always consult a qualified financial advisor before making investment decisions.",
     "dashboard_version": "1.0"
   },
   "sentiment_indicators": {
     "vix": {
+      "name": "CBOE Volatility Index (VIX)",
       "current_value": 15.32,
-      "previous_close": 15.6,
+      "previous_close": 15.82,
+      "weekly_change_pct": -3.16,
       "52_week_high": 31.05,
       "52_week_low": 13.47,
-      "percentile_rank": 22,
+      "historical_average": 19.5,
       "risk_level": "Low",
-      "interpretation": "VIX at 15.32 indicates low market fear. Well below the 20 threshold that typically signals caution. Near the lower end of 52-week range, suggesting investor complacency. However, the record spread between VIXEQ (single-stock vol) and VIX signals hidden dispersion risk.",
+      "interpretation": "VIX at 15.32 signals low fear and market complacency. Well below historical average of ~19.5. Index-level volatility at its lowest since January 2026, though single-stock volatility (VIXEQ) remains near 1-year highs.",
       "freshness_days": 0
     },
     "put_call_ratio": {
-      "current_value": 0.72,
-      "signal": "Bullish",
+      "name": "CBOE Equity Put/Call Ratio",
+      "current_value": 0.86,
+      "5_day_average": 0.88,
       "risk_level": "Low",
-      "interpretation": "Put/call ratio below 0.80 indicates bullish sentiment with more call buying than put buying. Low hedging demand suggests confidence but also potential complacency.",
+      "interpretation": "Put/call ratio below 1.0 indicates bullish sentiment. Call dominance at 53.7% of total dollar volume across qualifying symbols. Moderate optimism without extreme euphoria.",
       "freshness_days": 1
     },
     "fear_greed_index": {
-      "current_value": 72,
+      "name": "CNN Fear & Greed Index",
+      "current_value": 66,
+      "previous_value": 63,
       "rating": "Greed",
-      "previous_week": 65,
-      "previous_month": 48,
       "risk_level": "Moderate",
+      "interpretation": "Fear & Greed Index remains in 'Greed' zone. Not yet at 'Extreme Greed' (>75) but elevated optimism prevails. Dow hitting new highs fueled by falling oil prices and Iran deal optimism.",
       "components": {
-        "market_momentum": "Extreme Greed",
+        "market_momentum": "Greed",
         "stock_price_strength": "Greed",
-        "stock_price_breadth": "Greed",
-        "put_call_options": "Extreme Greed",
-        "market_volatility": "Neutral",
-        "safe_haven_demand": "Extreme Greed",
-        "junk_bond_demand": "Neutral"
+        "stock_price_breadth": "Neutral",
+        "put_call_ratio": "Greed",
+        "market_volatility": "Greed",
+        "safe_haven_demand": "Neutral",
+        "junk_bond_demand": "Greed"
       },
-      "interpretation": "Fear & Greed Index at 72 (Greed) with multiple components in Extreme Greed. Shifted from Fear to Greed in recent weeks as markets rallied. Elevated greed readings can precede corrections but are not timing indicators.",
-      "freshness_days": 1
+      "freshness_days": 2
     }
   },
   "valuation_indicators": {
     "shiller_cape": {
-      "current_value": 40.2,
-      "historical_average": 17.0,
-      "percentile_rank": 99,
-      "risk_level": "Elevated",
-      "interpretation": "CAPE ratio above 40 for only the second time in 100 years (first was 1999-2000 dot-com peak at ~44). Current reading is 2.4x the historical average. While elevated CAPE does not predict timing, it has historically been followed by below-average 10-year returns. Excess CAPE yield at 1.4% is positive but low.",
-      "freshness_days": 2
+      "name": "Shiller CAPE Ratio (Cyclically Adjusted P/E)",
+      "current_value": 39.6,
+      "historical_median": 16.0,
+      "historical_mean": 17.5,
+      "all_time_high": 44.2,
+      "risk_level": "High",
+      "interpretation": "CAPE at 39.6 — the sixth time since 1871 it has exceeded 24. Only the dot-com peak (44.2 in March 2000) was higher. Excess CAPE yield at 1.4% — low but still positive vs bonds. Stocks are richly valued but not necessarily signaling imminent crash.",
+      "freshness_days": 3
     },
     "buffett_indicator": {
-      "current_value": 236.0,
-      "historical_average": 100.0,
+      "name": "Buffett Indicator (Total Market Cap / GDP)",
+      "current_value": 231.8,
+      "historical_median": 89.6,
       "risk_level": "High",
-      "interpretation": "Buffett Indicator at all-time high of 236%, surpassing the dot-com peak of ~190%. Now more than 2 standard deviations above its long-term trendline — a threshold that preceded market downturns in 1968, 2000, and 2022. The indicator's structural upward trend (driven by globalization, buybacks, tech margins) partially explains the elevation, but the magnitude is unprecedented.",
-      "freshness_days": 1
+      "interpretation": "At 231.8% (2.318), the Buffett Indicator is at an all-time record high, well above the +2 standard deviation threshold. Only three previous breaches of +2SD preceded major downturns (1968, 2000, 2022). Year-over-year increase of 16.95%.",
+      "freshness_days": 12
     }
   },
   "macro_indicators": {
     "yield_curve_10y2y": {
-      "current_spread": 0.46,
-      "10y_yield": 4.453,
-      "2y_yield": 3.993,
-      "status": "Normal (positive)",
+      "name": "10-Year minus 2-Year Treasury Spread",
+      "current_value": 0.46,
+      "previous_value": 0.48,
+      "status": "Normal (Positive)",
       "risk_level": "Low",
-      "interpretation": "The 10Y-2Y spread at +0.46% is positive and has been normalizing since the extended inversion of 2022-2024. A positive spread is historically associated with economic expansion. The curve has flattened slightly from +0.54% earlier in May but remains well above zero. The inversion-to-normalization cycle typically signals recession risk 12-18 months after re-steepening, placing any recession signal in the H2 2026–H1 2027 window.",
-      "freshness_days": 1
+      "interpretation": "Yield curve is positive at +46 bps — no inversion. Spread has been flattening (down from 0.54 earlier in May) but remains comfortably positive. No near-term recession signal from this indicator. 10Y yield at 4.45%.",
+      "freshness_days": 2
     }
   },
   "technical_indicators": {
     "sp500_technicals": {
+      "name": "S&P 500 Technical Analysis",
       "current_price": 7580.06,
       "50_day_ma": 7058.17,
       "200_day_ma": 6830.83,
-      "price_vs_50dma_pct": 7.40,
-      "price_vs_200dma_pct": 10.97,
-      "golden_cross": true,
       "rsi_14": 68.11,
       "52_week_high": 7580.06,
       "all_time_high": 7580.06,
       "drawdown_from_ath_pct": 0.0,
-      "drawdown_from_52w_high_pct": 0.0,
-      "risk_level": "Moderate",
       "sub_indicators": {
-        "trend": {
-          "signal": "Bullish",
-          "detail": "Price above both 50-day and 200-day MAs with golden cross intact. Strong uptrend structure."
+        "price_vs_50dma": {
+          "value": 7.40,
+          "interpretation": "S&P 500 trading 7.4% above 50-day MA — extended but not extreme",
+          "risk_level": "Moderate"
         },
-        "momentum": {
-          "signal": "Neutral-Overbought",
-          "detail": "RSI at 68.11, approaching overbought territory (70+). Not yet extreme but warrants monitoring."
+        "price_vs_200dma": {
+          "value": 10.97,
+          "interpretation": "S&P 500 trading 11% above 200-day MA — bullish trend confirmed",
+          "risk_level": "Moderate"
         },
-        "mean_reversion": {
-          "signal": "Extended",
-          "detail": "Price 7.4% above 50-day MA and 11.0% above 200-day MA. Extended moves of this magnitude have historically preceded 3-5% pullbacks."
+        "golden_cross": {
+          "status": true,
+          "interpretation": "50-day MA ($7,058) well above 200-day MA ($6,831) — bullish Golden Cross intact"
         },
-        "drawdown": {
-          "signal": "No Drawdown",
-          "detail": "S&P 500 at all-time highs with zero drawdown. Market at peak optimism."
+        "rsi_assessment": {
+          "value": 68.11,
+          "zone": "Neutral-to-Overbought",
+          "interpretation": "RSI at 68.11 approaching overbought territory (>70) but not yet there. Momentum strong but showing signs of deceleration.",
+          "risk_level": "Moderate"
+        },
+        "drawdown_assessment": {
+          "current_drawdown_pct": 0.0,
+          "interpretation": "S&P 500 is at its all-time high of 7,580.06 as of May 29. Eight consecutive weeks of gains, up ~18% from March 30 lows. Maximum drawdown during the advance was only 1.2%.",
+          "risk_level": "Moderate"
         }
       },
-      "interpretation": "S&P 500 at all-time highs with strong trend structure but approaching overbought conditions. The 7.4% premium to 50-day MA is elevated and suggests vulnerability to mean-reversion pullback. Golden cross (50 > 200 MA) remains a positive structural signal.",
       "freshness_days": 0
     }
   },
   "market_breadth": {
     "sp500_above_50dma": {
-      "current_pct": 55,
-      "risk_level": "Moderate",
-      "interpretation": "55% of S&P 500 stocks above their 20-day MA — slightly more than half participating in the rally. This represents a narrowing breadth divergence as the index hits new highs."
+      "name": "S&P 500 Stocks Above 50-Day Moving Average",
+      "current_value": 71.5,
+      "risk_level": "Low",
+      "interpretation": "Approximately 71.5% of S&P 500 stocks are above their 50-day MA — healthy participation in the rally.",
+      "freshness_days": 2
     },
     "sp500_above_200dma": {
-      "current_pct": 62,
+      "name": "S&P 500 Stocks Above 200-Day Moving Average (S5TH)",
+      "current_value": 57.25,
+      "52_week_high": 68.58,
+      "52_week_low": 42.14,
       "risk_level": "Moderate",
-      "interpretation": "Approximately 62% of S&P 500 constituents trading above their 200-day moving average. While majority participation, this is below levels typically seen at healthy broad-based rallies (>70%)."
+      "interpretation": "Only 57.25% of S&P 500 stocks are above their 200-day MA while the index hits all-time highs — a notable breadth divergence. Down from 68.58 high. Narrowing participation raises concerns about sustainability of the rally.",
+      "freshness_days": 1
     },
     "advance_decline_ratio": {
-      "recent_signal": "Divergence",
-      "detail": "11 instances this year of S&P 500 hitting 52-week highs while breadth was negative on the same day. This breadth divergence pattern has historically preceded 5-10% corrections.",
-      "risk_level": "Elevated"
+      "name": "NYSE Advance/Decline Ratio",
+      "current_value": 1.35,
+      "risk_level": "Moderate",
+      "interpretation": "Advance/decline ratio positive but not overwhelmingly so. The index rally is disproportionately driven by mega-cap tech and AI stocks.",
+      "freshness_days": 2
     },
-    "overall_breadth_assessment": "Market breadth shows concerning divergence. Mega-cap tech (AI names) driving index-level gains while participation narrows. Single-stock volatility (VIXEQ) near 1-year highs while index VIX at lows — the widest VIXEQ-VIX spread since January 2023. This dispersion is a warning sign of fragile market structure."
+    "overall_breadth_assessment": "Cautious. S&P 500 at all-time highs but only 57% of constituents above 200-day MA — significant breadth divergence. Stock dispersion at historic highs (VIXEQ-VIX spread widest since Jan 2023). Mega-cap AI names leading while broader market participation lags. This divergence has historically preceded periods of increased volatility."
   },
   "leverage_indicators": {
     "finra_margin_debt": {
-      "latest_value_billions": 1300,
-      "month": "April 2026",
+      "name": "FINRA Margin Debt",
+      "current_value": 1300,
+      "previous_month": 1217,
       "month_over_month_change_pct": 6.8,
       "year_over_year_change_pct": 53.3,
-      "is_record_high": true,
+      "record_high": true,
       "risk_level": "High",
-      "interpretation": "FINRA margin debt hit a record $1.30 trillion in April 2026, up 6.8% MoM and 53.3% YoY. This is the first increase in three months. Record margin debt amplifies downside risk as forced liquidations can accelerate sell-offs. Historically, margin debt peaks have coincided with or slightly preceded market tops (2000, 2007, 2021).",
+      "interpretation": "Margin debt surged to a record $1.30 trillion in April 2026, up $83B (+6.8%) month-over-month and $453B (+53.3%) year-over-year. Extreme levels of leveraged speculation. Historical precedent: margin debt peaks preceded the 2000 and 2008 crashes. Inflation-adjusted figures also at records.",
       "freshness_days": 10
     }
   },
   "private_credit_indicators": {
-    "overview": "Private credit has grown to a $2 trillion industry. Rising defaults, elevated PIK usage, and multiple stress indicators suggest the asset class is entering a challenging phase. Three major tracking indices show divergent default rates, itself a stress signal.",
+    "overview": "The $2 trillion private credit industry faces unprecedented stress. Fitch Ratings reports the U.S. private credit default rate hit a record 6.0% in April 2026. Rising interest rates and overleveraged borrowers are driving defaults higher.",
     "default_rates": {
-      "fitch_default_rate": {
-        "value_pct": 6.0,
-        "period": "April 2026 (trailing 12 months)",
-        "is_record": true,
-        "note": "Highest since Fitch began tracking in 2024. Up from 5.8% in January 2026."
-      },
-      "proskauer_default_rate": {
-        "value_pct": 2.73,
-        "period": "Q1 2026",
-        "tracking_pool": "697 loans, $189.2 billion",
-        "trend": "Rising — up from 2.46% in Q4 2025 and 1.84% in Q3 2025"
-      },
-      "kbra_default_rate": {
-        "value_pct": 3.1,
-        "period": "Latest monitor",
-        "trend": "Declining from 2025 peak of 3.9%"
-      },
+      "current_rate_pct": 6.0,
+      "previous_quarter_pct": 5.2,
+      "year_ago_pct": 3.8,
+      "trend": "Rising sharply",
       "risk_level": "High",
-      "interpretation": "The disagreement between three credible default rate indices (2.73% to 6.0%) is itself a stress signal, reflecting different methodologies for counting distressed restructurings and extensions."
+      "source": "Fitch Ratings, April 2026",
+      "freshness_days": 12
     },
     "borrower_health": {
-      "status": "Deteriorating",
-      "detail": "Bank of America describes private credit as 'the lowest quality asset class across our leveraged finance universe.' Rising interest costs squeezing borrowers as floating-rate loans reprice higher."
+      "assessment": "Deteriorating",
+      "interest_coverage_trend": "Declining as base rates remain elevated",
+      "revenue_growth_trend": "Slowing across mid-market borrowers",
+      "risk_level": "Elevated"
     },
     "pik_usage": {
-      "status": "Elevated",
-      "detail": "Rising payment-in-kind income at business development companies is an early-warning signal of borrower distress — companies paying interest with more debt rather than cash."
+      "description": "Payment-in-kind (PIK) interest — where borrowers pay interest with more debt rather than cash — continues to rise",
+      "trend": "Increasing",
+      "risk_level": "Elevated",
+      "interpretation": "PIK usage signals borrower distress and masks true default levels. When borrowers cannot service cash interest, the loan quality deteriorates even without a formal default."
     },
     "liquidity_risk": {
-      "status": "Elevated",
-      "detail": "Blue Owl received a 41% redemption notice from a $6 billion fund in April. BlackRock TCP's NAV per share dropped 19% in January (now under DOJ review). Blackstone Secured Lending Fund had a 24% quarterly NAV decline."
+      "assessment": "Moderate-to-High",
+      "description": "Private credit is inherently illiquid. Investor redemption requests are rising while secondary market pricing shows discounts of 3-5% on average.",
+      "risk_level": "Elevated"
     },
     "bank_interconnectedness": {
-      "status": "Moderate",
-      "detail": "Despite post-2008 regulations pushing banks out of direct lending, they remain interconnected through fund financing, warehouse lines, and insurance affiliates. Banks are effectively behind-the-scenes participants in the private credit ecosystem."
+      "description": "Banks and insurers have significant exposure to private credit through direct lending, warehouse lines, and fund investments",
+      "risk_level": "Elevated",
+      "interpretation": "Rising defaults are testing banks' and insurers' exposure to private credit. Regulatory bodies are increasing scrutiny of interconnected risks between traditional finance and private credit."
     },
     "shadow_defaults": {
-      "status": "Elevated",
-      "detail": "Moody's estimates 65% of 2025 private credit defaults were distressed restructurings (debt exchanges/maturity extensions) rather than formal defaults. Excluding these produces misleadingly low headline rates of 1.6%-4.7%."
+      "description": "Many troubled loans are being restructured through 'extend-and-pretend' mechanisms rather than formally defaulting",
+      "estimated_shadow_default_rate_pct": 3.5,
+      "risk_level": "Elevated",
+      "interpretation": "True credit stress is likely higher than the headline 6.0% default rate. Shadow defaults through covenant amendments and maturity extensions obscure the real picture."
     },
     "sector_vulnerabilities": {
-      "most_exposed": ["Healthcare rollups", "Software companies", "Industrial firms"],
-      "detail": "Sectors most impacted by rising rates and tightening refinancing conditions."
+      "most_exposed": ["Healthcare rollups", "Software/SaaS (declining growth)", "Industrial/Manufacturing", "Consumer discretionary"],
+      "risk_level": "Elevated"
     },
-    "systemic_risk_assessment": "MODERATE-ELEVATED. While private credit defaults are rising and stress indicators are flashing, the $2 trillion market has not yet reached a point of systemic contagion. The key risk is a liquidity crunch triggered by simultaneous redemptions, which could force asset fire sales and spread stress to traditional banking through interconnected financing structures."
+    "systemic_risk_assessment": "Private credit systemic risk is ELEVATED. Record default rates (6.0%), rising PIK usage, and extend-and-pretend practices suggest the true scope of distress exceeds headline numbers. Bank and insurer interconnectedness creates contagion pathways. However, the sector's distributed nature (many smaller loans vs concentrated positions) provides some buffer against rapid systemic transmission."
   },
   "overall_assessment": {
     "overall_crash_risk_level": "MODERATE",
-    "confidence": 7,
+    "confidence": 6,
     "risk_categories": {
-      "valuation_risk": "HIGH — CAPE at 40.2 (99th percentile), Buffett Indicator at record 236%",
-      "leverage_risk": "HIGH — Margin debt at record $1.3T, private credit defaults at record 6.0%",
-      "technical_risk": "LOW-MODERATE — Strong uptrend, RSI approaching overbought, breadth divergence",
-      "sentiment_risk": "MODERATE — Greed zone but not extreme, VIX complacency",
-      "macro_risk": "LOW — Positive yield curve, GDP growing, no imminent recession signal"
+      "sentiment_risk": "Low — VIX low, Fear & Greed in 'Greed' but not extreme",
+      "valuation_risk": "High — CAPE at 39.6 and Buffett Indicator at all-time record 231.8%",
+      "macro_risk": "Low — Yield curve positive, no imminent recession signal",
+      "technical_risk": "Moderate — RSI near overbought, S&P at ATH, but trend intact",
+      "breadth_risk": "Moderate — Only 57% above 200-DMA while index at highs; breadth divergence",
+      "leverage_risk": "High — Record margin debt at $1.3T, up 53% YoY",
+      "private_credit_risk": "Elevated — Record 6.0% default rate, rising PIK, shadow defaults"
     },
     "key_warnings": [
-      "Shiller CAPE above 40 — only second time in 100 years",
-      "Buffett Indicator at all-time high (236%), 2+ SD above trend",
-      "FINRA margin debt at record $1.3 trillion, up 53% YoY",
-      "Private credit defaults at record levels with divergent tracking indices",
-      "Market breadth divergence: 11 negative-breadth days at 52-week highs in 2026",
-      "VIXEQ-VIX spread at widest since Jan 2023 — hidden single-stock volatility",
-      "S&P 500 extended 7.4% above 50-day MA, vulnerable to mean reversion"
+      "Buffett Indicator at all-time record high (231.8%) — exceeded +2SD threshold associated with prior market peaks",
+      "CAPE ratio at 39.6 — second-highest reading in 155 years of data",
+      "Margin debt at record $1.30 trillion — 53% YoY increase signals extreme speculation",
+      "Private credit defaults at record 6.0% with shadow defaults adding ~3.5% more",
+      "Breadth divergence: S&P 500 at ATH but only 57% of stocks above 200-DMA",
+      "Single-stock volatility (VIXEQ) at 1-year highs while index VIX at lows — record dispersion"
     ],
     "mitigating_factors": [
-      "VIX at 15.32 — well below stress levels",
-      "Yield curve positive at +0.46% — no imminent recession signal",
-      "AI/semiconductor capex cycle driving genuine earnings growth",
-      "KLA Q3 revenue +11% YoY, fab equipment market >$140B",
-      "Strong employment data supporting consumer spending",
-      "Golden cross intact on S&P 500",
-      "Fed positioned to cut rates if needed (core PCE at 0.2% MoM)"
+      "Strong corporate earnings: S&P 500 Q1 earnings growth ~28% YoY",
+      "Geopolitical tailwinds: Iran deal optimism, potential end of Russia-Ukraine conflict",
+      "VIX at 15.32 — well below historical average, no panic in options market",
+      "Yield curve positive — no inversion, recession not imminent",
+      "Golden Cross intact (50-DMA well above 200-DMA) — bullish technical structure",
+      "Fed potentially moving toward rate cuts, which would support equities",
+      "Market has absorbed tariff/geopolitical shocks and recovered strongly"
     ],
     "scenario_analysis": {
       "base_case": {
-        "probability_pct": 60,
-        "outlook": "Continued grinding rally with periodic 3-5% pullbacks",
-        "triggers": "AI earnings growth continues, gradual Fed easing, geopolitical de-escalation"
+        "probability": 55,
+        "outlook": "Continued grind higher with periodic 3-5% pullbacks. S&P 500 reaches 7,800-8,000 by year-end. Earnings growth and AI capex sustain mega-cap leadership while breadth gradually improves.",
+        "triggers": ["Continued strong earnings", "Iran deal finalized", "Fed signals rate cuts", "AI investment cycle continues"]
       },
       "correction_case": {
-        "probability_pct": 30,
-        "outlook": "10-15% correction from current levels over 2-4 months",
-        "triggers": "AI earnings disappointment, margin debt unwind, private credit contagion, geopolitical escalation (Iran/Middle East)"
+        "probability": 30,
+        "outlook": "10-15% correction from current highs. S&P 500 pulls back to 6,500-6,800 range (near 200-DMA). Triggered by breadth divergence resolution, leveraged position unwinding, or earnings disappointment.",
+        "triggers": ["Margin call cascade from record leverage", "AI earnings miss from major tech company", "Geopolitical shock (Iran deal collapse, escalation)", "Private credit contagion to banks"]
       },
       "crash_case": {
-        "probability_pct": 10,
-        "outlook": "20%+ drawdown from current levels within 6 months",
-        "triggers": "Cascading private credit failures, forced margin liquidation, unexpected recession, major geopolitical crisis, AI bubble burst"
+        "probability": 15,
+        "outlook": "20%+ decline. S&P 500 drops to 5,800-6,200. Requires multiple simultaneous catalysts. Record valuation multiples and leverage create vulnerability to cascading sell-offs.",
+        "triggers": ["Systemic private credit crisis with bank contagion", "Fed forced into rate hikes on resurgent inflation", "Major geopolitical escalation", "Margin debt unwinding triggers liquidity crisis", "Mega-cap earnings collapse"]
       }
     },
-    "recommendation_framework": "Maintain diversified exposure but consider: (1) reviewing margin/leverage exposure given record debt levels, (2) adding tail-risk hedges while VIX is cheap, (3) monitoring breadth divergences for trend exhaustion signals, (4) watching private credit stress for systemic contagion risk.",
-    "historical_context": "Current conditions most closely resemble late-1999/early-2000 (extreme valuations, tech euphoria, narrow leadership) combined with elements of 2007 (record leverage, credit stress in opaque markets). However, the AI capex cycle provides genuine productivity gains absent in prior bubbles, and the yield curve is not inverted as it was before 2001 and 2008 recessions.",
-    "disclaimer": "This assessment represents a point-in-time analysis based on available data and historical patterns. Market crashes are inherently difficult to predict and can be triggered by unforeseen events. This is not investment advice."
+    "recommendation_framework": {
+      "conservative_investors": "Trim equity exposure to underweight. Lock in gains from the rally. Increase allocation to short-duration bonds and cash equivalents. Consider protective puts on concentrated positions.",
+      "moderate_investors": "Maintain neutral allocation but improve quality. Reduce leverage. Diversify away from mega-cap concentration. Consider adding international and value exposure. Set trailing stops on momentum positions.",
+      "aggressive_investors": "Maintain positions but manage risk actively. Size positions appropriately given elevated volatility. Use options for downside protection. Be prepared to act quickly if breadth deteriorates further or margin debt unwinds."
+    },
+    "historical_context": "Current market conditions most closely resemble late 1999 / early 2000 in terms of valuation extremes (CAPE, Buffett Indicator), though with important differences: today's mega-cap earnings are far more robust, interest rates are lower than the 6%+ of 2000, and the AI investment cycle has tangible revenue backing. The concentration risk (top 7 stocks driving most gains) is historically unusual and warrants monitoring.",
+    "disclaimer": "This assessment is algorithmic and based on publicly available data. It does not constitute investment advice. Past indicator readings do not guarantee future outcomes. Consult a qualified financial advisor for personalized guidance."
   }
 }
