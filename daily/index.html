@@ -4,162 +4,166 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self'; frame-ancestors 'none'">
-    <title>Daily Morning Briefing — May 30, 2026</title>
+    <title>Daily Morning Briefing — Saturday, May 30, 2026</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
-        .container { max-width: 750px; margin: 30px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); overflow: hidden; }
+        .container { max-width: 750px; margin: 20px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); overflow: hidden; }
         .header { background: linear-gradient(135deg, #1a237e, #283593); color: #fff; padding: 30px; text-align: center; }
-        .header h1 { font-size: 1.8rem; margin-bottom: 5px; }
-        .header .subtitle { font-size: 0.95rem; opacity: 0.9; }
+        .header h1 { font-size: 24px; margin-bottom: 5px; }
+        .header .subtitle { font-size: 14px; opacity: 0.9; }
         .section { padding: 20px 30px; border-bottom: 1px solid #eee; }
-        .section:last-of-type { border-bottom: none; }
-        .section h2 { font-size: 1.3rem; margin-bottom: 12px; color: #1a237e; }
-        .section h3 { font-size: 1.1rem; margin: 14px 0 8px; color: #333; }
-        table { width: 100%; border-collapse: collapse; margin: 10px 0; }
-        table td { padding: 6px 10px; border-bottom: 1px solid #f0f0f0; }
-        table td:first-child { font-weight: 600; width: 40%; color: #555; }
-        .source-line { font-size: 0.8rem; color: #888; margin-top: 8px; }
+        .section:last-child { border-bottom: none; }
+        .section h2 { font-size: 18px; margin-bottom: 12px; color: #1a237e; }
+        .section h3 { font-size: 15px; margin: 14px 0 8px; color: #283593; }
         ul { list-style: none; padding: 0; }
-        ul li { background: #fafafa; margin: 8px 0; padding: 10px 14px; border-radius: 4px; border-left: 3px solid #ddd; }
-        ul li a { color: #1565C0; text-decoration: none; font-weight: 500; }
+        ul li { background: #fafafa; border-left: 3px solid #ddd; border-radius: 4px; padding: 10px 14px; margin-bottom: 8px; }
+        ul li a { color: #1565C0; text-decoration: none; font-weight: 600; }
         ul li a:hover { text-decoration: underline; }
-        ul li .meta { font-size: 0.8rem; color: #888; margin-top: 3px; }
-        .badge { display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; font-weight: 600; margin-left: 6px; vertical-align: middle; }
+        .source { font-size: 12px; color: #777; margin-top: 4px; }
+        .badge { display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 11px; font-weight: 600; margin-left: 6px; }
         .badge-en { background: #e8f4fd; color: #1565C0; }
         .badge-ru { background: #e8e8e8; color: #555; }
-        .footer { background: #f0f0f0; padding: 15px 30px; text-align: center; font-size: 0.8rem; color: #888; }
+        table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+        th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background: #f0f4ff; font-weight: 600; color: #1a237e; font-size: 13px; }
+        td { font-size: 14px; }
+        .footer { background: #f0f0f0; padding: 15px; text-align: center; font-size: 12px; color: #888; }
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="header">
-        <h1>Daily Morning Briefing</h1>
-        <div class="subtitle">Friday, May 30, 2026 — Austin, TX</div>
+    <div class="container">
+        <div class="header">
+            <h1>Daily Morning Briefing</h1>
+            <div class="subtitle">Saturday, May 30, 2026 — Austin, TX (CDT)</div>
+        </div>
+
+        <!-- Weather Section -->
+        <div class="section">
+            <h2>🌤️ Weather — Austin, TX (ZIP 78759)</h2>
+            <table>
+                <tr><th>Metric</th><th>Value</th></tr>
+                <tr><td>Current Temperature</td><td>22.8°C (73°F) · Feels like 23.6°C (75°F)</td></tr>
+                <tr><td>Conditions</td><td>Clear / Partly Sunny</td></tr>
+                <tr><td>Tonight Low</td><td>23°C (74°F)</td></tr>
+                <tr><td>Tomorrow High</td><td>33°C (91°F)</td></tr>
+                <tr><td>Precipitation Chance</td><td>1% today · 4% tonight</td></tr>
+                <tr><td>Humidity</td><td>76%</td></tr>
+                <tr><td>Wind</td><td>S 5–10 mph (gusts from SW at 17 mph)</td></tr>
+                <tr><td>Sunrise / Sunset</td><td>6:36 AM / 8:25 PM CDT</td></tr>
+            </table>
+            <p class="source">National Weather Service — May 30, 2026</p>
+        </div>
+
+        <!-- Positive Russia News -->
+        <div class="section">
+            <h2>✅ Positive Russia News</h2>
+            <ul>
+                <li>
+                    <a href="https://news-pravda.com/russia/2026/05/30/2338438.html" target="_blank">Russian Scientists Develop Nanoplatforms for Cancer Diagnosis and Immunotherapy</a>
+                    <div class="source">Researchers at Sirius University created albumin-based nanoparticles (24 nm) for targeted drug delivery to tumors, with applications in cancer immunotherapy and antibacterial treatment. — Pravda EN · May 30, 2026</div>
+                </li>
+                <li>
+                    <a href="https://tass.com/economy/2139037" target="_blank">Russia to Begin Pilot Lithium Extraction in Murmansk Region This Year</a>
+                    <div class="source">Pilot industrial lithium extraction planned at the Polmostundrovskoye deposit on the Kola Peninsula, marking a key step toward domestic lithium production. — TASS · May 30, 2026</div>
+                </li>
+                <li>
+                    <a href="https://gxpnews.net/en/2026/05/khimrar-launches-18-mln-active-pharmaceutical-ingredient-plant-outside-moscow/" target="_blank">KhimRar Launches $18M Active Pharmaceutical Ingredient Plant Near Moscow</a>
+                    <div class="source">New facility strengthens Russia's pharmaceutical manufacturing capacity and import substitution in API production. — GxP News · May 29, 2026</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Neutral Russia News -->
+        <div class="section">
+            <h2>📰 Neutral Russia News</h2>
+            <ul>
+                <li>
+                    <a href="https://tass.com/economy/2139017" target="_blank">Russian Economy May Grow by 2% by Year-End, Says Duma Financial Committee Head</a>
+                    <div class="source">Aksakov projects 2% GDP growth for 2026, driven by import substitution and expected rate cuts, above the government's 0.4% baseline forecast. — TASS · May 30, 2026</div>
+                </li>
+                <li>
+                    <a href="http://en.kremlin.ru/events/president/transcripts/79905" target="_blank">Putin Addresses EAEU Summit: Aggregate Economic Growth Exceeds 11% Over Three Years</a>
+                    <div class="source">At the Eurasian Economic Union summit in Astana, Putin highlighted industrial output up 1.6%, agricultural production up 4.6%, and construction up 4.2% across member states. — Kremlin.ru · May 29, 2026</div>
+                </li>
+                <li>
+                    <a href="https://www.aljazeera.com/news/2026/5/30/ukraine-drones-strike-russian-oil-facility-as-kyiv-and-moscow-trade-blows" target="_blank">Ukraine Drones Strike Russian Oil Facility in Taganrog; Two Civilians Injured</a>
+                    <div class="source">Coordinated drone attacks hit Rostov Oblast overnight; tanker and fuel tank caught fire at Taganrog port. — Al Jazeera · May 30, 2026</div>
+                </li>
+                <li>
+                    <a href="https://www.bbc.co.uk/news/articles/cdjp0n7rn41o" target="_blank">Ukraine Using AI Drones to Strike Russian Supply Lines, BBC Verify Confirms</a>
+                    <div class="source">BBC Verify confirmed 14+ incidents in the past week of AI-enabled Hornet drones targeting logistics vehicles on routes to Crimea. — BBC News · May 30, 2026</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- St. Petersburg News -->
+        <div class="section">
+            <h2>🏛️ St. Petersburg News</h2>
+            <ul>
+                <li>
+                    <a href="https://www.fontanka.ru/2026/05/30/76450903/" target="_blank">8th «ЗСД Фонтанка Фест» Cycling Festival Takes Over Western High-Speed Diameter Today</a>
+                    <span class="badge badge-ru">RU</span>
+                    <div class="source">20,000 cyclists ride from Bogatyrsky Prospekt to Vitebskaya interchange; road closures from 3 PM through 1 AM. — Fontanka.ru · May 30, 2026</div>
+                </li>
+                <li>
+                    <a href="https://www.fontanka.ru/2026/05/30/76451293/" target="_blank">Suspect Arrested for Shooting at Public Buses in St. Petersburg</a>
+                    <span class="badge badge-ru">RU</span>
+                    <div class="source">A 23-year-old was detained with a pneumatic pistol after damaging bus windows at a Vitebsky Prospekt stop on May 24. — Fontanka.ru · May 30, 2026</div>
+                </li>
+                <li>
+                    <a href="https://tass.com/economy/2139037" target="_blank">SPIEF 2026 Preparations Underway: Forum Set for June 3–6 in St. Petersburg</a>
+                    <span class="badge badge-en">EN</span>
+                    <div class="source">The St. Petersburg International Economic Forum will focus on shaping a new model of global development. — TASS · May 30, 2026</div>
+                </li>
+                <li>
+                    <a href="https://news-pravda.com/world/2026/05/29/2336851.html" target="_blank">40% of Milk Samples Tested in St. Petersburg Found Contaminated with E. coli</a>
+                    <span class="badge badge-en">EN</span>
+                    <div class="source">Rospotrebnadzor issued warnings after Public Control found dangerous microorganisms in nearly half of milk samples; some producers allegedly diluted products with water. — Pravda EN · May 29, 2026</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Semiconductor & Investor News -->
+        <div class="section">
+            <h2>💹 Semiconductor &amp; Investor News</h2>
+
+            <h3>🔬 KLAC (KLA Corporation)</h3>
+            <ul>
+                <li>
+                    <a href="https://www.tradingview.com/news/zacks:6f33961e8094b:0-can-kla-s-greenfield-fab-exposure-spark-multi-year-revenue-growth/" target="_blank">KLA's Greenfield Fab Exposure Could Spark Multi-Year Revenue Growth</a>
+                    <div class="source">Q3 FY2026 revenue $3.42B (+11% YoY), EPS $9.40. Wafer fab equipment market expected to exceed $140B in 2026. Advanced packaging revenue to surpass $1B. — Zacks/TradingView · May 29, 2026</div>
+                </li>
+                <li>
+                    <a href="https://finance.yahoo.com/markets/stocks/articles/brokers-suggest-investing-kla-klac-133005739.html" target="_blank">Brokers Suggest Investing in KLA (KLAC): ABR 1.80 (Strong Buy–Buy)</a>
+                    <div class="source">15 of 28 analysts rate KLAC Strong Buy, 3 Buy. Stock near $1,960, close to all-time highs. 21% dividend hike + $7B buyback authorization. — Yahoo Finance · May 29, 2026</div>
+                </li>
+                <li>
+                    <a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/kla-corporation-stock-us4824801009-shares-ease-after-recent-rally-as/69441235" target="_blank">KLAC Shares Ease After Recent Rally as Investors Digest AI-Driven Valuation</a>
+                    <div class="source">Stock pulled back slightly from record territory (~$1,960) as investors reassess valuation against strong AI/fab demand backdrop. — Ad Hoc News · May 29, 2026</div>
+                </li>
+                <li>
+                    <a href="https://www.tradingview.com/news/zacks:737c6d6b4094b:0-asml-vs-klac-which-semiconductor-equipment-stock-is-the-better-buy/" target="_blank">ASML vs. KLAC: Which Semiconductor Equipment Stock Is the Better Buy?</a>
+                    <div class="source">Head-to-head comparison favoring KLAC on valuation metrics and growth trajectory in advanced node process control. — Zacks/TradingView · May 28, 2026</div>
+                </li>
+            </ul>
+
+            <h3>💡 CPO (Co-Packaged Optics)</h3>
+            <ul>
+                <li>
+                    <a href="https://asia.nikkei.com/business/technology/artificial-intelligence/foxconn-to-start-shipping-next-gen-optical-tech-for-ai-data-centers" target="_blank">Foxconn to Start Shipping CPO Trays for AI Data Centers; 10,000 Units This Year</a>
+                    <div class="source">Chairman Young Liu announced next-gen co-packaged optics shipments to meet demand for faster AI infrastructure data transfer speeds. — Nikkei Asia · May 29, 2026</div>
+                </li>
+                <li>
+                    <a href="https://www.cnbc.com/2026/05/29/nvidia-photonics-investment-ai.html" target="_blank">Nvidia Invests $6.5B+ in Photonics to Solve AI's Copper Bottleneck</a>
+                    <div class="source">$2B each to Lumentum, Coherent, and Marvell; $500M to Corning; participation in Ayar Labs' $500M Series E — all to replace copper with light-based interconnects. — CNBC · May 29, 2026</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            The Moscow Times excluded. Deduplicated against 30-day history.
+        </div>
     </div>
-
-    <!-- Weather -->
-    <div class="section">
-        <h2>🌤️ Weather — Austin, TX (ZIP 78759)</h2>
-        <table>
-            <tr><td>Current Temperature</td><td>22.8 °C (73 °F) — Feels like 23.6 °C</td></tr>
-            <tr><td>Conditions</td><td>Clear / Partly Sunny</td></tr>
-            <tr><td>Tonight Low</td><td>23.3 °C (74 °F)</td></tr>
-            <tr><td>Tomorrow High</td><td>32.8 °C (91 °F)</td></tr>
-            <tr><td>Precipitation Chance</td><td>1 – 4%</td></tr>
-            <tr><td>Humidity</td><td>94%</td></tr>
-            <tr><td>Wind</td><td>S 5–10 mph (7.6 m/s from SW)</td></tr>
-            <tr><td>Sunrise</td><td>6:30 AM CDT</td></tr>
-            <tr><td>Sunset</td><td>8:27 PM CDT</td></tr>
-        </table>
-        <div class="source-line">National Weather Service — May 30, 2026</div>
-    </div>
-
-    <!-- Positive Russia News -->
-    <div class="section">
-        <h2>✅ Positive Russia News</h2>
-        <ul>
-            <li>
-                <a href="https://tass.com/politics/2138507" target="_blank">Putin: Closer Eurasian integration benefits every EAEU member; trade flows reach $95 billion</a>
-                <div class="meta">TASS — May 29, 2026</div>
-            </li>
-            <li>
-                <a href="https://tass.com/economy/2138897" target="_blank">Putin calls for high-tech future for EAEU countries, not just raw materials economy</a>
-                <div class="meta">TASS — May 29, 2026</div>
-            </li>
-            <li>
-                <a href="https://tass.com/politics/2138497" target="_blank">Trade liberalization talks between EAEU and India intensify; agreements signed with Tunisia, Serbia</a>
-                <div class="meta">TASS — May 29, 2026</div>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Neutral Russia News -->
-    <div class="section">
-        <h2>📰 Neutral Russia News</h2>
-        <ul>
-            <li>
-                <a href="https://www.aljazeera.com/news/2026/5/30/ukraine-drones-strike-russian-oil-facility-as-kyiv-and-moscow-trade-blows" target="_blank">Ukraine drones strike Russian oil facility in Taganrog port and Armavir depot overnight</a>
-                <div class="meta">Al Jazeera — May 30, 2026</div>
-            </li>
-            <li>
-                <a href="https://www.bbc.co.uk/news/articles/cdjp0n7rn41o" target="_blank">Ukraine using AI-enabled Hornet drones to strike Russian supply lines in occupied territories</a>
-                <div class="meta">BBC News — May 30, 2026</div>
-            </li>
-            <li>
-                <a href="https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-zelensky-romania-drone-attack-b2986368.html" target="_blank">NATO vows to defend &lsquo;every inch&rsquo; after Russian drone strikes Romania; Putin disputes attribution</a>
-                <div class="meta">The Independent — May 30, 2026</div>
-            </li>
-            <li>
-                <a href="https://www.cnn.com/2026/05/30/europe/ukraine-robots-drones-russia-war-intl" target="_blank">Robots are redefining the war in Ukraine and forcing Russia onto the back foot</a>
-                <div class="meta">CNN — May 30, 2026</div>
-            </li>
-        </ul>
-    </div>
-
-    <!-- St. Petersburg News -->
-    <div class="section">
-        <h2>🏛️ St. Petersburg News</h2>
-        <ul>
-            <li>
-                <a href="https://www.fontanka.ru/2026/05/30/76451293/" target="_blank">Задержан подозреваемый в стрельбе по автобусам на Витебском проспекте в Петербурге</a>
-                <span class="badge badge-ru">RU</span>
-                <div class="meta">Fontanka.ru — May 30, 2026</div>
-            </li>
-            <li>
-                <a href="https://www.fontanka.ru/2026/05/30/76450903/" target="_blank">«ЗСД Фонтанка Фест»: 20 000 велосипедистов проехали по Западному скоростному диаметру</a>
-                <span class="badge badge-ru">RU</span>
-                <div class="meta">Fontanka.ru — May 30, 2026</div>
-            </li>
-            <li>
-                <a href="https://spbcult.ru/articles/gotovye-resheniya-kuda-poyti/kuda-poyti-na-vykhodnykh-v-peterburge-29-31-maya-/" target="_blank">Выходные в Петербурге: «Классика на Дворцовой», выставки в Эрмитаже и Русском музее, «Летний театр» в Новой Голландии</a>
-                <span class="badge badge-ru">RU</span>
-                <div class="meta">SPbCult.ru — May 30, 2026</div>
-            </li>
-            <li>
-                <a href="https://kudago.com/spb/events/?date=2026-05-30" target="_blank">Events in St. Petersburg today: &lsquo;Sea Party&rsquo; at Sevkabel Port, Dog Festival at Gostiny Dvor, Japanese Culture Festival</a>
-                <span class="badge badge-en">EN</span>
-                <div class="meta">KudaGo — May 30, 2026</div>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Semiconductor & Investor News -->
-    <div class="section">
-        <h2>💹 Semiconductor &amp; Investor News</h2>
-
-        <h3>🔬 KLAC (KLA Corporation)</h3>
-        <ul>
-            <li>
-                <a href="https://www.tradingview.com/news/zacks:6f33961e8094b:0-can-kla-s-greenfield-fab-exposure-spark-multi-year-revenue-growth/" target="_blank">KLA&rsquo;s greenfield fab exposure may spark multi-year growth; Q3 FY2026 revenue $3.42B (+11% YoY)</a>
-                <div class="meta">TradingView / Zacks — May 29, 2026</div>
-            </li>
-            <li>
-                <a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/kla-corporation-stock-us4824801009-shares-ease-after-recent-rally-as/69441235" target="_blank">KLA shares ease near $1,960 after rally; investors digest AI-driven demand outlook</a>
-                <div class="meta">Ad Hoc News — May 29, 2026</div>
-            </li>
-            <li>
-                <a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/kla-corp-stock-us4824801009-shares-ease-after-recent-record-highs-as/69442642" target="_blank">KLA near record highs as investors eye valuation metrics amid semiconductor capex cycle</a>
-                <div class="meta">Ad Hoc News — May 29, 2026</div>
-            </li>
-        </ul>
-
-        <h3>💡 CPO (Co-Packaged Optics)</h3>
-        <ul>
-            <li>
-                <a href="https://asia.nikkei.com/business/technology/artificial-intelligence/foxconn-to-start-shipping-next-gen-optical-tech-for-ai-data-centers" target="_blank">Foxconn to start shipping CPO tray units for AI data centers; 10,000 units planned this year</a>
-                <div class="meta">Nikkei Asia — May 29, 2026</div>
-            </li>
-            <li>
-                <a href="https://www.cnbc.com/2026/05/29/nvidia-photonics-investment-ai.html" target="_blank">Nvidia has invested $6.5 billion in photonics companies in 3 months to solve AI interconnect bottleneck</a>
-                <div class="meta">CNBC — May 29, 2026</div>
-            </li>
-        </ul>
-    </div>
-
-    <div class="footer">
-        The Moscow Times excluded. Deduplicated against 30-day history.
-    </div>
-</div>
 </body>
 </html>
