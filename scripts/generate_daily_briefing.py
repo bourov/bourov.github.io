@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate the daily morning briefing HTML page.
 
-Uses weather.gov for real weather data and OpenAI Responses API with
+Uses weather.gov for real weather data and Anthropic Claude API with
 web search to curate current news articles.
 """
 
@@ -10,8 +10,8 @@ import os
 import sys
 from datetime import datetime, timezone, timedelta
 
+import anthropic
 import requests
-from openai import OpenAI
 
 DAILY_DIR = os.path.join(os.path.dirname(__file__), "..", "daily")
 OUTPUT_PATH = os.path.normpath(os.path.join(DAILY_DIR, "index.html"))
@@ -65,9 +65,16 @@ def fetch_weather():
         return None
 
 
+def extract_text(response):
+    """Extract concatenated text from an Anthropic response."""
+    return "".join(
+        block.text for block in response.content if block.type == "text"
+    )
+
+
 def generate_briefing_html(weather_data):
-    """Call OpenAI Responses API with web search to produce the briefing."""
-    client = OpenAI()
+    """Call Anthropic Claude API with web search to produce the briefing."""
+    client = anthropic.Anthropic()
 
     ct = timezone(timedelta(hours=-5))          # CDT (summer)
     now = datetime.now(ct)
@@ -126,13 +133,14 @@ Location: Austin, TX
 Output ONLY the raw HTML (no markdown fences, no commentary).
 Every news link must be a real, verifiable URL from a genuine publication."""
 
-    response = client.responses.create(
-        model="gpt-4o",
-        tools=[{"type": "web_search_preview"}],
-        input=prompt,
+    response = client.messages.create(
+        model="claude-sonnet-4-20250514",
+        max_tokens=16000,
+        tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 10}],
+        messages=[{"role": "user", "content": prompt}],
     )
 
-    html = response.output_text.strip()
+    html = extract_text(response)
     # Strip markdown fences if the model wrapped the output
     if html.startswith("```"):
         first_newline = html.index("\n")
@@ -152,7 +160,7 @@ def main():
         if not html.endswith("\n"):
             fh.write("\n")
 
-    print(f"✓ Daily briefing written to {OUTPUT_PATH}")
+    print(f"Daily briefing written to {OUTPUT_PATH}")
 
 
 if __name__ == "__main__":

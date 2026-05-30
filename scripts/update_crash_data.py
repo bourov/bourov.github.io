@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Update the crash dashboard indicator data (crash/crash_indicators_data.json).
 
-Fetches live market data from Yahoo Finance, then uses OpenAI Responses API
+Fetches live market data from Yahoo Finance, then uses Anthropic Claude API
 with web search to fill in indicators that aren't available via free APIs and
 to generate interpretations.
 """
@@ -11,8 +11,8 @@ import os
 import sys
 from datetime import datetime, timezone
 
+import anthropic
 import yfinance as yf
-from openai import OpenAI
 
 OUTPUT_PATH = os.path.normpath(
     os.path.join(os.path.dirname(__file__), "..", "crash", "crash_indicators_data.json")
@@ -72,18 +72,10 @@ def fetch_market_data():
     except Exception as exc:
         print(f"Warning: S&P 500 fetch failed: {exc}", file=sys.stderr)
 
-    # --- Treasury yields (10Y & 2Y via Yahoo Finance) ---
+    # --- Treasury yields (10Y via Yahoo Finance) ---
     try:
-        tnx = yf.Ticker("^TNX")  # 10-year yield × 10
-        twy = yf.Ticker("^IRX")  # 13-week T-bill (2Y not directly on YF, approximate)
+        tnx = yf.Ticker("^TNX")  # 10-year yield
         h10 = tnx.history(period="5d")
-        # Try 2-year via "2YY=F" or just use 10Y for now
-        try:
-            t2y = yf.Ticker("^TYX")  # 30-year as proxy fallback
-            h2 = t2y.history(period="5d")
-        except Exception:
-            h2 = None
-
         if not h10.empty:
             y10 = float(h10["Close"].iloc[-1])
             data["treasury_10y"] = round(y10, 3)
@@ -94,9 +86,16 @@ def fetch_market_data():
     return data
 
 
+def extract_text(response):
+    """Extract concatenated text from an Anthropic response."""
+    return "".join(
+        block.text for block in response.content if block.type == "text"
+    )
+
+
 def generate_crash_json(market_data):
-    """Use OpenAI Responses API + web search to build the full JSON."""
-    client = OpenAI()
+    """Use Anthropic Claude API + web search to build the full JSON."""
+    client = anthropic.Anthropic()
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
@@ -175,13 +174,14 @@ EXACTLY — the front-end dashboard parses each field):
 - risk_level values: "Low", "Moderate", "Elevated", "High".
 - Output ONLY raw JSON — no markdown fences, no commentary, no explanation."""
 
-    response = client.responses.create(
-        model="gpt-4o",
-        tools=[{"type": "web_search_preview"}],
-        input=prompt,
+    response = client.messages.create(
+        model="claude-sonnet-4-20250514",
+        max_tokens=16000,
+        tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 10}],
+        messages=[{"role": "user", "content": prompt}],
     )
 
-    text = response.output_text.strip()
+    text = extract_text(response)
     if text.startswith("```"):
         text = text[text.index("\n") + 1 :]
     if text.endswith("```"):
@@ -192,7 +192,7 @@ EXACTLY — the front-end dashboard parses each field):
 
 
 def main():
-    print("Fetching market data from Yahoo Finance …")
+    print("Fetching market data from Yahoo Finance ...")
     market_data = fetch_market_data()
     for key, val in market_data.items():
         if isinstance(val, dict):
@@ -200,7 +200,7 @@ def main():
         else:
             print(f"  {key}: {val}")
 
-    print("Generating crash indicators JSON via OpenAI …")
+    print("Generating crash indicators JSON via Claude ...")
     crash_json = generate_crash_json(market_data)
 
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
@@ -208,7 +208,7 @@ def main():
         json.dump(crash_json, fh, indent=2)
         fh.write("\n")
 
-    print(f"✓ Crash data written to {OUTPUT_PATH}")
+    print(f"Crash data written to {OUTPUT_PATH}")
 
 
 if __name__ == "__main__":

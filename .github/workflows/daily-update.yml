@@ -28,12 +28,12 @@ jobs:
 
       - name: Generate daily briefing
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/generate_daily_briefing.py
 
       - name: Update crash dashboard data
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/update_crash_data.py
 
       - name: Commit & push changes
