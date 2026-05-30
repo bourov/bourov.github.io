@@ -232,17 +232,17 @@
     ],
     "scenario_analysis": {
       "base_case": {
-        "probability_pct": 55,
+        "probability": 55,
         "outlook": "Continued grind higher with periodic 3-5% pullbacks. S&P 500 reaches 7,800-8,000 by year-end. Earnings growth and AI capex sustain mega-cap leadership while breadth gradually improves.",
         "triggers": ["Continued strong earnings", "Iran deal finalized", "Fed signals rate cuts", "AI investment cycle continues"]
       },
       "correction_case": {
-        "probability_pct": 30,
+        "probability": 30,
         "outlook": "10-15% correction from current highs. S&P 500 pulls back to 6,500-6,800 range (near 200-DMA). Triggered by breadth divergence resolution, leveraged position unwinding, or earnings disappointment.",
         "triggers": ["Margin call cascade from record leverage", "AI earnings miss from major tech company", "Geopolitical shock (Iran deal collapse, escalation)", "Private credit contagion to banks"]
       },
       "crash_case": {
-        "probability_pct": 15,
+        "probability": 15,
         "outlook": "20%+ decline. S&P 500 drops to 5,800-6,200. Requires multiple simultaneous catalysts. Record valuation multiples and leverage create vulnerability to cascading sell-offs.",
         "triggers": ["Systemic private credit crisis with bank contagion", "Fed forced into rate hikes on resurgent inflation", "Major geopolitical escalation", "Margin debt unwinding triggers liquidity crisis", "Mega-cap earnings collapse"]
       }
