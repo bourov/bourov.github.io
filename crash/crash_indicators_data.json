@@ -146,8 +146,8 @@
   "leverage_indicators": {
     "finra_margin_debt": {
       "name": "FINRA Margin Debt",
-      "current_value_billions": 1300,
-      "previous_month_billions": 1217,
+      "current_value": 1300,
+      "previous_month": 1217,
       "month_over_month_change_pct": 6.8,
       "year_over_year_change_pct": 53.3,
       "record_high": true,
