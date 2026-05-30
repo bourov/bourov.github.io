@@ -4,162 +4,166 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self'; frame-ancestors 'none'">
-    <title>Daily Morning Briefing — May 30, 2026</title>
+    <title>Daily Morning Briefing — Saturday, May 31, 2026</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
-        .container { max-width: 750px; margin: 30px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); overflow: hidden; }
+        .container { max-width: 750px; margin: 20px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); overflow: hidden; }
         .header { background: linear-gradient(135deg, #1a237e, #283593); color: #fff; padding: 30px; text-align: center; }
-        .header h1 { font-size: 1.8rem; margin-bottom: 5px; }
-        .header .subtitle { font-size: 0.95rem; opacity: 0.9; }
+        .header h1 { font-size: 1.8em; margin-bottom: 5px; }
+        .header .subtitle { font-size: 0.95em; opacity: 0.9; }
         .section { padding: 20px 30px; border-bottom: 1px solid #eee; }
         .section:last-of-type { border-bottom: none; }
-        .section h2 { font-size: 1.3rem; margin-bottom: 12px; color: #1a237e; }
-        .section h3 { font-size: 1.1rem; margin: 14px 0 8px; color: #333; }
-        table { width: 100%; border-collapse: collapse; margin: 10px 0; }
-        table td { padding: 6px 10px; border-bottom: 1px solid #f0f0f0; }
-        table td:first-child { font-weight: 600; width: 40%; color: #555; }
-        .source-line { font-size: 0.8rem; color: #888; margin-top: 8px; }
-        ul { list-style: none; padding: 0; }
-        ul li { background: #fafafa; margin: 8px 0; padding: 10px 14px; border-radius: 4px; border-left: 3px solid #ddd; }
-        ul li a { color: #1565C0; text-decoration: none; font-weight: 500; }
-        ul li a:hover { text-decoration: underline; }
-        ul li .meta { font-size: 0.8rem; color: #888; margin-top: 3px; }
-        .badge { display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; font-weight: 600; margin-left: 6px; vertical-align: middle; }
+        .section h2 { font-size: 1.3em; margin-bottom: 12px; color: #1a237e; }
+        .section h3 { font-size: 1.1em; margin: 14px 0 8px; color: #283593; }
+        table.weather { width: 100%; border-collapse: collapse; margin-top: 8px; }
+        table.weather td { padding: 8px 12px; border-bottom: 1px solid #f0f0f0; }
+        table.weather td:first-child { font-weight: 600; width: 40%; color: #555; }
+        ul.news { list-style: none; padding: 0; }
+        ul.news li { background: #fafafa; border-radius: 4px; border-left: 3px solid #ddd; padding: 10px 14px; margin-bottom: 8px; }
+        ul.news li a { color: #1565C0; text-decoration: none; font-weight: 600; }
+        ul.news li a:hover { text-decoration: underline; }
+        ul.news li .source { font-size: 0.85em; color: #777; margin-top: 3px; }
+        .badge { display: inline-block; font-size: 0.75em; padding: 2px 7px; border-radius: 3px; font-weight: 600; margin-left: 6px; vertical-align: middle; }
         .badge-en { background: #e8f4fd; color: #1565C0; }
         .badge-ru { background: #e8e8e8; color: #555; }
-        .footer { background: #f0f0f0; padding: 15px 30px; text-align: center; font-size: 0.8rem; color: #888; }
+        .weather-source { font-size: 0.85em; color: #888; margin-top: 10px; }
+        .footer { background: #f0f0f0; padding: 15px 30px; text-align: center; font-size: 0.8em; color: #888; }
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="header">
-        <h1>Daily Morning Briefing</h1>
-        <div class="subtitle">Friday, May 30, 2026 — Austin, TX</div>
+    <div class="container">
+        <div class="header">
+            <h1>Daily Morning Briefing</h1>
+            <div class="subtitle">Saturday, May 31, 2026</div>
+        </div>
+
+        <!-- Weather -->
+        <div class="section">
+            <h2>🌤️ Weather — Austin, TX (ZIP 78759)</h2>
+            <table class="weather">
+                <tr><td>Current Temperature</td><td>22.8 °C (73.0 °F) · Feels like 23.6 °C</td></tr>
+                <tr><td>Today's High</td><td>32.8 °C (91 °F) — Mostly Sunny</td></tr>
+                <tr><td>Tonight's Low</td><td>23.9 °C (75 °F) — Partly Cloudy</td></tr>
+                <tr><td>Tomorrow's High</td><td>~33 °C (91 °F)</td></tr>
+                <tr><td>Precipitation Chance</td><td>2% today · 3% tonight</td></tr>
+                <tr><td>Humidity</td><td>94%</td></tr>
+                <tr><td>Wind</td><td>SSE 5 mph (8 km/h)</td></tr>
+                <tr><td>Conditions</td><td>Mostly Sunny</td></tr>
+                <tr><td>Sunrise / Sunset</td><td>6:28 AM / 8:29 PM CDT</td></tr>
+            </table>
+            <p class="weather-source">National Weather Service — May 31, 2026</p>
+        </div>
+
+        <!-- Positive Russia News -->
+        <div class="section">
+            <h2>✅ Positive Russia News</h2>
+            <ul class="news">
+                <li>
+                    <a href="https://tass.com/economy/2139017" target="_blank" rel="noopener">Russian economy may grow by 2% by year-end, driven by import substitution and lower interest rates</a>
+                    <div class="source">TASS — May 30, 2026</div>
+                </li>
+                <li>
+                    <a href="https://sputnikglobe.com/20260530/ruble-ranks-in-top-3-strongest-currencies-against-dollar-in-may-1124213682.html" target="_blank" rel="noopener">Ruble ranks in top-3 strongest currencies against the US dollar in May, up 4.9%</a>
+                    <div class="source">Sputnik — May 30, 2026</div>
+                </li>
+                <li>
+                    <a href="https://sputnikglobe.com/20260529/over-130-countries-territories-to-attend-spief-in-2026--russias-roscongress-1124208809.html" target="_blank" rel="noopener">Over 130 countries and territories to attend SPIEF 2026 in St. Petersburg</a>
+                    <div class="source">Sputnik — May 29, 2026</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Neutral Russia News -->
+        <div class="section">
+            <h2>📰 Neutral Russia News</h2>
+            <ul class="news">
+                <li>
+                    <a href="https://eadaily.com/en/news/2026/05/30/the-situation-in-the-smo-area-is-nearing-completion-putin" target="_blank" rel="noopener">Putin says "situation on the battlefield is nearing completion" at press conference in Astana</a>
+                    <div class="source">EADaily — May 30, 2026</div>
+                </li>
+                <li>
+                    <a href="https://www.aljazeera.com/news/2026/5/30/ukraine-drones-strike-russian-oil-facility-as-kyiv-and-moscow-trade-blows" target="_blank" rel="noopener">Ukraine drones strike Russian oil facility in Taganrog as Kyiv and Moscow trade blows</a>
+                    <div class="source">Al Jazeera — May 30, 2026</div>
+                </li>
+                <li>
+                    <a href="https://www.bbc.co.uk/news/articles/cdjp0n7rn41o" target="_blank" rel="noopener">Ukraine using AI-enabled Hornet drones to strike vital Russian supply lines</a>
+                    <div class="source">BBC News — May 30, 2026</div>
+                </li>
+                <li>
+                    <a href="https://www.euronews.com/my-europe/2026/05/30/zelenskyy-warns-russia-may-be-preparing-massive-new-attack" target="_blank" rel="noopener">Zelenskyy warns Russia may be preparing 'massive' new attack</a>
+                    <div class="source">Euronews — May 30, 2026</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- St. Petersburg News -->
+        <div class="section">
+            <h2>🏛️ St. Petersburg News</h2>
+            <ul class="news">
+                <li>
+                    <a href="https://sputnikglobe.com/20260529/over-130-countries-territories-to-attend-spief-in-2026--russias-roscongress-1124208809.html" target="_blank" rel="noopener">Over 130 countries confirmed for SPIEF 2026 in St. Petersburg (June 3–6)</a>
+                    <div class="source">Sputnik — May 29, 2026 <span class="badge badge-en">EN</span></div>
+                </li>
+                <li>
+                    <a href="https://neva.today/news/2026/5/30/749455" target="_blank" rel="noopener">North Korea sends delegation to St. Petersburg ahead of SPIEF; Elon Musk's father confirms visit</a>
+                    <div class="source">Neva.Today — May 30, 2026 <span class="badge badge-ru">RU</span></div>
+                </li>
+                <li>
+                    <a href="https://www.fontanka.ru/2026/05/30/76450903/" target="_blank" rel="noopener">8th International Cycling Festival «ZSD Fontanka Fest» closes sections of Western High-Speed Diameter</a>
+                    <div class="source">Fontanka.ru — May 30, 2026 <span class="badge badge-ru">RU</span></div>
+                </li>
+                <li>
+                    <a href="https://www.fontanka.ru/2026/05/30/76451293/" target="_blank" rel="noopener">Suspect arrested for shooting at public buses with pneumatic pistol on Vitebsky Prospekt</a>
+                    <div class="source">Fontanka.ru — May 30, 2026 <span class="badge badge-ru">RU</span></div>
+                </li>
+                <li>
+                    <a href="https://tass.com/economy/2139017" target="_blank" rel="noopener">SPIEF preparations underway: North Korean economic delegation led by External Economic Relations Minister</a>
+                    <div class="source">TASS — May 30, 2026 <span class="badge badge-en">EN</span></div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Semiconductor & Investor News -->
+        <div class="section">
+            <h2>💹 Semiconductor &amp; Investor News</h2>
+
+            <h3>🔬 KLAC (KLA Corporation)</h3>
+            <ul class="news">
+                <li>
+                    <a href="https://247wallst.com/investing/2026/05/30/top-5-stocks-that-will-ride-the-data-center-chip-equipment-supercycle/" target="_blank" rel="noopener">KLA named among top 5 stocks to ride the data center chip equipment supercycle</a>
+                    <div class="source">24/7 Wall St. — May 30, 2026</div>
+                </li>
+                <li>
+                    <a href="https://www.americanbankingnews.com/2026/05/30/kla-nasdaqklac-vs-novonix-nasdaqnvx-financial-review.html" target="_blank" rel="noopener">KLA vs. NOVONIX financial review: KLA beats on 10 of 12 factors; consensus target $1,842.19</a>
+                    <div class="source">American Banking News — May 30, 2026</div>
+                </li>
+                <li>
+                    <a href="https://www.cnbc.com/2026/05/29/theres-a-record-disconnect-unfolding-in-the-trading-pits-right-now.html" target="_blank" rel="noopener">Record disconnect: semiconductor implied volatility (SMH ~50%) dwarfs index-level VIX (~15.6)</a>
+                    <div class="source">CNBC — May 29, 2026</div>
+                </li>
+                <li>
+                    KLAC closed at $1,921.71 (−0.31%) on May 29. Next earnings call: July 30, 2026.
+                    <div class="source">Market Data — May 29, 2026</div>
+                </li>
+            </ul>
+
+            <h3>💡 CPO (Co-Packaged Optics)</h3>
+            <ul class="news">
+                <li>
+                    <a href="https://www.tvanouvelles.ca/2026/05/29/ia-lasers-et-goulots-detranglement-quand-la-lumiere-devient-le-nerf-de-la-guerre-technologique" target="_blank" rel="noopener">AI, lasers and bottlenecks: photonics and CPO emerge as critical technologies for next-gen data centers</a>
+                    <div class="source">TVA Nouvelles — May 30, 2026</div>
+                </li>
+                <li>
+                    <a href="https://tspasemiconductor.substack.com/p/huaweis-tao-law-explains-the-direction" target="_blank" rel="noopener">Huawei's "Tao Law" and Hi-ONE: co-packaged optics and photonic integration driving chip interconnect evolution</a>
+                    <div class="source">TSPA Semiconductor — May 30, 2026</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            The Moscow Times excluded. Deduplicated against 30-day history.
+        </div>
     </div>
-
-    <!-- Weather -->
-    <div class="section">
-        <h2>🌤️ Weather — Austin, TX (ZIP 78759)</h2>
-        <table>
-            <tr><td>Current Temperature</td><td>22.8 °C (73 °F) — Feels like 23.6 °C</td></tr>
-            <tr><td>Conditions</td><td>Clear / Partly Sunny</td></tr>
-            <tr><td>Tonight Low</td><td>23.3 °C (74 °F)</td></tr>
-            <tr><td>Tomorrow High</td><td>32.8 °C (91 °F)</td></tr>
-            <tr><td>Precipitation Chance</td><td>1 – 4%</td></tr>
-            <tr><td>Humidity</td><td>94%</td></tr>
-            <tr><td>Wind</td><td>S 5–10 mph (7.6 m/s from SW)</td></tr>
-            <tr><td>Sunrise</td><td>6:30 AM CDT</td></tr>
-            <tr><td>Sunset</td><td>8:27 PM CDT</td></tr>
-        </table>
-        <div class="source-line">National Weather Service — May 30, 2026</div>
-    </div>
-
-    <!-- Positive Russia News -->
-    <div class="section">
-        <h2>✅ Positive Russia News</h2>
-        <ul>
-            <li>
-                <a href="https://tass.com/politics/2138507" target="_blank">Putin: Closer Eurasian integration benefits every EAEU member; trade flows reach $95 billion</a>
-                <div class="meta">TASS — May 29, 2026</div>
-            </li>
-            <li>
-                <a href="https://tass.com/economy/2138897" target="_blank">Putin calls for high-tech future for EAEU countries, not just raw materials economy</a>
-                <div class="meta">TASS — May 29, 2026</div>
-            </li>
-            <li>
-                <a href="https://tass.com/politics/2138497" target="_blank">Trade liberalization talks between EAEU and India intensify; agreements signed with Tunisia, Serbia</a>
-                <div class="meta">TASS — May 29, 2026</div>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Neutral Russia News -->
-    <div class="section">
-        <h2>📰 Neutral Russia News</h2>
-        <ul>
-            <li>
-                <a href="https://www.aljazeera.com/news/2026/5/30/ukraine-drones-strike-russian-oil-facility-as-kyiv-and-moscow-trade-blows" target="_blank">Ukraine drones strike Russian oil facility in Taganrog port and Armavir depot overnight</a>
-                <div class="meta">Al Jazeera — May 30, 2026</div>
-            </li>
-            <li>
-                <a href="https://www.bbc.co.uk/news/articles/cdjp0n7rn41o" target="_blank">Ukraine using AI-enabled Hornet drones to strike Russian supply lines in occupied territories</a>
-                <div class="meta">BBC News — May 30, 2026</div>
-            </li>
-            <li>
-                <a href="https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-zelensky-romania-drone-attack-b2986368.html" target="_blank">NATO vows to defend &lsquo;every inch&rsquo; after Russian drone strikes Romania; Putin disputes attribution</a>
-                <div class="meta">The Independent — May 30, 2026</div>
-            </li>
-            <li>
-                <a href="https://www.cnn.com/2026/05/30/europe/ukraine-robots-drones-russia-war-intl" target="_blank">Robots are redefining the war in Ukraine and forcing Russia onto the back foot</a>
-                <div class="meta">CNN — May 30, 2026</div>
-            </li>
-        </ul>
-    </div>
-
-    <!-- St. Petersburg News -->
-    <div class="section">
-        <h2>🏛️ St. Petersburg News</h2>
-        <ul>
-            <li>
-                <a href="https://www.fontanka.ru/2026/05/30/76451293/" target="_blank">Задержан подозреваемый в стрельбе по автобусам на Витебском проспекте в Петербурге</a>
-                <span class="badge badge-ru">RU</span>
-                <div class="meta">Fontanka.ru — May 30, 2026</div>
-            </li>
-            <li>
-                <a href="https://www.fontanka.ru/2026/05/30/76450903/" target="_blank">«ЗСД Фонтанка Фест»: 20 000 велосипедистов проехали по Западному скоростному диаметру</a>
-                <span class="badge badge-ru">RU</span>
-                <div class="meta">Fontanka.ru — May 30, 2026</div>
-            </li>
-            <li>
-                <a href="https://spbcult.ru/articles/gotovye-resheniya-kuda-poyti/kuda-poyti-na-vykhodnykh-v-peterburge-29-31-maya-/" target="_blank">Выходные в Петербурге: «Классика на Дворцовой», выставки в Эрмитаже и Русском музее, «Летний театр» в Новой Голландии</a>
-                <span class="badge badge-ru">RU</span>
-                <div class="meta">SPbCult.ru — May 30, 2026</div>
-            </li>
-            <li>
-                <a href="https://kudago.com/spb/events/?date=2026-05-30" target="_blank">Events in St. Petersburg today: &lsquo;Sea Party&rsquo; at Sevkabel Port, Dog Festival at Gostiny Dvor, Japanese Culture Festival</a>
-                <span class="badge badge-en">EN</span>
-                <div class="meta">KudaGo — May 30, 2026</div>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Semiconductor & Investor News -->
-    <div class="section">
-        <h2>💹 Semiconductor &amp; Investor News</h2>
-
-        <h3>🔬 KLAC (KLA Corporation)</h3>
-        <ul>
-            <li>
-                <a href="https://www.tradingview.com/news/zacks:6f33961e8094b:0-can-kla-s-greenfield-fab-exposure-spark-multi-year-revenue-growth/" target="_blank">KLA&rsquo;s greenfield fab exposure may spark multi-year growth; Q3 FY2026 revenue $3.42B (+11% YoY)</a>
-                <div class="meta">TradingView / Zacks — May 29, 2026</div>
-            </li>
-            <li>
-                <a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/kla-corporation-stock-us4824801009-shares-ease-after-recent-rally-as/69441235" target="_blank">KLA shares ease near $1,960 after rally; investors digest AI-driven demand outlook</a>
-                <div class="meta">Ad Hoc News — May 29, 2026</div>
-            </li>
-            <li>
-                <a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/kla-corp-stock-us4824801009-shares-ease-after-recent-record-highs-as/69442642" target="_blank">KLA near record highs as investors eye valuation metrics amid semiconductor capex cycle</a>
-                <div class="meta">Ad Hoc News — May 29, 2026</div>
-            </li>
-        </ul>
-
-        <h3>💡 CPO (Co-Packaged Optics)</h3>
-        <ul>
-            <li>
-                <a href="https://asia.nikkei.com/business/technology/artificial-intelligence/foxconn-to-start-shipping-next-gen-optical-tech-for-ai-data-centers" target="_blank">Foxconn to start shipping CPO tray units for AI data centers; 10,000 units planned this year</a>
-                <div class="meta">Nikkei Asia — May 29, 2026</div>
-            </li>
-            <li>
-                <a href="https://www.cnbc.com/2026/05/29/nvidia-photonics-investment-ai.html" target="_blank">Nvidia has invested $6.5 billion in photonics companies in 3 months to solve AI interconnect bottleneck</a>
-                <div class="meta">CNBC — May 29, 2026</div>
-            </li>
-        </ul>
-    </div>
-
-    <div class="footer">
-        The Moscow Times excluded. Deduplicated against 30-day history.
-    </div>
-</div>
 </body>
 </html>
