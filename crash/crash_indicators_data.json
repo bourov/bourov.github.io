@@ -252,17 +252,17 @@
     ],
     "scenario_analysis": {
       "base_case": {
-        "probability_pct": 60,
+        "probability": 60,
         "outlook": "Continued grinding rally with periodic 3-5% pullbacks",
         "triggers": "AI earnings growth continues, gradual Fed easing, geopolitical de-escalation"
       },
       "correction_case": {
-        "probability_pct": 30,
+        "probability": 30,
         "outlook": "10-15% correction from current levels over 2-4 months",
         "triggers": "AI earnings disappointment, margin debt unwind, private credit contagion, geopolitical escalation (Iran/Middle East)"
       },
       "crash_case": {
-        "probability_pct": 10,
+        "probability": 10,
         "outlook": "20%+ drawdown from current levels within 6 months",
         "triggers": "Cascading private credit failures, forced margin liquidation, unexpected recession, major geopolitical crisis, AI bubble burst"
       }
