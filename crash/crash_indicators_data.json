@@ -1,4 +1,40 @@
 {
+  "crash_probability": {
+    "5_day": {
+      "probability_pct": 2.5,
+      "confidence": 7,
+      "key_drivers": [
+        "VIX at 15.32 \u2014 extremely low implied volatility",
+        "No imminent catalysts on calendar for next 5 days",
+        "Strong momentum \u2014 S&P 500 at ATH with Golden Cross intact"
+      ],
+      "interpretation": "Very low near-term crash risk. Markets exhibit strong momentum with low volatility. A 20%+ drawdown in 5 days would require an extraordinary black swan event."
+    },
+    "20_day": {
+      "probability_pct": 5.0,
+      "confidence": 6,
+      "key_drivers": [
+        "Record margin debt ($1.3T) creates forced-selling vulnerability",
+        "Breadth divergence \u2014 only 57% above 200-DMA despite ATH",
+        "Elevated valuations (CAPE 39.6, Buffett Indicator 231.8%)",
+        "Low VIX often precedes volatility spikes"
+      ],
+      "interpretation": "Low but non-trivial risk. Record leverage and breadth divergence create conditions where a catalyst could trigger cascading sell-offs, but strong earnings and positive macro backdrop provide support."
+    },
+    "60_day": {
+      "probability_pct": 12.0,
+      "confidence": 5,
+      "key_drivers": [
+        "Valuation extremes historically associated with major corrections",
+        "Record margin debt amplifies any downturn through forced liquidations",
+        "Private credit stress (6.0% default rate) could transmit to banks",
+        "Geopolitical uncertainty (Iran deal, Russia-Ukraine) could reverse",
+        "Single-stock volatility divergence from index VIX signals fragility"
+      ],
+      "interpretation": "Moderate risk over 60-day horizon. While no single catalyst is imminent, the combination of extreme valuations, record leverage, and private credit stress creates a fragile environment. Historical base rate for 20%+ drawdowns in any 60-day window is ~3-4%; current conditions roughly triple that base rate."
+    },
+    "methodology": "Based on current VIX level, technical indicators, macro conditions, historical base rates, and market structure analysis."
+  },
   "metadata": {
     "generated_at": "2026-05-31T06:00:00Z",
     "analysis_date": "2026-05-31",
@@ -54,7 +90,7 @@
       "historical_mean": 17.5,
       "all_time_high": 44.2,
       "risk_level": "High",
-      "interpretation": "CAPE at 39.6 — the sixth time since 1871 it has exceeded 24. Only the dot-com peak (44.2 in March 2000) was higher. Excess CAPE yield at 1.4% — low but still positive vs bonds. Stocks are richly valued but not necessarily signaling imminent crash.",
+      "interpretation": "CAPE at 39.6 \u2014 the sixth time since 1871 it has exceeded 24. Only the dot-com peak (44.2 in March 2000) was higher. Excess CAPE yield at 1.4% \u2014 low but still positive vs bonds. Stocks are richly valued but not necessarily signaling imminent crash.",
       "freshness_days": 3
     },
     "buffett_indicator": {
@@ -73,7 +109,7 @@
       "previous_value": 0.48,
       "status": "Normal (Positive)",
       "risk_level": "Low",
-      "interpretation": "Yield curve is positive at +46 bps — no inversion. Spread has been flattening (down from 0.54 earlier in May) but remains comfortably positive. No near-term recession signal from this indicator. 10Y yield at 4.45%.",
+      "interpretation": "Yield curve is positive at +46 bps \u2014 no inversion. Spread has been flattening (down from 0.54 earlier in May) but remains comfortably positive. No near-term recession signal from this indicator. 10Y yield at 4.45%.",
       "freshness_days": 2
     }
   },
@@ -89,18 +125,18 @@
       "drawdown_from_ath_pct": 0.0,
       "sub_indicators": {
         "price_vs_50dma": {
-          "value": 7.40,
-          "interpretation": "S&P 500 trading 7.4% above 50-day MA — extended but not extreme",
+          "value": 7.4,
+          "interpretation": "S&P 500 trading 7.4% above 50-day MA \u2014 extended but not extreme",
           "risk_level": "Moderate"
         },
         "price_vs_200dma": {
           "value": 10.97,
-          "interpretation": "S&P 500 trading 11% above 200-day MA — bullish trend confirmed",
+          "interpretation": "S&P 500 trading 11% above 200-day MA \u2014 bullish trend confirmed",
           "risk_level": "Moderate"
         },
         "golden_cross": {
           "status": true,
-          "interpretation": "50-day MA ($7,058) well above 200-day MA ($6,831) — bullish Golden Cross intact"
+          "interpretation": "50-day MA ($7,058) well above 200-day MA ($6,831) \u2014 bullish Golden Cross intact"
         },
         "rsi_assessment": {
           "value": 68.11,
@@ -122,7 +158,7 @@
       "name": "S&P 500 Stocks Above 50-Day Moving Average",
       "current_value": 71.5,
       "risk_level": "Low",
-      "interpretation": "Approximately 71.5% of S&P 500 stocks are above their 50-day MA — healthy participation in the rally.",
+      "interpretation": "Approximately 71.5% of S&P 500 stocks are above their 50-day MA \u2014 healthy participation in the rally.",
       "freshness_days": 2
     },
     "sp500_above_200dma": {
@@ -131,7 +167,7 @@
       "52_week_high": 68.58,
       "52_week_low": 42.14,
       "risk_level": "Moderate",
-      "interpretation": "Only 57.25% of S&P 500 stocks are above their 200-day MA while the index hits all-time highs — a notable breadth divergence. Down from 68.58 high. Narrowing participation raises concerns about sustainability of the rally.",
+      "interpretation": "Only 57.25% of S&P 500 stocks are above their 200-day MA while the index hits all-time highs \u2014 a notable breadth divergence. Down from 68.58 high. Narrowing participation raises concerns about sustainability of the rally.",
       "freshness_days": 1
     },
     "advance_decline_ratio": {
@@ -141,7 +177,7 @@
       "interpretation": "Advance/decline ratio positive but not overwhelmingly so. The index rally is disproportionately driven by mega-cap tech and AI stocks.",
       "freshness_days": 2
     },
-    "overall_breadth_assessment": "Cautious. S&P 500 at all-time highs but only 57% of constituents above 200-day MA — significant breadth divergence. Stock dispersion at historic highs (VIXEQ-VIX spread widest since Jan 2023). Mega-cap AI names leading while broader market participation lags. This divergence has historically preceded periods of increased volatility."
+    "overall_breadth_assessment": "Cautious. S&P 500 at all-time highs but only 57% of constituents above 200-day MA \u2014 significant breadth divergence. Stock dispersion at historic highs (VIXEQ-VIX spread widest since Jan 2023). Mega-cap AI names leading while broader market participation lags. This divergence has historically preceded periods of increased volatility."
   },
   "leverage_indicators": {
     "finra_margin_debt": {
@@ -174,7 +210,7 @@
       "risk_level": "Elevated"
     },
     "pik_usage": {
-      "description": "Payment-in-kind (PIK) interest — where borrowers pay interest with more debt rather than cash — continues to rise",
+      "description": "Payment-in-kind (PIK) interest \u2014 where borrowers pay interest with more debt rather than cash \u2014 continues to rise",
       "trend": "Increasing",
       "risk_level": "Elevated",
       "interpretation": "PIK usage signals borrower distress and masks true default levels. When borrowers cannot service cash interest, the loan quality deteriorates even without a formal default."
@@ -196,7 +232,12 @@
       "interpretation": "True credit stress is likely higher than the headline 6.0% default rate. Shadow defaults through covenant amendments and maturity extensions obscure the real picture."
     },
     "sector_vulnerabilities": {
-      "most_exposed": ["Healthcare rollups", "Software/SaaS (declining growth)", "Industrial/Manufacturing", "Consumer discretionary"],
+      "most_exposed": [
+        "Healthcare rollups",
+        "Software/SaaS (declining growth)",
+        "Industrial/Manufacturing",
+        "Consumer discretionary"
+      ],
       "risk_level": "Elevated"
     },
     "systemic_risk_assessment": "Private credit systemic risk is ELEVATED. Record default rates (6.0%), rising PIK usage, and extend-and-pretend practices suggest the true scope of distress exceeds headline numbers. Bank and insurer interconnectedness creates contagion pathways. However, the sector's distributed nature (many smaller loans vs concentrated positions) provides some buffer against rapid systemic transmission."
@@ -205,28 +246,41 @@
     "overall_crash_risk_level": "MODERATE",
     "confidence": 6,
     "risk_categories": {
-      "sentiment_risk": "Low — VIX low, Fear & Greed in 'Greed' but not extreme",
-      "valuation_risk": "High — CAPE at 39.6 and Buffett Indicator at all-time record 231.8%",
-      "macro_risk": "Low — Yield curve positive, no imminent recession signal",
-      "technical_risk": "Moderate — RSI near overbought, S&P at ATH, but trend intact",
-      "breadth_risk": "Moderate — Only 57% above 200-DMA while index at highs; breadth divergence",
-      "leverage_risk": "High — Record margin debt at $1.3T, up 53% YoY",
-      "private_credit_risk": "Elevated — Record 6.0% default rate, rising PIK, shadow defaults"
+      "near_term_stress": {
+        "level": "Low",
+        "description": "VIX at 15.32, Fear & Greed in 'Greed' zone but not extreme. Low implied volatility and bullish sentiment."
+      },
+      "valuation_vulnerability": {
+        "level": "High",
+        "description": "CAPE at 39.6 and Buffett Indicator at all-time record 231.8%. Extreme valuations historically precede major corrections."
+      },
+      "technical_regime": {
+        "level": "Moderate",
+        "description": "RSI near overbought, S&P at ATH with Golden Cross intact. Breadth divergence \u2014 only 57% above 200-DMA."
+      },
+      "market_structure": {
+        "level": "Elevated",
+        "description": "Record margin debt at $1.3T (53% YoY). Private credit defaults at 6.0%. Single-stock volatility divergence signals fragility."
+      },
+      "macro_environment": {
+        "level": "Low",
+        "description": "Yield curve positive at +46bps. No recession signal. Strong earnings growth (~28% YoY). Fed potentially moving toward cuts."
+      }
     },
     "key_warnings": [
-      "Buffett Indicator at all-time record high (231.8%) — exceeded +2SD threshold associated with prior market peaks",
-      "CAPE ratio at 39.6 — second-highest reading in 155 years of data",
-      "Margin debt at record $1.30 trillion — 53% YoY increase signals extreme speculation",
+      "Buffett Indicator at all-time record high (231.8%) \u2014 exceeded +2SD threshold associated with prior market peaks",
+      "CAPE ratio at 39.6 \u2014 second-highest reading in 155 years of data",
+      "Margin debt at record $1.30 trillion \u2014 53% YoY increase signals extreme speculation",
       "Private credit defaults at record 6.0% with shadow defaults adding ~3.5% more",
       "Breadth divergence: S&P 500 at ATH but only 57% of stocks above 200-DMA",
-      "Single-stock volatility (VIXEQ) at 1-year highs while index VIX at lows — record dispersion"
+      "Single-stock volatility (VIXEQ) at 1-year highs while index VIX at lows \u2014 record dispersion"
     ],
     "mitigating_factors": [
       "Strong corporate earnings: S&P 500 Q1 earnings growth ~28% YoY",
       "Geopolitical tailwinds: Iran deal optimism, potential end of Russia-Ukraine conflict",
-      "VIX at 15.32 — well below historical average, no panic in options market",
-      "Yield curve positive — no inversion, recession not imminent",
-      "Golden Cross intact (50-DMA well above 200-DMA) — bullish technical structure",
+      "VIX at 15.32 \u2014 well below historical average, no panic in options market",
+      "Yield curve positive \u2014 no inversion, recession not imminent",
+      "Golden Cross intact (50-DMA well above 200-DMA) \u2014 bullish technical structure",
       "Fed potentially moving toward rate cuts, which would support equities",
       "Market has absorbed tariff/geopolitical shocks and recovered strongly"
     ],
@@ -234,17 +288,33 @@
       "base_case": {
         "probability": 55,
         "outlook": "Continued grind higher with periodic 3-5% pullbacks. S&P 500 reaches 7,800-8,000 by year-end. Earnings growth and AI capex sustain mega-cap leadership while breadth gradually improves.",
-        "triggers": ["Continued strong earnings", "Iran deal finalized", "Fed signals rate cuts", "AI investment cycle continues"]
+        "triggers": [
+          "Continued strong earnings",
+          "Iran deal finalized",
+          "Fed signals rate cuts",
+          "AI investment cycle continues"
+        ]
       },
       "correction_case": {
         "probability": 30,
         "outlook": "10-15% correction from current highs. S&P 500 pulls back to 6,500-6,800 range (near 200-DMA). Triggered by breadth divergence resolution, leveraged position unwinding, or earnings disappointment.",
-        "triggers": ["Margin call cascade from record leverage", "AI earnings miss from major tech company", "Geopolitical shock (Iran deal collapse, escalation)", "Private credit contagion to banks"]
+        "triggers": [
+          "Margin call cascade from record leverage",
+          "AI earnings miss from major tech company",
+          "Geopolitical shock (Iran deal collapse, escalation)",
+          "Private credit contagion to banks"
+        ]
       },
       "crash_case": {
         "probability": 15,
         "outlook": "20%+ decline. S&P 500 drops to 5,800-6,200. Requires multiple simultaneous catalysts. Record valuation multiples and leverage create vulnerability to cascading sell-offs.",
-        "triggers": ["Systemic private credit crisis with bank contagion", "Fed forced into rate hikes on resurgent inflation", "Major geopolitical escalation", "Margin debt unwinding triggers liquidity crisis", "Mega-cap earnings collapse"]
+        "triggers": [
+          "Systemic private credit crisis with bank contagion",
+          "Fed forced into rate hikes on resurgent inflation",
+          "Major geopolitical escalation",
+          "Margin debt unwinding triggers liquidity crisis",
+          "Mega-cap earnings collapse"
+        ]
       }
     },
     "recommendation_framework": {
