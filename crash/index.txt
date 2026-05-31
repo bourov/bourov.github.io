@@ -1,4 +1,4 @@
-2:I[76394,["928","static/chunks/928-2493125d.js","931","static/chunks/app/page-9218cb36.js"],"DashboardClient"]
+2:I[76394,["928","static/chunks/928-2493125d.js","931","static/chunks/app/page-a1b2c3d4.js"],"DashboardClient"]
 3:I[98388,["185","static/chunks/app/layout-624af91c.js"],"ThemeProvider"]
 4:I[16146,[],""]
 5:I[94411,[],""]
