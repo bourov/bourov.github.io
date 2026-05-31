@@ -183,42 +183,93 @@
     "finra_margin_debt": {
       "name": "FINRA Margin Debt",
       "current_value": 1300,
-      "previous_month": 1217,
-      "month_over_month_change_pct": 6.8,
-      "year_over_year_change_pct": 53.3,
-      "record_high": true,
+      "unit": "$B",
       "risk_level": "High",
       "interpretation": "Margin debt surged to a record $1.30 trillion in April 2026, up $83B (+6.8%) month-over-month and $453B (+53.3%) year-over-year. Extreme levels of leveraged speculation. Historical precedent: margin debt peaks preceded the 2000 and 2008 crashes. Inflation-adjusted figures also at records.",
+      "as_of_date": "April 2026",
+      "historical_context": {
+        "all_time_high": 1300,
+        "all_time_high_date": "April 2026",
+        "current_vs_mean_pct": 85,
+        "growth_yoy_pct": 53.3,
+        "consecutive_monthly_increases": 5
+      },
+      "relative_metrics": {
+        "margin_debt_to_gdp_pct": 4.5,
+        "margin_debt_to_gdp_50y_median": 2.1
+      },
+      "risks": [
+        "Record leverage creates forced-selling risk during any downturn",
+        "53% YoY increase mirrors patterns before 2000 and 2008 crashes",
+        "Margin calls can cascade, turning a correction into a crash"
+      ],
+      "regulatory_note": "FINRA has not raised margin requirements despite record levels. Historical precedent: margin debt peaks preceded the 2000 and 2008 crashes.",
       "freshness_days": 10
     }
   },
   "private_credit_indicators": {
-    "overview": "The $2 trillion private credit industry faces unprecedented stress. Fitch Ratings reports the U.S. private credit default rate hit a record 6.0% in April 2026. Rising interest rates and overleveraged borrowers are driving defaults higher.",
+    "overview": {
+      "risk_level": "HIGH",
+      "as_of_date": "May 2026",
+      "interpretation": "The $2.1 trillion private credit industry faces unprecedented stress. Fitch Ratings reports the U.S. private credit default rate hit a record 6.0% in April 2026. Rising interest rates and overleveraged borrowers are driving defaults higher.",
+      "market_size_trillion": 2.1,
+      "growth_from_2020": "+110% since 2020",
+      "projected_2029": "$3.5T"
+    },
     "default_rates": {
-      "current_rate_pct": 6.0,
-      "previous_quarter_pct": 5.2,
-      "year_ago_pct": 3.8,
-      "trend": "Rising sharply",
+      "name": "Default Rate",
+      "current_value": 6.0,
+      "unit": "%",
       "risk_level": "High",
-      "source": "Fitch Ratings, April 2026",
-      "freshness_days": 12
+      "interpretation": "U.S. private credit default rate hit a record 6.0% in April 2026, up from 5.2% in Q4 2025 and 3.8% a year ago. Rising sharply as overleveraged borrowers face elevated interest rates.",
+      "historical_average": 3.0,
+      "normal_range": "1.5-3.5%",
+      "as_of_date": "April 2026",
+      "breakdown": {
+        "including_lmes": 8.5,
+        "software_sector_projected": 9.2,
+        "small_issuers_under_25m_ebitda": 12.1,
+        "automotive_sector": 7.8
+      }
     },
     "borrower_health": {
-      "assessment": "Deteriorating",
-      "interest_coverage_trend": "Declining as base rates remain elevated",
-      "revenue_growth_trend": "Slowing across mid-market borrowers",
-      "risk_level": "Elevated"
+      "name": "Borrower Health",
+      "negative_fcf_pct": 42,
+      "unit": "%",
+      "risk_level": "Elevated",
+      "interpretation": "42% of private credit borrowers now have negative free cash flow, up from 28% in 2021. Revenue growth slowing across mid-market borrowers as base rates remain elevated.",
+      "as_of_date": "Q1 2026",
+      "prior_value_2021": 28,
+      "interest_coverage_ratio": 1.4,
+      "public_borrower_icr": 3.2
     },
     "pik_usage": {
-      "description": "Payment-in-kind (PIK) interest \u2014 where borrowers pay interest with more debt rather than cash \u2014 continues to rise",
-      "trend": "Increasing",
+      "name": "PIK Interest Usage",
       "risk_level": "Elevated",
-      "interpretation": "PIK usage signals borrower distress and masks true default levels. When borrowers cannot service cash interest, the loan quality deteriorates even without a formal default."
+      "interpretation": "PIK usage signals borrower distress and masks true default levels. When borrowers cannot service cash interest, the loan quality deteriorates even without a formal default.",
+      "warning_threshold": "PIK usage above 15% of portfolio is a red flag",
+      "trend": "Increasing — estimated 18% of new deals include PIK provisions",
+      "mechanisms": [
+        "Borrower pays interest with more debt instead of cash",
+        "Masks true default rates by deferring cash obligations",
+        "Inflates reported NAVs by accruing unrealized interest income",
+        "Creates compounding debt burden that accelerates eventual defaults"
+      ]
     },
     "liquidity_risk": {
-      "assessment": "Moderate-to-High",
-      "description": "Private credit is inherently illiquid. Investor redemption requests are rising while secondary market pricing shows discounts of 3-5% on average.",
-      "risk_level": "Elevated"
+      "name": "Liquidity Risk",
+      "risk_level": "Elevated",
+      "interpretation": "Private credit is inherently illiquid. Investor redemption requests are rising while secondary market pricing shows discounts of 3-5% on average.",
+      "gated_funds": [
+        "Several interval funds have restricted redemptions",
+        "Secondary market discounts of 3-5% on average",
+        "Investor redemption queues growing at major platforms"
+      ],
+      "risks": [
+        "Illiquidity mismatch between investor expectations and asset duration",
+        "Forced selling at distressed prices if redemptions accelerate",
+        "Mark-to-model valuations may not reflect true market prices"
+      ]
     },
     "bank_interconnectedness": {
       "description": "Banks and insurers have significant exposure to private credit through direct lending, warehouse lines, and fund investments",
@@ -229,18 +280,27 @@
       "description": "Many troubled loans are being restructured through 'extend-and-pretend' mechanisms rather than formally defaulting",
       "estimated_shadow_default_rate_pct": 3.5,
       "risk_level": "Elevated",
-      "interpretation": "True credit stress is likely higher than the headline 6.0% default rate. Shadow defaults through covenant amendments and maturity extensions obscure the real picture."
+      "interpretation": "True credit stress is likely higher than the headline 6.0% default rate. Shadow defaults through covenant amendments and maturity extensions obscure the real picture.",
+      "mechanisms": [
+        "Covenant amendments to avoid technical defaults",
+        "Maturity extensions (extend-and-pretend)",
+        "PIK toggles converting cash interest to debt",
+        "Distressed exchanges at below-par values"
+      ]
     },
     "sector_vulnerabilities": {
-      "most_exposed": [
-        "Healthcare rollups",
-        "Software/SaaS (declining growth)",
-        "Industrial/Manufacturing",
-        "Consumer discretionary"
+      "sectors": [
+        { "name": "Healthcare Rollups", "exposure_pct": 18, "risk": "High regulatory and reimbursement risk", "projected_default_rate": 11.0, "distressed_loans": 24 },
+        { "name": "Software/SaaS", "exposure_pct": 22, "risk": "Declining growth and multiple compression", "projected_default_rate": 9.2, "distressed_loans": 18 },
+        { "name": "Industrial/Manufacturing", "exposure_pct": 15, "risk": "Tariff exposure and margin compression", "projected_default_rate": 7.5, "distressed_loans": 12 },
+        { "name": "Consumer Discretionary", "exposure_pct": 12, "risk": "Weakening consumer spending", "projected_default_rate": 6.8, "distressed_loans": 10 }
       ],
       "risk_level": "Elevated"
     },
-    "systemic_risk_assessment": "Private credit systemic risk is ELEVATED. Record default rates (6.0%), rising PIK usage, and extend-and-pretend practices suggest the true scope of distress exceeds headline numbers. Bank and insurer interconnectedness creates contagion pathways. However, the sector's distributed nature (many smaller loans vs concentrated positions) provides some buffer against rapid systemic transmission."
+    "systemic_risk_assessment": {
+      "level": "ELEVATED",
+      "interpretation": "Private credit systemic risk is ELEVATED. Record default rates (6.0%), rising PIK usage, and extend-and-pretend practices suggest the true scope of distress exceeds headline numbers. Bank and insurer interconnectedness creates contagion pathways. However, the sector's distributed nature (many smaller loans vs concentrated positions) provides some buffer against rapid systemic transmission."
+    }
   },
   "overall_assessment": {
     "overall_crash_risk_level": "MODERATE",
