@@ -4,41 +4,42 @@
       "probability_pct": 1.5,
       "confidence": 7,
       "key_drivers": [
-        "VIX at 16.12 — well below the 25+ stress threshold",
-        "S&P 500 at a record 7609.78 with strong momentum",
+        "VIX at 16.63 \u2014 well below the 25+ stress threshold",
+        "S&P 500 at 7553.68, just 0.74% off its 7609.78 record after a mild pullback",
+        "RSI-14 cooled to 67.0 \u2014 out of overbought territory",
         "No imminent macro catalyst on the immediate horizon"
       ],
-      "interpretation": "Extremely low near-term crash risk. VIX at 16.12 signals complacency and the S&P 500 sits at a record 7609.78. The historical base rate for a 5-day 20%+ drawdown is ~0.1%; nudged slightly higher only by stretched valuations, an overbought RSI (75.0), and event risk."
+      "interpretation": "Extremely low near-term crash risk. VIX at 16.63 still signals calm and the S&P 500 sits within 1% of its record after a minor June 3 dip. The historical base rate for a 5-day 20%+ drawdown is ~0.1%; nudged slightly higher only by stretched valuations and event risk."
     },
     "20_day": {
       "probability_pct": 4.0,
       "confidence": 6,
       "key_drivers": [
-        "CAPE near 39.7 — close to dot-com-era extremes",
-        "Buffett Indicator at a record high (~231%)",
+        "CAPE near 40.1 \u2014 close to dot-com-era extremes",
+        "Buffett Indicator at a record high (~233%)",
         "Record margin debt (~$1.3T) raises forced-selling risk",
-        "RSI-14 at 75.0 — now overbought",
-        "Equity put/call at a ~4-year low — froth in call buying"
+        "Equity put/call near 0.49 \u2014 froth in call buying",
+        "Fear & Greed slipped from Greed to Neutral (54)"
       ],
-      "interpretation": "Low but non-trivial risk. Extreme valuations, record leverage, and an overbought tape (RSI 75.0) create vulnerability to exogenous shocks. Base rate ~1.5% adjusted upward for CAPE near 40, a record Buffett Indicator, and frothy options positioning; partly offset by a positive (un-inverted) yield curve and contained volatility."
+      "interpretation": "Low but non-trivial risk. Extreme valuations, record leverage, and frothy options positioning create vulnerability to exogenous shocks. Base rate ~1.5% adjusted upward for CAPE near 40 and a record Buffett Indicator; partly offset by a positive (un-inverted) yield curve, contained volatility, and an RSI that has cooled to 67.0."
     },
     "60_day": {
       "probability_pct": 7.5,
       "confidence": 5,
       "key_drivers": [
-        "Valuation extremes: CAPE ~39.7 and a record Buffett Indicator (~231%) — levels seen only near major tops",
+        "Valuation extremes: CAPE ~40.1 and a record Buffett Indicator (~233%) \u2014 levels seen only near major tops",
         "Record margin debt (~$1.3T) creates a forced-selling channel on any downturn",
         "Private credit default rate at a record ~6.0% with rising shadow-default stress",
-        "Breadth divergence: only ~56% of S&P 500 above the 200-day MA despite the index at an all-time high",
+        "Breadth divergence: only ~56% of S&P 500 above the 200-day MA near all-time highs",
         "Rich AI-driven concentration in mega-cap leadership"
       ],
-      "interpretation": "Moderate risk over a two-month horizon. Base rate ~4% elevated to ~7.5% by the convergence of extreme valuations, record leverage, narrowing breadth, overbought momentum, and record private-credit defaults. The combination of CAPE near 40 and a record Buffett Indicator has historically clustered near major market tops."
+      "interpretation": "Moderate risk over a two-month horizon. Base rate ~4% elevated to ~7.5% by the convergence of extreme valuations, record leverage, narrowing breadth, and record private-credit defaults. The combination of CAPE near 40 and a record Buffett Indicator has historically clustered near major market tops."
     },
     "methodology": "Based on current VIX level, technical indicators, macro conditions, historical base rates, and market structure analysis."
   },
   "metadata": {
-    "generated_at": "2026-06-03T06:00:00-05:00",
-    "analysis_date": "2026-06-03",
+    "generated_at": "2026-06-04T06:00:00-05:00",
+    "analysis_date": "2026-06-04",
     "data_source": "yfinance, weather.gov, FRED, FINRA, Fitch, CNN Business, CBOE, web research",
     "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. Past performance and historical patterns do not guarantee future results.",
     "dashboard_version": "1.0"
@@ -46,9 +47,9 @@
   "sentiment_indicators": {
     "vix": {
       "name": "CBOE Volatility Index (VIX)",
-      "current_value": 16.12,
+      "current_value": 16.63,
       "risk_level": "Low",
-      "interpretation": "VIX at 16.12 indicates low fear and complacency, below the long-term average near 19-20. Persistent calm at record index highs can mask fragility beneath the surface.",
+      "interpretation": "VIX at 16.63 indicates low fear and complacency, below the long-term average near 19-20. Persistent calm near record index highs can mask fragility beneath the surface.",
       "historical_average": 19.5,
       "unit": "",
       "normal_range": "12-20",
@@ -60,29 +61,29 @@
     },
     "put_call_ratio": {
       "name": "CBOE Equity Put/Call Ratio",
-      "current_value": 0.45,
+      "current_value": 0.49,
       "risk_level": "Low",
-      "interpretation": "The equity put/call ratio's 5-day average has fallen to ~0.45, a low last seen in early 2022 and consistent with insatiable call buying. Such froth is a contrarian caution flag and signals little downside hedging.",
+      "interpretation": "The CBOE equity put/call ratio sits near 0.49, a low consistent with heavy call buying and little downside hedging. Such froth is a contrarian caution flag.",
       "historical_average": 0.65,
       "unit": "",
       "normal_range": "0.7-1.2",
-      "as_of_date": "2026-06-02",
+      "as_of_date": "2026-06-03",
       "sub_metrics": {
-        "equity_pcr": 0.45,
+        "equity_pcr": 0.49,
         "index_pcr": 1.1,
         "total_pcr": 0.7
       }
     },
     "fear_greed_index": {
       "name": "CNN Fear & Greed Index",
-      "current_value": 63,
+      "current_value": 54,
       "risk_level": "Moderate",
-      "interpretation": "Reading of 63 sits in the 'Greed' zone — optimistic but short of extreme greed (>75). Sentiment has held in the low-60s as the S&P 500 prints fresh record highs.",
+      "interpretation": "Reading of 54 sits in the 'Neutral' zone, having slipped from 'Greed' as the S&P 500 pulled back modestly on June 3. Sentiment is no longer stretched but remains far from fear.",
       "historical_average": 50,
       "unit": "",
       "normal_range": "25-75",
-      "current_category": "Greed",
-      "as_of_date": "2026-06-02",
+      "current_category": "Neutral",
+      "as_of_date": "2026-06-03",
       "recent_history": {
         "1_week_ago": 61,
         "1_month_ago": 58
@@ -92,23 +93,23 @@
   "valuation_indicators": {
     "shiller_cape": {
       "name": "Shiller CAPE Ratio (Cyclically Adjusted P/E)",
-      "current_value": 39.7,
+      "current_value": 40.1,
       "historical_mean": 17.1,
       "risk_level": "High",
-      "interpretation": "CAPE near 39.7 is among the highest readings in ~155 years of data, exceeded only by the dot-com peak (~44 in 1999-2000) and approaching 1929 levels. Prior readings above 38 preceded major drawdowns.",
+      "interpretation": "CAPE near 40.1 is among the highest readings in ~155 years of data, exceeded only by the dot-com peak (~44 in 1999-2000) and approaching 1929 levels. Prior readings above 38 preceded major drawdowns.",
       "unit": "x",
       "historical_context": {
         "all_time_high": 44.2,
         "all_time_high_date": "1999-12",
-        "current_vs_mean_pct": 132.2
+        "current_vs_mean_pct": 134.5
       },
       "implied_future_return": "Roughly 0-2% annualized real over the next decade (based on excess CAPE yield)"
     },
     "buffett_indicator": {
       "name": "Buffett Indicator (Total Market Cap / GDP)",
-      "current_value": 231,
+      "current_value": 233,
       "risk_level": "High",
-      "interpretation": "At ~231% the Buffett Indicator just set a new all-time high, far above the ~200% 'playing with fire' threshold Buffett cited and far above the long-term average near 85%. Recent reporting flags it as one of the strongest valuation warnings on record.",
+      "interpretation": "At ~233% the Buffett Indicator remains at a record high, far above the ~200% 'playing with fire' threshold Buffett cited and far above the long-term average near 85%. It ranks among the strongest valuation warnings on record.",
       "unit": "%",
       "normal_range": "75-120%",
       "historical_average": 85,
@@ -124,21 +125,21 @@
   "macro_indicators": {
     "yield_curve_10y2y": {
       "name": "10-Year minus 2-Year Treasury Spread",
-      "current_value": 0.48,
+      "current_value": 0.43,
       "risk_level": "Low",
-      "interpretation": "The 10Y-2Y spread is positive at +0.48%, having un-inverted from the 2022-2024 inversion. A positive slope removes the classic recession flag, though lagged effects of the prior inversion linger. 10Y near 4.45%, 2Y near 3.97%.",
+      "interpretation": "The 10Y-2Y spread is positive at +0.43%, having un-inverted from the 2022-2024 inversion. A positive slope removes the classic recession flag, though lagged effects of the prior inversion linger. 10Y near 4.49%, 2Y near 4.06%.",
       "unit": "%",
       "normal_range": "0.5-2.0%",
       "historical_average": 0.9,
-      "as_of_date": "2026-06-02",
+      "as_of_date": "2026-06-03",
       "inversion_check": {
         "currently_inverted": false,
         "last_inversion_date": "2024-09",
-        "days_since_uninversion": 622
+        "days_since_uninversion": 623
       },
-      "recession_signal": "No active signal — curve positive; monitor for re-flattening",
+      "recession_signal": "No active signal \u2014 curve positive; monitor for re-flattening",
       "recent_values": {
-        "1_week_ago": 0.46,
+        "1_week_ago": 0.47,
         "1_month_ago": 0.49,
         "1_year_ago": 0.34
       }
@@ -147,21 +148,21 @@
   "technical_indicators": {
     "sp500_technicals": {
       "name": "S&P 500 Technical Analysis",
-      "current_price": 7609.78,
+      "current_price": 7553.68,
       "overall_risk_level": "Elevated",
-      "overall_interpretation": "Strong uptrend: price 7.18% above the 50-day MA and 11.22% above the 200-day MA with a Golden Cross intact. But RSI 75.0 is now overbought and the index sits at an all-time high, leaving no margin of safety despite bullish momentum.",
-      "as_of_date": "2026-06-02",
+      "overall_interpretation": "Strong uptrend: price 6.10% above the 50-day MA and 10.31% above the 200-day MA with a Golden Cross intact. RSI has cooled to 67.0 after a minor pullback from the 7609.78 record, easing the overbought condition but leaving valuations stretched.",
+      "as_of_date": "2026-06-03",
       "sub_indicators": {
         "price_vs_50dma": {
-          "value": 7.18,
+          "value": 6.1,
           "unit": "%",
-          "interpretation": "Price is 7.18% above the 50-day MA (7100.11) — bullish but extended.",
+          "interpretation": "Price is 6.10% above the 50-day MA (7119.56) \u2014 bullish but extended.",
           "risk_level": "Low"
         },
         "price_vs_200dma": {
-          "value": 11.22,
+          "value": 10.31,
           "unit": "%",
-          "interpretation": "Price is 11.22% above the 200-day MA (6842.2) — confirms the long-term uptrend.",
+          "interpretation": "Price is 10.31% above the 200-day MA (6847.72) \u2014 confirms the long-term uptrend.",
           "risk_level": "Low"
         },
         "golden_cross": {
@@ -169,21 +170,21 @@
           "unit": "",
           "status": true,
           "risk_level": "Low",
-          "interpretation": "50-day MA is above the 200-day MA — Golden Cross active, a bullish long-term posture."
+          "interpretation": "50-day MA is above the 200-day MA \u2014 Golden Cross active, a bullish long-term posture."
         },
         "rsi_assessment": {
-          "value": 75.0,
+          "value": 67.0,
           "unit": "",
-          "zone": "Overbought",
-          "interpretation": "RSI-14 at 75.0 is above the overbought line (70), signaling stretched momentum and elevated pullback risk.",
-          "risk_level": "Elevated"
+          "zone": "Neutral-Bullish",
+          "interpretation": "RSI-14 at 67.0 is below the overbought line (70) after a small pullback \u2014 strong momentum without an extreme reading.",
+          "risk_level": "Moderate"
         },
         "drawdown_assessment": {
-          "value": 0.0,
+          "value": 0.74,
           "unit": "%",
-          "current_drawdown_pct": 0.0,
-          "interpretation": "Index is at its all-time high (7609.78 on 2026-06-02) — drawdown ~0.0%. No cushion, but no technical breakdown.",
-          "risk_level": "Elevated"
+          "current_drawdown_pct": 0.74,
+          "interpretation": "Index is 0.74% below its 7609.78 all-time high (set 2026-06-02) \u2014 a shallow dip, no technical breakdown.",
+          "risk_level": "Moderate"
         }
       }
     }
@@ -191,37 +192,37 @@
   "market_breadth": {
     "sp500_above_50dma": {
       "name": "S&P 500 Stocks Above 50-Day Moving Average",
-      "current_value": 58.0,
+      "current_value": 57.0,
       "risk_level": "Moderate",
-      "interpretation": "About 58% of S&P 500 members are above their 50-day MA — adequate but unremarkable participation while the index prints record highs.",
+      "interpretation": "About 57% of S&P 500 members are above their 50-day MA \u2014 adequate but unremarkable participation near record highs.",
       "unit": "% of S&P 500",
       "normal_range": "50-80%",
       "historical_average": 60,
-      "as_of_date": "2026-06-02"
+      "as_of_date": "2026-06-03"
     },
     "sp500_above_200dma": {
       "name": "S&P 500 Stocks Above 200-Day Moving Average (S5TH)",
       "current_value": 56.0,
       "risk_level": "Elevated",
-      "interpretation": "Only ~56% of constituents are above their 200-day MA while the index is at an all-time high — a breadth divergence that has historically preceded corrections.",
+      "interpretation": "Only ~56% of constituents are above their 200-day MA near an all-time high \u2014 a breadth divergence that has historically preceded corrections.",
       "unit": "% of S&P 500",
       "normal_range": "50-75%",
       "historical_average": 60,
-      "as_of_date": "2026-06-02"
+      "as_of_date": "2026-06-03"
     },
     "advance_decline_ratio": {
       "name": "NYSE Advance/Decline Ratio",
-      "current_value": 1.1,
+      "current_value": 1.0,
       "risk_level": "Moderate",
-      "interpretation": "Slightly positive but soft — advances are led by a narrow group of mega-caps while broader participation fades.",
+      "interpretation": "Roughly neutral \u2014 advances are led by a narrow group of mega-caps while broader participation fades.",
       "unit": "",
       "normal_range": "0.8-1.5",
       "historical_average": 1.0,
-      "as_of_date": "2026-06-02"
+      "as_of_date": "2026-06-03"
     },
     "overall_breadth_assessment": {
       "risk_level": "Elevated",
-      "interpretation": "DIVERGENT — the index is at record highs but only about half of constituents are in long-term uptrends. Narrow, concentrated leadership of this kind has historically preceded corrections within 2-6 months."
+      "interpretation": "DIVERGENT \u2014 the index is within 1% of record highs but only about half of constituents are in long-term uptrends. Narrow, concentrated leadership of this kind has historically preceded corrections within 2-6 months."
     }
   },
   "leverage_indicators": {
@@ -254,7 +255,7 @@
   "private_credit_indicators": {
     "overview": {
       "risk_level": "HIGH",
-      "as_of_date": "2026-06-02",
+      "as_of_date": "2026-06-03",
       "interpretation": "Private credit has scaled rapidly into a major, opaque segment of corporate financing, with record defaults, weaker borrower fundamentals, growing PIK usage, and deepening bank interconnectedness raising systemic concerns.",
       "market_size_trillion": 2.0,
       "growth_from_2020": "roughly 2.5x since 2020",
@@ -290,7 +291,7 @@
     "pik_usage": {
       "name": "PIK Interest Usage",
       "risk_level": "Elevated",
-      "interpretation": "Payment-in-kind (PIK) income has grown as a share of BDC revenue, indicating borrowers are deferring cash interest by adding to principal — a classic sign of stress masked as accrual income.",
+      "interpretation": "Payment-in-kind (PIK) income has grown as a share of BDC revenue, indicating borrowers are deferring cash interest by adding to principal \u2014 a classic sign of stress masked as accrual income.",
       "warning_threshold": "PIK income above ~10% of total investment income",
       "trend": "Rising across business development companies (BDCs)",
       "mechanisms": [
@@ -318,7 +319,7 @@
     "bank_interconnectedness": {
       "name": "Bank Exposure to Private Credit",
       "risk_level": "Elevated",
-      "interpretation": "Bank lending to non-depository financial institutions (NDFIs) — including private-credit funds — has grown rapidly, creating indirect banking-system exposure to private-credit losses.",
+      "interpretation": "Bank lending to non-depository financial institutions (NDFIs) \u2014 including private-credit funds \u2014 has grown rapidly, creating indirect banking-system exposure to private-credit losses.",
       "total_ndfi_exposure_trillion": 1.3,
       "growth_since_2010": "more than 5x",
       "bank_commitments_to_pc_funds": "Hundreds of billions in subscription lines and fund-level facilities",
@@ -412,15 +413,15 @@
     "risk_categories": {
       "near_term_stress": {
         "level": "Low",
-        "description": "VIX at 16.12, tight credit spreads, and an un-inverted yield curve point to minimal near-term stress."
+        "description": "VIX at 16.63, tight credit spreads, and an un-inverted yield curve point to minimal near-term stress."
       },
       "valuation_vulnerability": {
         "level": "High",
-        "description": "CAPE near 39.7 and a record Buffett Indicator (~231%) leave the market priced for perfection with little margin of safety."
+        "description": "CAPE near 40.1 and a record Buffett Indicator (~233%) leave the market priced for perfection with little margin of safety."
       },
       "technical_regime": {
-        "level": "Elevated",
-        "description": "Bullish trend (Golden Cross, price above both MAs) but RSI 75.0 is now overbought at an all-time high."
+        "level": "Moderate",
+        "description": "Bullish trend (Golden Cross, price above both MAs) with RSI cooled to 67.0 after a shallow 0.74% dip from the record."
       },
       "market_structure": {
         "level": "Elevated",
@@ -432,23 +433,24 @@
       }
     },
     "key_warnings": [
-      "Valuations (CAPE ~39.7, Buffett Indicator at a record ~231%) are at levels historically associated with major tops",
+      "Valuations (CAPE ~40.1, Buffett Indicator at a record ~233%) are at levels historically associated with major tops",
       "Record margin debt (~$1.3T) creates a forced-selling channel in any drawdown",
-      "Momentum is stretched: RSI-14 at 75.0 is overbought at an all-time high",
-      "Breadth divergence: only ~56% of S&P 500 members above their 200-day MA at record highs",
+      "Breadth divergence: only ~56% of S&P 500 members above their 200-day MA near record highs",
+      "Frothy options positioning: equity put/call near 0.49 signals little downside hedging",
       "Record private-credit defaults (~6.0%) and shadow restructurings signal building stress in opaque credit markets"
     ],
     "mitigating_factors": [
-      "VIX is low and credit spreads are tight — no acute stress priced in",
+      "VIX is low and credit spreads are tight \u2014 no acute stress priced in",
       "Yield curve is positive (un-inverted), removing the classic recession flag",
       "Strong technical uptrend with a Golden Cross and price above key moving averages",
+      "RSI has cooled to 67.0, easing the prior overbought condition",
       "Corporate earnings growth remains positive and broad-based"
     ],
     "scenario_analysis": {
       "base_case": {
         "probability": 68,
         "outlook": "Continued grind higher or sideways consolidation; volatility stays contained.",
-        "timeframe": "Ongoing — next 2-3 months",
+        "timeframe": "Ongoing \u2014 next 2-3 months",
         "triggers": [
           "Stable rates and resilient earnings",
           "Continued AI-driven capex and demand"
