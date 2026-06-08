@@ -1,7 +1,7 @@
 {
   "crash_probability": {
     "5_day": {
-      "probability_pct": 0.2,
+      "probability_pct": 0.1,
       "confidence": 8,
       "key_drivers": [
         "CAPE at 41.57 \u2014 near historical extremes (dot-com peak was 44.2)",
@@ -9,10 +9,10 @@
         "Only 57.0% of S&P 500 above 200dma \u2014 breadth divergence",
         "Margin debt growing 53% YoY \u2014 elevated leverage"
       ],
-      "interpretation": "Extremely Low 5-day crash risk at 0.2%. Historical base rate adjusted for current VIX (21.51), RSI (47.93), CAPE (41.57)."
+      "interpretation": "Extremely Low 5-day crash risk at 0.1%. Historical base rate adjusted for current VIX (18.79), RSI (47.93), CAPE (41.57)."
     },
     "20_day": {
-      "probability_pct": 2.5,
+      "probability_pct": 1.7,
       "confidence": 8,
       "key_drivers": [
         "CAPE at 41.57 \u2014 near historical extremes (dot-com peak was 44.2)",
@@ -20,10 +20,10 @@
         "Only 57.0% of S&P 500 above 200dma \u2014 breadth divergence",
         "Margin debt growing 53% YoY \u2014 elevated leverage"
       ],
-      "interpretation": "Low 20-day crash risk at 2.5%. Historical base rate adjusted for current VIX (21.51), RSI (47.93), CAPE (41.57)."
+      "interpretation": "Extremely Low 20-day crash risk at 1.7%. Historical base rate adjusted for current VIX (18.79), RSI (47.93), CAPE (41.57)."
     },
     "60_day": {
-      "probability_pct": 22.2,
+      "probability_pct": 18.1,
       "confidence": 8,
       "key_drivers": [
         "CAPE at 41.57 \u2014 near historical extremes (dot-com peak was 44.2)",
@@ -31,13 +31,13 @@
         "Only 57.0% of S&P 500 above 200dma \u2014 breadth divergence",
         "Margin debt growing 53% YoY \u2014 elevated leverage"
       ],
-      "interpretation": "High 60-day crash risk at 22.2%. Historical base rate adjusted for current VIX (21.51), RSI (47.93), CAPE (41.57)."
+      "interpretation": "Elevated 60-day crash risk at 18.1%. Historical base rate adjusted for current VIX (18.79), RSI (47.93), CAPE (41.57)."
     },
     "methodology": "Based on current VIX level, technical indicators, macro conditions, historical base rates, and market structure analysis."
   },
   "metadata": {
-    "generated_at": "2026-06-07T22:11:42-0500",
-    "analysis_date": "2026-06-07",
+    "generated_at": "2026-06-08T07:26:27-0500",
+    "analysis_date": "2026-06-08",
     "data_source": "yfinance, weather.gov, FRED, FINRA, CNN Business, web scraping",
     "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. Past performance and historical patterns do not guarantee future results.",
     "dashboard_version": "1.0"
@@ -45,9 +45,9 @@
   "sentiment_indicators": {
     "vix": {
       "name": "CBOE Volatility Index (VIX)",
-      "current_value": 21.51,
-      "risk_level": "Elevated",
-      "interpretation": "VIX at 21.51 indicates moderate anxiety. Near the long-term average of ~20.",
+      "current_value": 18.79,
+      "risk_level": "Moderate",
+      "interpretation": "VIX at 18.79 indicates low market fear and complacency. Well below the long-term average of ~20.",
       "historical_average": 19.5,
       "unit": "",
       "normal_range": "12-20",
@@ -55,7 +55,7 @@
         "high": 31.05,
         "low": 13.47
       },
-      "as_of_date": "2026-06-05"
+      "as_of_date": "2026-06-08"
     },
     "put_call_ratio": {
       "name": "CBOE Equity Put/Call Ratio",
@@ -65,7 +65,7 @@
       "historical_average": 0.82,
       "unit": "",
       "normal_range": "0.7-1.2",
-      "as_of_date": "2026-06-07",
+      "as_of_date": "2026-06-08",
       "sub_metrics": {
         "equity_pcr": 0.6,
         "index_pcr": 0.78,
@@ -81,7 +81,7 @@
       "unit": "",
       "normal_range": "25-75",
       "current_category": "Fear",
-      "as_of_date": "2026-06-07",
+      "as_of_date": "2026-06-08",
       "recent_history": {
         "1_week_ago": 42,
         "1_month_ago": 42
@@ -133,7 +133,7 @@
       "inversion_check": {
         "currently_inverted": false,
         "last_inversion_date": "2024-09-15",
-        "days_since_uninversion": 630
+        "days_since_uninversion": 631
       },
       "recession_signal": "No active signal \u2014 prior inversion effects may still be lagging",
       "recent_values": {
@@ -196,7 +196,7 @@
       "unit": "% of S&P 500",
       "normal_range": "50-80%",
       "historical_average": 60,
-      "as_of_date": "2026-06-07"
+      "as_of_date": "2026-06-08"
     },
     "sp500_above_200dma": {
       "name": "S&P 500 Stocks Above 200-Day Moving Average (S5TH)",
@@ -206,7 +206,7 @@
       "unit": "% of S&P 500",
       "normal_range": "50-75%",
       "historical_average": 57,
-      "as_of_date": "2026-06-07"
+      "as_of_date": "2026-06-08"
     },
     "advance_decline_ratio": {
       "name": "NYSE Advance/Decline Ratio",
@@ -216,7 +216,7 @@
       "unit": "",
       "normal_range": "0.8-1.5",
       "historical_average": 1.1,
-      "as_of_date": "2026-06-07"
+      "as_of_date": "2026-06-08"
     },
     "overall_breadth_assessment": {
       "risk_level": "Moderate",
@@ -253,7 +253,7 @@
   "private_credit_indicators": {
     "overview": {
       "risk_level": "HIGH",
-      "as_of_date": "2026-06-07",
+      "as_of_date": "2026-06-08",
       "interpretation": "Private credit has grown to a $1.7T market. Rising defaults (6.0%), widespread PIK usage, and bank interconnectedness create contagion channels.",
       "market_size_trillion": 1.7,
       "growth_from_2020": "133% growth from $0.73T in 2020",
@@ -413,8 +413,8 @@
     "confidence": 6,
     "risk_categories": {
       "near_term_stress": {
-        "level": "Moderate",
-        "description": "VIX at 21.51, RSI at 48. Some near-term stress signals."
+        "level": "Low",
+        "description": "VIX at 18.79, RSI at 48. Low near-term stress."
       },
       "valuation_vulnerability": {
         "level": "High",
@@ -441,6 +441,7 @@
       "Private credit defaults at 6.0% cyclical high"
     ],
     "mitigating_factors": [
+      "VIX at 18.79 shows no near-term stress",
       "Yield curve positive \u2014 no active recession signal",
       "Corporate earnings growth remains positive",
       "AI/semiconductor capex cycle providing fundamental support",
@@ -481,7 +482,7 @@
       "moderate_investors": "Rebalance to target allocation. Trim positions above fair value. Use protective puts on concentrated positions.",
       "aggressive_investors": "Ride momentum with defined risk management. Set trailing stops at 8-10%. Avoid adding leverage at current valuations."
     },
-    "historical_context": "Current market combines extreme valuations (CAPE 41.57, Buffett 219.0%) with moderate volatility (VIX 21.51) and record leverage ($1300B margin debt).",
+    "historical_context": "Current market combines extreme valuations (CAPE 41.57, Buffett 219.0%) with low volatility (VIX 18.79) and record leverage ($1300B margin debt).",
     "disclaimer": "This assessment is for informational purposes only and does not constitute investment advice. Always consult a qualified financial advisor."
   }
 }
