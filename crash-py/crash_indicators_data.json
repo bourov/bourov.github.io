@@ -36,7 +36,7 @@
     "methodology": "Based on current VIX level, technical indicators, macro conditions, historical base rates, and market structure analysis."
   },
   "metadata": {
-    "generated_at": "2026-06-08T21:47:48-0500",
+    "generated_at": "2026-06-08T22:18:39-0500",
     "analysis_date": "2026-06-08",
     "data_source": "yfinance, weather.gov, FRED, FINRA, CNN Business, web scraping",
     "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. Past performance and historical patterns do not guarantee future results.",
@@ -87,6 +87,55 @@
         "1_month_ago": 40
       }
     }
+  },
+  "dalio_bubble_indicator": {
+    "name": "Dalio-Style Bubble Indicator",
+    "composite_score": 71.4,
+    "composite_reading": "Bubble",
+    "risk_level": "High",
+    "unit": "0-100",
+    "interpretation": "Composite bubble score at 71.4/100 (Bubble). Ray Dalio's framework scores 6 dimensions: prices vs traditional measures, unsustainable conditions, new buyer entry, bullish sentiment, leverage, and forward purchases. Current level is in bubble territory.",
+    "as_of_date": "2026-06-08",
+    "gauges": {
+      "prices_vs_traditional_measures": {
+        "score": 91.8,
+        "reading": "Extreme Bubble",
+        "description": "How high are prices relative to traditional measures (CAPE, Buffett Indicator)?"
+      },
+      "unsustainable_conditions": {
+        "score": 95.0,
+        "reading": "Extreme Bubble",
+        "description": "Are prices discounting unsustainable conditions (equity risk premium)?"
+      },
+      "new_buyer_entry": {
+        "score": 36.0,
+        "reading": "Normal",
+        "description": "How many new buyers have entered the market (retail participation proxy)?"
+      },
+      "bullish_sentiment": {
+        "score": 13.6,
+        "reading": "Depressed",
+        "description": "How broadly bullish is sentiment (Fear & Greed, RSI)?"
+      },
+      "leverage_purchases": {
+        "score": 100.0,
+        "reading": "Extreme Bubble",
+        "description": "Are purchases being financed by high leverage (margin debt)?"
+      },
+      "forward_purchases": {
+        "score": 92.0,
+        "reading": "Extreme Bubble",
+        "description": "Have buyers made extended forward purchases (capex, forward speculation)?"
+      }
+    },
+    "historical_comparisons": {
+      "1929_peak": 100,
+      "2000_dot_com_peak": 100,
+      "2021_meme_stock_era": 73,
+      "current": 71.4
+    },
+    "methodology": "Rules-based proxy of Ray Dalio's 6-gauge bubble framework. Each gauge scores 0-100 using CAPE, Buffett Indicator, equity risk premium, Fear & Greed Index, RSI, and margin debt metrics. Composite is equal-weighted average.",
+    "source_note": "Rules-based proxy \u2014 not Bridgewater's proprietary indicator. Inspired by Dalio's publicly described 6-gauge framework."
   },
   "valuation_indicators": {
     "shiller_cape": {
