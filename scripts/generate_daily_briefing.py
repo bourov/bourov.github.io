@@ -55,7 +55,7 @@ def fetch_weather():
 
         return {"forecast_periods": periods[:6], "current_observation": {
             "temperature_c": observation.get("temperature", {}).get("value"),
-            "humidity": observation.get("relativeHumidity", {}).get("value"),
+            "dewpoint_c": observation.get("dewpoint", {}).get("value"),
             "wind_speed_kmh": observation.get("windSpeed", {}).get("value"),
             "wind_direction": observation.get("windDirection", {}).get("value"),
             "description": observation.get("textDescription"),
@@ -99,16 +99,16 @@ Location: Austin, TX
 
 1. **Weather — Austin, TX (ZIP 78759)** (🌤️)
    Table rows: current temp (°C + feels-like), tonight low, tomorrow high,
-   precipitation chance, humidity, wind, conditions, sunrise/sunset.
+   precipitation chance, dew point, wind, conditions, sunrise/sunset.
    {"Use the real weather.gov data above." if weather_data else "Look up today's Austin TX weather."}
    Source line: "National Weather Service — {date_long}"
 
 2. **Positive Russia News** (✅) — 2-3 uplifting or constructive stories from
    Russia published in the last 24 hours. Real URLs only. Exclude The Moscow
-   Times.
+   Times and all Ukrainian sources (Kyiv Post, Kyiv Independent, Ukrainska Pravda, etc.).
 
 3. **Neutral Russia News** (📰) — 2-4 factual, objective items about Russia
-   from the last 24 hours. Real URLs only.
+   from the last 24 hours. Real URLs only. Exclude Ukrainian sources.
 
 4. **St. Petersburg News** (🏛️) — 4-6 items from Saint Petersburg, Russia.
    Mix English and Russian sources; tag each with an EN or RU badge.
@@ -128,7 +128,7 @@ Location: Austin, TX
   border, linked headline + source/date line
 - Language badges: EN = #e8f4fd bg / #1565C0 text; RU = #e8e8e8 bg / #555
 - `.footer`: #f0f0f0 bg, small centered text noting 24-hour sources,
-  "The Moscow Times excluded. Deduplicated against 30-day history."
+  "The Moscow Times and Ukrainian sources excluded. Deduplicated against 30-day history."
 
 Output ONLY the raw HTML (no markdown fences, no commentary).
 Every news link must be a real, verifiable URL from a genuine publication."""
