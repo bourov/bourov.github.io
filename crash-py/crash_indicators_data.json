@@ -36,8 +36,8 @@
     "methodology": "Based on current VIX level, technical indicators, macro conditions, historical base rates, and market structure analysis."
   },
   "metadata": {
-    "generated_at": "2026-06-13T06:12:21-0500",
-    "analysis_date": "2026-06-13",
+    "generated_at": "2026-06-14T06:27:49-0500",
+    "analysis_date": "2026-06-14",
     "data_source": "yfinance, weather.gov, FRED, FINRA, CNN Business, web scraping",
     "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. Past performance and historical patterns do not guarantee future results.",
     "dashboard_version": "1.0"
@@ -65,7 +65,7 @@
       "historical_average": 0.82,
       "unit": "",
       "normal_range": "0.7-1.2",
-      "as_of_date": "2026-06-13",
+      "as_of_date": "2026-06-14",
       "sub_metrics": {
         "equity_pcr": 0.6,
         "index_pcr": 0.78,
@@ -81,7 +81,7 @@
       "unit": "",
       "normal_range": "25-75",
       "current_category": "Fear",
-      "as_of_date": "2026-06-13",
+      "as_of_date": "2026-06-14",
       "recent_history": {
         "1_week_ago": 34,
         "1_month_ago": 34
@@ -95,7 +95,7 @@
     "risk_level": "Elevated",
     "unit": "0-100",
     "interpretation": "Composite bubble score at 68.4/100 (Bubble). Ray Dalio's framework scores 6 dimensions: prices vs traditional measures, unsustainable conditions, new buyer entry, bullish sentiment, leverage, and forward purchases. Current level is in bubble territory.",
-    "as_of_date": "2026-06-13",
+    "as_of_date": "2026-06-14",
     "gauges": {
       "prices_vs_traditional_measures": {
         "score": 91.3,
@@ -182,7 +182,7 @@
       "inversion_check": {
         "currently_inverted": false,
         "last_inversion_date": "2024-09-15",
-        "days_since_uninversion": 636
+        "days_since_uninversion": 637
       },
       "recession_signal": "No active signal \u2014 prior inversion effects may still be lagging",
       "recent_values": {
@@ -245,7 +245,7 @@
       "unit": "% of S&P 500",
       "normal_range": "50-80%",
       "historical_average": 60,
-      "as_of_date": "2026-06-13"
+      "as_of_date": "2026-06-14"
     },
     "sp500_above_200dma": {
       "name": "S&P 500 Stocks Above 200-Day Moving Average (S5TH)",
@@ -255,7 +255,7 @@
       "unit": "% of S&P 500",
       "normal_range": "50-75%",
       "historical_average": 57,
-      "as_of_date": "2026-06-13"
+      "as_of_date": "2026-06-14"
     },
     "advance_decline_ratio": {
       "name": "NYSE Advance/Decline Ratio",
@@ -265,7 +265,7 @@
       "unit": "",
       "normal_range": "0.8-1.5",
       "historical_average": 1.1,
-      "as_of_date": "2026-06-13"
+      "as_of_date": "2026-06-14"
     },
     "overall_breadth_assessment": {
       "risk_level": "Moderate",
@@ -302,7 +302,7 @@
   "private_credit_indicators": {
     "overview": {
       "risk_level": "HIGH",
-      "as_of_date": "2026-06-13",
+      "as_of_date": "2026-06-14",
       "interpretation": "Private credit has grown to a $1.7T market. Rising defaults (6.0%), widespread PIK usage, and bank interconnectedness create contagion channels.",
       "market_size_trillion": 1.7,
       "growth_from_2020": "133% growth from $0.73T in 2020",
