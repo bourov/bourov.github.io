@@ -116,6 +116,7 @@ Location: Austin, TX
 5. **Semiconductor & Investor News** (💹)
    - Sub-section **KLAC (KLA Corporation)** (🔬): 3-5 recent items.
    - Sub-section **CPO (Co-Packaged Optics)** (💡): 1-2 recent items.
+   - Sub-section **MLCC (Multi-Layer Ceramic Capacitors)** (🔋): 1-2 recent items.
 
 ### Styling rules (match exactly):
 - `<meta charset="UTF-8">`, viewport meta, CSP meta:
