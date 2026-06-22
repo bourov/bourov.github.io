@@ -9,7 +9,7 @@
         "Only 57.0% of S&P 500 above 200dma \u2014 breadth divergence",
         "Margin debt growing 53% YoY \u2014 elevated leverage"
       ],
-      "interpretation": "Extremely Low 5-day crash risk at 0.1%. Historical base rate adjusted for current VIX (16.4), RSI (45.94), CAPE (41.71)."
+      "interpretation": "Extremely Low 5-day crash risk at 0.1%. Historical base rate adjusted for current VIX (16.69), RSI (44.13), CAPE (41.71)."
     },
     "20_day": {
       "probability_pct": 1.7,
@@ -20,7 +20,7 @@
         "Only 57.0% of S&P 500 above 200dma \u2014 breadth divergence",
         "Margin debt growing 53% YoY \u2014 elevated leverage"
       ],
-      "interpretation": "Extremely Low 20-day crash risk at 1.7%. Historical base rate adjusted for current VIX (16.4), RSI (45.94), CAPE (41.71)."
+      "interpretation": "Extremely Low 20-day crash risk at 1.7%. Historical base rate adjusted for current VIX (16.69), RSI (44.13), CAPE (41.71)."
     },
     "60_day": {
       "probability_pct": 18.1,
@@ -31,13 +31,13 @@
         "Only 57.0% of S&P 500 above 200dma \u2014 breadth divergence",
         "Margin debt growing 53% YoY \u2014 elevated leverage"
       ],
-      "interpretation": "Elevated 60-day crash risk at 18.1%. Historical base rate adjusted for current VIX (16.4), RSI (45.94), CAPE (41.71)."
+      "interpretation": "Elevated 60-day crash risk at 18.1%. Historical base rate adjusted for current VIX (16.69), RSI (44.13), CAPE (41.71)."
     },
     "methodology": "Based on current VIX level, technical indicators, macro conditions, historical base rates, and market structure analysis."
   },
   "metadata": {
-    "generated_at": "2026-06-21T06:42:53-0500",
-    "analysis_date": "2026-06-21",
+    "generated_at": "2026-06-22T09:34:31-0500",
+    "analysis_date": "2026-06-22",
     "data_source": "yfinance, weather.gov, FRED, FINRA, CNN Business, web scraping",
     "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. Past performance and historical patterns do not guarantee future results.",
     "dashboard_version": "1.0"
@@ -45,9 +45,9 @@
   "sentiment_indicators": {
     "vix": {
       "name": "CBOE Volatility Index (VIX)",
-      "current_value": 16.4,
+      "current_value": 16.69,
       "risk_level": "Moderate",
-      "interpretation": "VIX at 16.4 indicates low market fear and complacency. Well below the long-term average of ~20.",
+      "interpretation": "VIX at 16.69 indicates low market fear and complacency. Well below the long-term average of ~20.",
       "historical_average": 19.5,
       "unit": "",
       "normal_range": "12-20",
@@ -55,7 +55,7 @@
         "high": 31.05,
         "low": 13.47
       },
-      "as_of_date": "2026-06-18"
+      "as_of_date": "2026-06-22"
     },
     "put_call_ratio": {
       "name": "CBOE Equity Put/Call Ratio",
@@ -65,7 +65,7 @@
       "historical_average": 0.82,
       "unit": "",
       "normal_range": "0.7-1.2",
-      "as_of_date": "2026-06-21",
+      "as_of_date": "2026-06-22",
       "sub_metrics": {
         "equity_pcr": 0.6,
         "index_pcr": 0.78,
@@ -74,28 +74,28 @@
     },
     "fear_greed_index": {
       "name": "CNN Fear & Greed Index",
-      "current_value": 37,
+      "current_value": 38,
       "risk_level": "Elevated",
-      "interpretation": "Fear & Greed at 37 in 'Fear' zone. Cautious sentiment \u2014 no extreme signal.",
+      "interpretation": "Fear & Greed at 38 in 'Fear' zone. Cautious sentiment \u2014 no extreme signal.",
       "historical_average": 50,
       "unit": "",
       "normal_range": "25-75",
       "current_category": "Fear",
-      "as_of_date": "2026-06-21",
+      "as_of_date": "2026-06-22",
       "recent_history": {
-        "1_week_ago": 37,
-        "1_month_ago": 37
+        "1_week_ago": 38,
+        "1_month_ago": 38
       }
     }
   },
   "dalio_bubble_indicator": {
     "name": "Dalio-Style Bubble Indicator",
-    "composite_score": 70.0,
+    "composite_score": 70.5,
     "composite_reading": "Bubble",
     "risk_level": "High",
     "unit": "0-100",
-    "interpretation": "Composite bubble score at 70.0/100 (Bubble). Ray Dalio's framework scores 6 dimensions: prices vs traditional measures, unsustainable conditions, new buyer entry, bullish sentiment, leverage, and forward purchases. Current level is in bubble territory.",
-    "as_of_date": "2026-06-21",
+    "interpretation": "Composite bubble score at 70.5/100 (Bubble). Ray Dalio's framework scores 6 dimensions: prices vs traditional measures, unsustainable conditions, new buyer entry, bullish sentiment, leverage, and forward purchases. Current level is in bubble territory.",
+    "as_of_date": "2026-06-22",
     "gauges": {
       "prices_vs_traditional_measures": {
         "score": 91.8,
@@ -108,12 +108,12 @@
         "description": "Are prices discounting unsustainable conditions (equity risk premium)?"
       },
       "new_buyer_entry": {
-        "score": 31.8,
+        "score": 33.2,
         "reading": "Normal",
         "description": "How many new buyers have entered the market (retail participation proxy)?"
       },
       "bullish_sentiment": {
-        "score": 9.3,
+        "score": 10.7,
         "reading": "Depressed",
         "description": "How broadly bullish is sentiment (Fear & Greed, RSI)?"
       },
@@ -132,7 +132,7 @@
       "1929_peak": 100,
       "2000_dot_com_peak": 100,
       "2021_meme_stock_era": 73,
-      "current": 70.0
+      "current": 70.5
     },
     "methodology": "Rules-based proxy of Ray Dalio's 6-gauge bubble framework. Each gauge scores 0-100 using CAPE, Buffett Indicator, equity risk premium, Fear & Greed Index, RSI, and margin debt metrics. Composite is equal-weighted average.",
     "source_note": "Rules-based proxy \u2014 not Bridgewater's proprietary indicator. Inspired by Dalio's publicly described 6-gauge framework."
@@ -172,44 +172,44 @@
   "macro_indicators": {
     "yield_curve_10y2y": {
       "name": "10-Year minus 2-Year Treasury Spread",
-      "current_value": 0.59,
+      "current_value": 0.63,
       "risk_level": "Low",
-      "interpretation": "Yield curve positive at +0.59% \u2014 no immediate recession signal. 10Y yield at 4.451%.",
+      "interpretation": "Yield curve positive at +0.63% \u2014 no immediate recession signal. 10Y yield at 4.491%.",
       "unit": "%",
       "normal_range": "0.5-2.0%",
       "historical_average": 0.93,
-      "as_of_date": "2026-06-18",
+      "as_of_date": "2026-06-22",
       "inversion_check": {
         "currently_inverted": false,
         "last_inversion_date": "2024-09-15",
-        "days_since_uninversion": 644
+        "days_since_uninversion": 645
       },
       "recession_signal": "No active signal \u2014 prior inversion effects may still be lagging",
       "recent_values": {
-        "1_week_ago": 0.61,
-        "1_month_ago": 0.64,
-        "1_year_ago": 0.49
+        "1_week_ago": 0.65,
+        "1_month_ago": 0.68,
+        "1_year_ago": 0.53
       }
     }
   },
   "technical_indicators": {
     "sp500_technicals": {
       "name": "S&P 500 Technical Analysis",
-      "current_price": 7500.58,
+      "current_price": 7485.51,
       "overall_risk_level": "Low",
-      "overall_interpretation": "S&P 500 at 7500.58. RSI 46 neutral. Golden Cross intact. Price 2.5% above 50dma, 8.7% above 200dma.",
-      "as_of_date": "2026-06-18",
+      "overall_interpretation": "S&P 500 at 7485.51. RSI 44 neutral. Golden Cross intact. Price 2.1% above 50dma, 8.4% above 200dma.",
+      "as_of_date": "2026-06-22",
       "sub_indicators": {
         "price_vs_50dma": {
-          "value": 2.53,
+          "value": 2.14,
           "unit": "%",
-          "interpretation": "Price 2.5% above 50-day MA (7316)",
+          "interpretation": "Price 2.1% above 50-day MA (7329)",
           "risk_level": "Low"
         },
         "price_vs_200dma": {
-          "value": 8.66,
+          "value": 8.36,
           "unit": "%",
-          "interpretation": "Price 8.7% above 200-day MA (6903)",
+          "interpretation": "Price 8.4% above 200-day MA (6908)",
           "risk_level": "Low"
         },
         "golden_cross": {
@@ -220,17 +220,17 @@
           "interpretation": "Golden Cross active \u2014 bullish"
         },
         "rsi_assessment": {
-          "value": 45.9,
+          "value": 44.1,
           "unit": "",
           "zone": "Neutral",
-          "interpretation": "RSI at 45.9 \u2014 neutral momentum",
+          "interpretation": "RSI at 44.1 \u2014 neutral momentum",
           "risk_level": "Low"
         },
         "drawdown_assessment": {
-          "value": 1.43,
+          "value": 1.63,
           "unit": "%",
-          "current_drawdown_pct": 1.43,
-          "interpretation": "1.4% below ATH",
+          "current_drawdown_pct": 1.63,
+          "interpretation": "1.6% below ATH",
           "risk_level": "Low"
         }
       }
@@ -245,7 +245,7 @@
       "unit": "% of S&P 500",
       "normal_range": "50-80%",
       "historical_average": 60,
-      "as_of_date": "2026-06-21"
+      "as_of_date": "2026-06-22"
     },
     "sp500_above_200dma": {
       "name": "S&P 500 Stocks Above 200-Day Moving Average (S5TH)",
@@ -255,7 +255,7 @@
       "unit": "% of S&P 500",
       "normal_range": "50-75%",
       "historical_average": 57,
-      "as_of_date": "2026-06-21"
+      "as_of_date": "2026-06-22"
     },
     "advance_decline_ratio": {
       "name": "NYSE Advance/Decline Ratio",
@@ -265,7 +265,7 @@
       "unit": "",
       "normal_range": "0.8-1.5",
       "historical_average": 1.1,
-      "as_of_date": "2026-06-21"
+      "as_of_date": "2026-06-22"
     },
     "overall_breadth_assessment": {
       "risk_level": "Moderate",
@@ -302,7 +302,7 @@
   "private_credit_indicators": {
     "overview": {
       "risk_level": "HIGH",
-      "as_of_date": "2026-06-21",
+      "as_of_date": "2026-06-22",
       "interpretation": "Private credit has grown to a $1.7T market. Rising defaults (6.0%), widespread PIK usage, and bank interconnectedness create contagion channels.",
       "market_size_trillion": 1.7,
       "growth_from_2020": "133% growth from $0.73T in 2020",
@@ -463,7 +463,7 @@
     "risk_categories": {
       "near_term_stress": {
         "level": "Low",
-        "description": "VIX at 16.4, RSI at 46. Low near-term stress."
+        "description": "VIX at 16.69, RSI at 44. Low near-term stress."
       },
       "valuation_vulnerability": {
         "level": "High",
@@ -471,7 +471,7 @@
       },
       "technical_regime": {
         "level": "Low",
-        "description": "RSI 46, S&P at 7500.58. Neutral technical posture."
+        "description": "RSI 44, S&P at 7485.51. Neutral technical posture."
       },
       "market_structure": {
         "level": "Elevated",
@@ -479,7 +479,7 @@
       },
       "macro_environment": {
         "level": "Low",
-        "description": "Yield curve positive at +0.59%. No active recession signal."
+        "description": "Yield curve positive at +0.63%. No active recession signal."
       }
     },
     "key_warnings": [
@@ -490,7 +490,7 @@
       "Private credit defaults at 6.0% cyclical high"
     ],
     "mitigating_factors": [
-      "VIX at 16.4 shows no near-term stress",
+      "VIX at 16.69 shows no near-term stress",
       "Yield curve positive \u2014 no active recession signal",
       "Corporate earnings growth remains positive",
       "AI/semiconductor capex cycle providing fundamental support",
@@ -531,7 +531,7 @@
       "moderate_investors": "Rebalance to target allocation. Trim positions above fair value. Use protective puts on concentrated positions.",
       "aggressive_investors": "Ride momentum with defined risk management. Set trailing stops at 8-10%. Avoid adding leverage at current valuations."
     },
-    "historical_context": "Current market combines extreme valuations (CAPE 41.71, Buffett 219.0%) with low volatility (VIX 16.4) and record leverage ($1300B margin debt).",
+    "historical_context": "Current market combines extreme valuations (CAPE 41.71, Buffett 219.0%) with low volatility (VIX 16.69) and record leverage ($1300B margin debt).",
     "disclaimer": "This assessment is for informational purposes only and does not constitute investment advice. Always consult a qualified financial advisor."
   }
 }
