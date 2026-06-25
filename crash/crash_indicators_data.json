@@ -1,43 +1,43 @@
 {
   "crash_probability": {
     "5_day": {
-      "probability_pct": 2.5,
+      "probability_pct": 2.0,
       "confidence": 4,
       "key_drivers": [
-        "Global semiconductor sell-off with Kospi circuit breaker triggered",
-        "VIX at 19.25, elevated but not at panic levels",
-        "S&P 500 RSI at 38.74, approaching oversold territory"
+        "VIX at 18.09, just below the long-term average — moderate anxiety but no panic",
+        "S&P 500 RSI at 40.6, approaching oversold territory which historically limits further downside",
+        "Post-semiconductor sell-off stabilization — market digesting June 23 tech rout"
       ],
-      "interpretation": "Near-term crash risk is modestly elevated due to the ongoing tech/semiconductor sell-off, but broad market damage is contained. RSI is approaching oversold, which typically limits further downside. The 5-day base rate for a 20%+ crash is historically ~0.1%, elevated here due to sector stress."
+      "interpretation": "Near-term crash risk is modestly elevated following the June 23 tech sell-off. RSI approaching oversold typically triggers short-term bounces. The 5-day base rate for a 20%+ crash is historically ~0.1%, elevated here by residual sector stress and record leverage."
     },
     "20_day": {
-      "probability_pct": 5.0,
+      "probability_pct": 4.5,
       "confidence": 5,
       "key_drivers": [
         "Record margin debt at $1.42T creates forced-selling risk on further declines",
         "CAPE at 41x and Buffett Indicator at 234% leave no valuation cushion",
-        "Tech sector rotation could accelerate if semiconductor weakness persists",
-        "Yield curve flattening to 27 bps signals late-cycle dynamics"
+        "Fear & Greed at 28 — already in Fear territory, but not yet at extremes that mark bottoms",
+        "Yield curve compressing to 27 bps signals late-cycle dynamics"
       ],
-      "interpretation": "The 20-day window captures the period where the current tech rotation could either stabilize or cascade into broader de-risking. Record margin debt is the key amplifier risk. Historical base rate is ~0.5-1.5%, elevated here by leverage and valuation extremes."
+      "interpretation": "The 20-day window captures the period where the tech sell-off either stabilizes or cascades into broader de-risking. Record margin debt is the key amplifier. Historical base rate is ~0.5-1.5%, elevated here by leverage and valuation extremes."
     },
     "60_day": {
-      "probability_pct": 8.5,
+      "probability_pct": 8.0,
       "confidence": 6,
       "key_drivers": [
         "Extreme valuations (CAPE 41x, Buffett 234%) historically precede corrections",
-        "Record margin debt ($1.42T) at 53% YoY growth creates cascade risk",
-        "Negative equity risk premium (-2.0%) \u2014 stocks not compensating for bond risk",
+        "Record margin debt ($1.42T) at 54% YoY growth creates cascade risk",
+        "Negative equity risk premium (-2.0%) — stocks not compensating for bond risk",
         "Private credit default rate at record 6% with $2T market size",
-        "Geopolitical risks from Russia-Ukraine escalation and trade tensions"
+        "Geopolitical risks from Russia-Ukraine escalation and energy supply disruptions"
       ],
-      "interpretation": "Over 60 days, the combination of extreme valuations, record leverage, and negative equity risk premium creates meaningful crash risk. However, golden cross remains active and corporate earnings growth continues. Historical base rate is ~2-4%, elevated here by structural vulnerabilities."
+      "interpretation": "Over 60 days, the combination of extreme valuations, record leverage, and negative equity risk premium creates meaningful crash risk. Golden cross remains active and corporate earnings growth continues. Historical base rate is ~2-4%, elevated here by structural vulnerabilities."
     },
     "methodology": "Based on current VIX level, technical indicators, macro conditions, historical base rates, and market structure analysis."
   },
   "metadata": {
-    "generated_at": "2026-06-24T09:00:00Z",
-    "analysis_date": "2026-06-24",
+    "generated_at": "2026-06-25T09:00:00Z",
+    "analysis_date": "2026-06-25",
     "data_source": "Yahoo Finance (yfinance), FRED, CBOE, CNN, FINRA, Fitch Ratings, GuruFocus",
     "disclaimer": "This analysis is for informational purposes only and does not constitute investment advice. Past performance does not guarantee future results. Market conditions can change rapidly.",
     "dashboard_version": "1.0"
@@ -45,9 +45,9 @@
   "sentiment_indicators": {
     "vix": {
       "name": "CBOE Volatility Index (VIX)",
-      "current_value": 19.25,
+      "current_value": 18.09,
       "risk_level": "Moderate",
-      "interpretation": "VIX at 19.25 is near its long-term average of ~19.5, reflecting moderate market anxiety following the global tech sell-off. Below the 20 threshold that typically signals elevated fear, but up sharply from the 13.47 low earlier this year.",
+      "interpretation": "VIX at 18.09 is slightly below its long-term average of ~19.5, reflecting moderate market anxiety one day after the global tech sell-off. The decline from 19.25 suggests some stabilization, but elevated implied vol relative to the 13.47 low earlier this year indicates lingering uncertainty.",
       "historical_average": 19.5,
       "unit": "",
       "normal_range": "12-20",
@@ -55,47 +55,47 @@
         "high": 31.05,
         "low": 13.47
       },
-      "as_of_date": "2026-06-23"
+      "as_of_date": "2026-06-24"
     },
     "put_call_ratio": {
       "name": "CBOE Equity Put/Call Ratio",
       "current_value": 0.6,
       "risk_level": "Low",
-      "interpretation": "Equity put/call ratio at 0.60 is below the historical average of ~0.70, indicating relatively low hedging activity. Despite the tech sell-off, options markets are not yet pricing in extreme fear. This suggests complacency rather than panic.",
+      "interpretation": "Equity put/call ratio at 0.60 remains below the historical average of ~0.70, indicating relatively low hedging activity. Despite the tech sell-off, options markets have not yet priced in extreme fear. The total CBOE P/C ratio of 0.85 is closer to neutral.",
       "historical_average": 0.7,
       "unit": "",
       "normal_range": "0.7-1.2",
-      "as_of_date": "2026-06-22",
+      "as_of_date": "2026-06-24",
       "sub_metrics": {
         "equity_pcr": 0.6,
-        "index_pcr": 0.85,
-        "total_pcr": 0.72
+        "index_pcr": 1.08,
+        "total_pcr": 0.85
       }
     },
     "fear_greed_index": {
       "name": "CNN Fear & Greed Index",
-      "current_value": 34.7,
-      "risk_level": "Moderate",
-      "interpretation": "Fear & Greed Index at 34.7 is in the 'Fear' zone, improving slightly from 31.6. The reading reflects cautious sentiment following the global chip sell-off but is not at extreme fear levels that typically mark bottoms.",
+      "current_value": 28,
+      "risk_level": "Elevated",
+      "interpretation": "Fear & Greed Index at 28 is firmly in the 'Fear' zone, declining from 35 a week ago. The sharp drop reflects the June 23 global tech sell-off and Korean memory crash. Readings below 25 historically represent contrarian buying opportunities.",
       "historical_average": 50,
       "unit": "",
       "normal_range": "25-75",
       "current_category": "Fear",
-      "as_of_date": "2026-06-23",
+      "as_of_date": "2026-06-24",
       "recent_history": {
-        "1_week_ago": 31.6,
-        "1_month_ago": 50.0
+        "1_week_ago": 40,
+        "1_month_ago": 55
       }
     }
   },
   "dalio_bubble_indicator": {
     "name": "Dalio-Style Bubble Indicator",
-    "composite_score": 65.7,
+    "composite_score": 64.8,
     "composite_reading": "Bubble",
     "risk_level": "Elevated",
     "unit": "0-100",
-    "interpretation": "Composite score of 65.7/100 reflects bubble conditions. Extreme valuations (CAPE 41x, Buffett 234%) and record leverage drive gauges 1, 2, 5, and 6 to elevated levels. However, bearish sentiment (Fear & Greed at 34.7, RSI at 38.7) suppresses gauges 3 and 4, indicating the market lacks the euphoric new-buyer frenzy typical of historic bubble peaks.",
-    "as_of_date": "2026-06-24",
+    "interpretation": "Composite score of 64.8/100 reflects bubble conditions. Extreme valuations (CAPE 41x, Buffett 234%) and record leverage drive gauges 1, 2, 5, and 6 to extreme levels. However, deeply bearish sentiment (Fear & Greed at 28, RSI at 40.6) suppresses gauges 3 and 4, indicating the market lacks the euphoric new-buyer frenzy typical of historic bubble peaks. The slight decline from 65.7 reflects worsening sentiment offsetting persistent valuation extremes.",
+    "as_of_date": "2026-06-25",
     "gauges": {
       "prices_vs_traditional_measures": {
         "score": 94.5,
@@ -108,22 +108,22 @@
         "description": "Are prices discounting unsustainable conditions (equity risk premium)?"
       },
       "new_buyer_entry": {
-        "score": 28.6,
-        "reading": "Normal",
+        "score": 19.2,
+        "reading": "Depressed",
         "description": "How many new buyers have entered the market (retail participation proxy)?"
       },
       "bullish_sentiment": {
-        "score": 6.3,
+        "score": 0,
         "reading": "Depressed",
         "description": "How broadly bullish is sentiment (Fear & Greed, RSI)?"
       },
       "leverage_purchases": {
-        "score": 79.5,
-        "reading": "Bubble",
+        "score": 89.8,
+        "reading": "Extreme Bubble",
         "description": "Are purchases being financed by high leverage (margin debt)?"
       },
       "forward_purchases": {
-        "score": 90.4,
+        "score": 90.5,
         "reading": "Extreme Bubble",
         "description": "Have buyers made extended forward purchases (capex, forward speculation)?"
       }
@@ -132,7 +132,7 @@
       "1929_peak": 100,
       "2000_dot_com_peak": 100,
       "2021_meme_stock_era": 73,
-      "current": 65.7
+      "current": 64.8
     },
     "methodology": "Rules-based proxy of Ray Dalio's 6-gauge bubble framework. Each gauge scores 0-100 using CAPE, Buffett Indicator, equity risk premium, Fear & Greed Index, RSI, and margin debt metrics. Composite is equal-weighted average.",
     "source_note": "Rules-based proxy \u2014 not Bridgewater's proprietary indicator. Inspired by Dalio's publicly described 6-gauge framework."
@@ -174,42 +174,42 @@
       "name": "10-Year minus 2-Year Treasury Spread",
       "current_value": 0.27,
       "risk_level": "Elevated",
-      "interpretation": "The 10Y-2Y spread at 27 bps is positive but compressing, at the 1st percentile of its 52-week range (27-74 bps). The curve un-inverted in October 2024 after a prolonged inversion that began in July 2022. Historically, the post-inversion steepening phase often coincides with recession onset, though this time the economy has remained resilient.",
+      "interpretation": "The 10Y-2Y spread at 27 bps is positive but compressing rapidly, declining from 43 bps a month ago. The curve un-inverted in October 2024 after a prolonged inversion that began in July 2022. The current flattening is consistent with late-cycle dynamics and growing recession concerns.",
       "unit": "%",
       "normal_range": "0.5-2.0%",
-      "historical_average": 0.93,
+      "historical_average": 0.85,
       "as_of_date": "2026-06-22",
       "inversion_check": {
         "currently_inverted": false,
         "last_inversion_date": "2024-10",
-        "days_since_uninversion": 601
+        "days_since_uninversion": 604
       },
-      "recession_signal": "The 2022-2024 inversion fired its recession signal. Subsequent steepening and now re-flattening to 27 bps suggests late-cycle dynamics. The lag between un-inversion and recession onset is typically 6-18 months.",
+      "recession_signal": "The 2022-2024 inversion fired its recession signal. Subsequent steepening and now re-flattening to 27 bps suggests late-cycle dynamics. The lag between un-inversion and recession onset is typically 6-18 months — now 20 months post-uninversion.",
       "recent_values": {
-        "1_week_ago": 0.39,
-        "1_month_ago": 0.53,
-        "1_year_ago": 0.44
+        "1_week_ago": 0.38,
+        "1_month_ago": 0.43,
+        "1_year_ago": 0.48
       }
     }
   },
   "technical_indicators": {
     "sp500_technicals": {
       "name": "S&P 500 Technical Analysis",
-      "current_price": 7365.46,
+      "current_price": 7358.22,
       "overall_risk_level": "Moderate",
-      "overall_interpretation": "S&P 500 at 7365.46 is trading near its 50-day MA with a moderate drawdown of -3.2% from ATH. RSI at 38.7 is approaching oversold territory. Golden cross remains active (50DMA above 200DMA), which is a bullish structural signal. The tech sell-off has pulled the index lower but broad technical damage is limited.",
-      "as_of_date": "2026-06-23",
+      "overall_interpretation": "S&P 500 at 7358.22 is trading at its 50-day MA with a moderate drawdown of -3.3% from ATH. RSI at 40.6 is approaching oversold territory. Golden cross remains active (50DMA above 200DMA), which is a bullish structural signal. The tech sell-off has pulled the index lower but broad technical damage is limited.",
+      "as_of_date": "2026-06-24",
       "sub_indicators": {
         "price_vs_50dma": {
-          "value": 0.35,
+          "value": 0.13,
           "unit": "%",
-          "interpretation": "Price is 0.4% above the 50-day MA at 7340, indicating near-term neutral positioning.",
-          "risk_level": "Low"
+          "interpretation": "Price is 0.1% above the 50-day MA at 7349, indicating near-term neutral positioning right at the moving average.",
+          "risk_level": "Moderate"
         },
         "price_vs_200dma": {
-          "value": 6.56,
+          "value": 6.39,
           "unit": "%",
-          "interpretation": "Price is 6.6% above the 200-day MA at 6912, a healthy long-term uptrend buffer.",
+          "interpretation": "Price is 6.4% above the 200-day MA at 6916, a healthy long-term uptrend buffer.",
           "risk_level": "Low"
         },
         "golden_cross": {
@@ -217,20 +217,20 @@
           "unit": "",
           "status": true,
           "risk_level": "Low",
-          "interpretation": "Golden cross is active with 50DMA (7340) above 200DMA (6912). This bullish structural signal has been in place and supports the long-term uptrend."
+          "interpretation": "Golden cross is active with 50DMA (7349) above 200DMA (6916). This bullish structural signal supports the long-term uptrend."
         },
         "rsi_assessment": {
-          "value": 38.7,
+          "value": 40.57,
           "unit": "",
           "zone": "Near Oversold",
-          "interpretation": "RSI-14 at 38.7 is approaching the oversold threshold of 30, reflecting the recent sell-off. Historically, readings below 40 on the S&P 500 often precede short-term bounces.",
+          "interpretation": "RSI-14 at 40.6 is approaching the oversold threshold of 30. Historically, readings below 40 on the S&P 500 often precede short-term bounces.",
           "risk_level": "Moderate"
         },
         "drawdown_assessment": {
-          "value": 3.21,
+          "value": 3.31,
           "unit": "%",
-          "current_drawdown_pct": -3.21,
-          "interpretation": "The S&P 500 is 3.2% below its all-time high of 7609.78. This is a mild pullback, well within normal correction territory (<5%). A correction is typically defined as a 10%+ decline.",
+          "current_drawdown_pct": -3.31,
+          "interpretation": "The S&P 500 is 3.3% below its all-time high of 7609.78. This is a mild pullback, well within normal correction territory (<5%).",
           "risk_level": "Low"
         }
       }
@@ -239,37 +239,37 @@
   "market_breadth": {
     "sp500_above_50dma": {
       "name": "S&P 500 Stocks Above 50-Day Moving Average",
-      "current_value": 53.4,
-      "risk_level": "Moderate",
-      "interpretation": "At 53.4%, just over half of S&P 500 constituents are above their 50-day MA. This is below the healthy range of 60-80% and suggests narrowing market participation, though not yet at warning levels below 40%.",
+      "current_value": 47.0,
+      "risk_level": "Elevated",
+      "interpretation": "At an estimated 47%, less than half of S&P 500 constituents are above their 50-day MA following the June 23 tech sell-off. This is below the healthy range of 50-80% and suggests narrowing market participation, approaching warning levels.",
       "unit": "% of S&P 500",
       "normal_range": "50-80%",
       "historical_average": 57,
-      "as_of_date": "2026-06-12"
+      "as_of_date": "2026-06-24"
     },
     "sp500_above_200dma": {
       "name": "S&P 500 Stocks Above 200-Day Moving Average (S5TH)",
-      "current_value": 52.1,
+      "current_value": 55.0,
       "risk_level": "Moderate",
-      "interpretation": "At 52.1%, roughly half of S&P 500 stocks are in long-term uptrends. This is below the healthy range of 55-75% and indicates somewhat narrow market leadership, concentrated in mega-cap tech and AI names.",
+      "interpretation": "At an estimated 55%, just over half of S&P 500 stocks maintain long-term uptrends. This is at the lower end of the healthy range (50-75%) and indicates somewhat narrow market leadership, concentrated in mega-cap tech and AI names.",
       "unit": "% of S&P 500",
       "normal_range": "50-75%",
-      "historical_average": 55,
-      "as_of_date": "2026-06-12"
+      "historical_average": 57,
+      "as_of_date": "2026-06-24"
     },
     "advance_decline_ratio": {
       "name": "NYSE Advance/Decline Ratio",
-      "current_value": 1.7,
+      "current_value": 1.12,
       "risk_level": "Low",
-      "interpretation": "The A/D ratio of 1.7 on the most recent session (June 18) shows 61% of issues advancing, indicating healthy breadth despite the tech sell-off. The cumulative A/D line at 153,540 remains near its highs.",
+      "interpretation": "The A/D ratio of 1.12 on June 23 shows 51% of issues advancing (2,529 advances vs 2,262 declines). Despite the tech sell-off, slightly more stocks advanced than declined, suggesting the sell-off was concentrated in mega-cap tech rather than broad-based.",
       "unit": "",
       "normal_range": "0.8-1.5",
       "historical_average": 1.0,
-      "as_of_date": "2026-06-18"
+      "as_of_date": "2026-06-23"
     },
     "overall_breadth_assessment": {
       "risk_level": "Moderate",
-      "interpretation": "Market breadth is mixed. While the A/D ratio shows healthy participation, the percentage of stocks above their 50-day and 200-day MAs has fallen to ~53%, suggesting the rally is becoming narrower. The tech sell-off may further erode breadth metrics in coming days."
+      "interpretation": "Market breadth is deteriorating. The percentage of stocks above their 50-day MA has fallen below 50%, suggesting the rally is becoming increasingly narrow. However, the A/D ratio holding above 1.0 indicates the sell-off is sector-specific rather than systemic."
     }
   },
   "leverage_indicators": {
@@ -278,14 +278,14 @@
       "current_value": 1415.6,
       "unit": "$B",
       "risk_level": "High",
-      "interpretation": "Margin debt hit a record $1416B in May 2026, up 53.7% year-over-year and up 8.5% from April. This unprecedented leverage amplifies both gains and losses. In past cycles, record margin debt peaks have preceded significant market drawdowns (2000, 2007, 2021).",
+      "interpretation": "Margin debt hit a record $1,416B in May 2026, up 54% year-over-year and up 8.5% from April. This unprecedented leverage amplifies both gains and losses. In past cycles, record margin debt peaks have preceded significant market drawdowns (2000, 2007, 2021).",
       "as_of_date": "2026-05-31",
       "historical_context": {
         "all_time_high": 1415.6,
         "all_time_high_date": "2026-05",
         "current_vs_mean_pct": 183.1,
         "growth_yoy_pct": 53.7,
-        "consecutive_monthly_increases": 13
+        "consecutive_monthly_increases": 3
       },
       "relative_metrics": {
         "margin_debt_to_gdp_pct": 4.45,
@@ -296,13 +296,13 @@
         "Record leverage combined with concentrated tech/AI positions creates sector-specific tail risk",
         "Margin calls could accelerate sell-offs beyond fundamental fair value"
       ],
-      "regulatory_note": "FINRA publishes margin statistics with a one-month lag. May 2026 data is the latest available as of June 24, 2026."
+      "regulatory_note": "FINRA publishes margin statistics with a one-month lag. May 2026 data is the latest available as of June 25, 2026."
     }
   },
   "private_credit_indicators": {
     "overview": {
       "risk_level": "HIGH",
-      "as_of_date": "2026-06-24",
+      "as_of_date": "2026-06-25",
       "interpretation": "The private credit market has grown to approximately $2 trillion in AUM, with default rates at record highs. Rapid expansion, limited transparency, and growing interconnections with the banking system create systemic risk channels that could amplify a broader market downturn.",
       "market_size_trillion": 2.0,
       "growth_from_2020": "3x growth from ~$0.7T in 2020",
@@ -313,7 +313,7 @@
       "current_value": 6.0,
       "unit": "%",
       "risk_level": "High",
-      "interpretation": "Fitch's Private Credit Default Rate remained at a record 6.0% in May 2026, unchanged from April. With 14 default events logged in May across healthcare, business services, and industrial manufacturing, distress is broadening across sectors.",
+      "interpretation": "Fitch's Private Credit Default Rate remained at a record 6.0% in May 2026, unchanged from April. With 14 default events logged in May across healthcare, business services, and industrial manufacturing, distress is broadening. The KBRA DLD Direct Lending Index trailing 12-month default rate reached 2.3%, matching its all-time high, with a forecast of 3.5% by year-end.",
       "historical_average": 3.0,
       "normal_range": "1.5-3.5%",
       "as_of_date": "2026-05-31",
@@ -338,9 +338,9 @@
     "pik_usage": {
       "name": "PIK Interest Usage",
       "risk_level": "Elevated",
-      "interpretation": "Payment-in-kind interest usage continues to rise as borrowers with negative FCF capitalize interest rather than paying cash. PIK allows managers to report 'performing' loans while actual cash flows deteriorate \u2014 masking true credit stress.",
-      "warning_threshold": ">15% of portfolio companies using PIK",
-      "trend": "Increasing through 2025-2026 as rates remain elevated",
+      "interpretation": "PIK interest marginally decreased to 3.9% in Q1 2026, below the 5% warning threshold but still indicative of borrower stress. PIK allows managers to report 'performing' loans while actual cash flows deteriorate, masking true credit stress.",
+      "warning_threshold": ">5% of portfolio PIK income signals stress, >10% signals widespread distress",
+      "trend": "Stable at 3.9% in Q1 2026, down marginally from prior quarter",
       "mechanisms": [
         "Interest capitalized into loan principal rather than paid in cash",
         "Allows technically 'current' status while cash flows deteriorate",
@@ -395,7 +395,7 @@
       "description": "Distressed exchanges, loan amendments, and liability management exercises (LMEs) that avoid formal default classification but represent de facto credit events.",
       "estimated_shadow_default_rate_pct": 4.5,
       "risk_level": "High",
-      "interpretation": "Including LMEs and distressed exchanges, the effective default rate rises from the reported 6.0% to approximately 10.5%. These shadow defaults obscure true credit stress and delay loss recognition, creating a gap between reported and actual portfolio health.",
+      "interpretation": "Including LMEs and distressed exchanges, the effective default rate rises from the reported 6.0% to approximately 10.5%. Half of May's default events consisted of maturity extensions under stress. These shadow defaults obscure true credit stress and delay loss recognition.",
       "mechanisms": [
         "Amend-and-extend: pushing out maturities to avoid missed payments",
         "PIK toggles: converting cash-pay obligations to capitalized interest",
@@ -473,7 +473,7 @@
     "risk_categories": {
       "near_term_stress": {
         "level": "Moderate",
-        "description": "Global tech sell-off has pushed VIX to 19.25 and RSI to 38.7, but broad market damage is contained. Kospi circuit breaker event and 2%+ Nasdaq decline signal sector-specific stress rather than systemic panic."
+        "description": "Tech sell-off has pushed VIX to 18.09 and RSI to 40.6. The June 23 semiconductor rout (Kospi -10%, Nasdaq -2.2%) is stabilizing. RSI near oversold suggests limited further near-term downside."
       },
       "valuation_vulnerability": {
         "level": "High",
@@ -481,45 +481,45 @@
       },
       "technical_regime": {
         "level": "Moderate",
-        "description": "Golden cross remains active and 200-day MA uptrend is intact. However, RSI at 38.7 is approaching oversold and the S&P 500 is only 0.4% above its 50-day MA, making the near-term setup fragile."
+        "description": "Golden cross remains active and 200-day MA uptrend is intact (+6.4% above). However, RSI at 40.6 is approaching oversold and the S&P 500 is only 0.1% above its 50-day MA, making the near-term setup fragile."
       },
       "market_structure": {
         "level": "High",
-        "description": "Record margin debt at $1.42T (53% YoY growth), private credit defaults at 6%, and narrowing market breadth (53% above 50DMA) create structural vulnerabilities that could amplify any downturn."
+        "description": "Record margin debt at $1.42T (54% YoY growth), private credit defaults at 6%, and narrowing market breadth (~47% above 50DMA) create structural vulnerabilities that could amplify any downturn."
       },
       "macro_environment": {
         "level": "Moderate",
-        "description": "Yield curve at 27 bps is positive but compressing. 10Y yield at 4.45% reflects persistent inflation concerns. Economy remains resilient but late-cycle dynamics are evident in credit markets."
+        "description": "Yield curve at 27 bps is positive but compressing from 43 bps a month ago. 10Y yield at 4.45% reflects persistent inflation concerns. Economy remains resilient but late-cycle dynamics are evident in credit markets."
       }
     },
     "key_warnings": [
-      "Record FINRA margin debt ($1.42T) at 53% YoY growth creates forced-liquidation tail risk",
+      "Record FINRA margin debt ($1.42T) at 54% YoY growth creates forced-liquidation tail risk",
       "Negative equity risk premium (-2.0%) \u2014 worst since dot-com era",
       "Private credit defaults at record 6% with $2T in AUM",
       "CAPE and Buffett Indicator both near all-time highs",
-      "Global tech sell-off triggered Kospi circuit breaker \u2014 contagion risk",
-      "Yield curve compressing to 27 bps, at 1st percentile of 52-week range"
+      "Fear & Greed Index dropped to 28 (Fear) \u2014 rapid sentiment deterioration",
+      "Yield curve compressing to 27 bps from 43 bps a month ago"
     ],
     "mitigating_factors": [
       "Golden cross active \u2014 structural long-term uptrend intact",
-      "RSI at 38.7 approaching oversold \u2014 historical bounce zone",
+      "RSI at 40.6 approaching oversold \u2014 historical bounce zone",
       "Corporate earnings growth remains positive, especially AI/tech sector",
       "Labor market healthy, consumer spending resilient",
       "Fed has room to cut rates if needed \u2014 current 10Y at 4.45%",
-      "Semiconductor sell-off may be healthy profit-taking after 95% YTD ETF gains"
+      "Semiconductor sell-off may be healthy profit-taking after extended rally"
     ],
     "scenario_analysis": {
       "base_case": {
-        "probability": 60,
+        "probability": 62,
         "outlook": "Tech sector stabilizes, market consolidates 3-5% below ATH. Breadth gradually improves as rotation from mega-cap to cyclicals continues. S&P 500 trades in 7100-7600 range through Q3.",
         "triggers": [
-          "Micron earnings beat restoring chip confidence",
+          "Semiconductor earnings season restoring chip confidence",
           "Continued strong employment data",
           "Fed maintaining steady policy"
         ]
       },
       "correction_case": {
-        "probability": 30,
+        "probability": 28,
         "outlook": "Tech sell-off deepens to 15-20% correction from sector highs. S&P 500 pulls back 8-12% to 200-day MA (~6900). Margin calls accelerate selling. Recovery begins Q4 as valuations reset.",
         "triggers": [
           "Semiconductor export controls tightened",
@@ -543,6 +543,6 @@
       "aggressive_investors": "Selectively add to oversold positions (RSI <40) in quality names. Tech sell-off creates entry points for long-term AI thesis. However, avoid adding leverage at record margin debt levels. Use the dip to rebalance, not to concentrate."
     },
     "historical_context": "Current conditions share characteristics with several historical episodes: the valuation profile resembles late 1999-2000 (CAPE >40), leverage levels echo 2007 peaks (margin debt as % GDP), and the sector-specific sell-off pattern is similar to March 2000's initial tech crack. However, key differences include stronger corporate balance sheets, higher real interest rates providing a policy cushion, and more diversified economic growth drivers beyond tech.",
-    "disclaimer": "This assessment is for informational purposes only and does not constitute investment advice. Market conditions can change rapidly and unpredictably. All probability estimates are based on historical patterns and current data, which may not predict future outcomes. Consult a qualified financial advisor before making investment decisions."
+    "disclaimer": "This analysis is for informational purposes only and does not constitute investment advice. All data is sourced from public APIs and may be subject to delays. Past performance and historical patterns do not guarantee future results."
   }
 }
