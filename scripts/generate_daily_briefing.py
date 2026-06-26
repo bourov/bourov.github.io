@@ -1,68 +1,17 @@
 #!/usr/bin/env python3
 """Generate the daily morning briefing HTML page.
 
-Uses weather.gov for real weather data and Anthropic Claude API with
-web search to curate current news articles.
+Uses Anthropic Claude API with web search to curate current news articles.
 """
 
-import json
 import os
 import sys
 from datetime import datetime, timezone, timedelta
 
 import anthropic
-import requests
 
 DAILY_DIR = os.path.join(os.path.dirname(__file__), "..", "daily")
 OUTPUT_PATH = os.path.normpath(os.path.join(DAILY_DIR, "index.html"))
-
-# Austin, TX 78759 coordinates
-LATITUDE = 30.4015
-LONGITUDE = -97.7254
-NWS_USER_AGENT = "(bourov.github.io daily-briefing, github-actions)"
-
-
-def fetch_weather():
-    """Fetch current weather and forecast for Austin, TX from weather.gov."""
-    headers = {"User-Agent": NWS_USER_AGENT, "Accept": "application/geo+json"}
-    try:
-        point = requests.get(
-            f"https://api.weather.gov/points/{LATITUDE},{LONGITUDE}",
-            headers=headers,
-            timeout=15,
-        )
-        point.raise_for_status()
-        props = point.json()["properties"]
-
-        forecast = requests.get(
-            props["forecast"], headers=headers, timeout=15
-        )
-        forecast.raise_for_status()
-        periods = forecast.json()["properties"]["periods"]
-
-        obs_url = f"{props['observationStations']}"
-        stations = requests.get(obs_url, headers=headers, timeout=15)
-        stations.raise_for_status()
-        station_id = stations.json()["features"][0]["properties"]["stationIdentifier"]
-
-        obs = requests.get(
-            f"https://api.weather.gov/stations/{station_id}/observations/latest",
-            headers=headers,
-            timeout=15,
-        )
-        obs.raise_for_status()
-        observation = obs.json()["properties"]
-
-        return {"forecast_periods": periods[:6], "current_observation": {
-            "temperature_c": observation.get("temperature", {}).get("value"),
-            "dewpoint_c": observation.get("dewpoint", {}).get("value"),
-            "wind_speed_kmh": observation.get("windSpeed", {}).get("value"),
-            "wind_direction": observation.get("windDirection", {}).get("value"),
-            "description": observation.get("textDescription"),
-        }}
-    except Exception as exc:
-        print(f"Warning: weather fetch failed: {exc}", file=sys.stderr)
-        return None
 
 
 def extract_text(response):
@@ -72,7 +21,7 @@ def extract_text(response):
     )
 
 
-def generate_briefing_html(weather_data):
+def generate_briefing_html():
     """Call Anthropic Claude API with web search to produce the briefing."""
     client = anthropic.Anthropic()
 
@@ -80,40 +29,25 @@ def generate_briefing_html(weather_data):
     now = datetime.now(ct)
     date_long = now.strftime("%B %-d, %Y")      # e.g. May 30, 2026
 
-    weather_block = ""
-    if weather_data:
-        weather_block = (
-            "Real-time weather data from weather.gov for Austin, TX:\n"
-            + json.dumps(weather_data, indent=2, default=str)
-        )
-
     prompt = f"""Generate a COMPLETE, self-contained HTML page for today's Daily Morning Briefing.
 
 Date: {date_long}
 Prepared at: 6:00 AM CT
 Location: Austin, TX
 
-{weather_block}
-
 ### Required sections (in order):
 
-1. **Weather — Austin, TX (ZIP 78759)** (🌤️)
-   Table rows: current temp (°C + feels-like), tonight low, tomorrow high,
-   precipitation chance, dew point, wind, conditions, sunrise/sunset.
-   {"Use the real weather.gov data above." if weather_data else "Look up today's Austin TX weather."}
-   Source line: "National Weather Service — {date_long}"
+1. **Russia News** (🇷🇺) — At least 5 positive/uplifting/constructive stories from
+   Russia published in the last 24 hours, plus 2-4 neutral factual items.
+   Combine all into one section. Prioritize positive stories (growth, investment,
+   development, cooperation, cultural events, sports, science). Real URLs only.
+   Exclude The Moscow Times and all Ukrainian sources (Kyiv Post, Kyiv Independent,
+   Ukrainska Pravda, etc.).
 
-2. **Positive Russia News** (✅) — 2-3 uplifting or constructive stories from
-   Russia published in the last 24 hours. Real URLs only. Exclude The Moscow
-   Times and all Ukrainian sources (Kyiv Post, Kyiv Independent, Ukrainska Pravda, etc.).
-
-3. **Neutral Russia News** (📰) — 2-4 factual, objective items about Russia
-   from the last 24 hours. Real URLs only. Exclude Ukrainian sources.
-
-4. **St. Petersburg News** (🏛️) — 4-6 items from Saint Petersburg, Russia.
+2. **St. Petersburg News** (🏛️) — 4-6 items from Saint Petersburg, Russia.
    Mix English and Russian sources; tag each with an EN or RU badge.
 
-5. **Semiconductor & Investor News** (💹)
+3. **Semiconductor & Investor News** (💹)
    - Sub-section **KLAC (KLA Corporation)** (🔬): 3-5 recent items.
    - Sub-section **CPO (Co-Packaged Optics)** (💡): 1-2 recent items.
    - Sub-section **MLCC (Multi-Layer Ceramic Capacitors)** (🔋): 1-2 recent items.
@@ -152,8 +86,7 @@ Every news link must be a real, verifiable URL from a genuine publication."""
 
 
 def main():
-    weather = fetch_weather()
-    html = generate_briefing_html(weather)
+    html = generate_briefing_html()
 
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as fh:
