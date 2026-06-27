@@ -28,6 +28,7 @@ def generate_briefing_html():
     ct = timezone(timedelta(hours=-5))          # CDT (summer)
     now = datetime.now(ct)
     date_long = now.strftime("%B %-d, %Y")      # e.g. May 30, 2026
+    yesterday = (now - timedelta(days=1)).strftime("%Y-%m-%d")
 
     prompt = f"""Generate a COMPLETE, self-contained HTML page for today's Daily Morning Briefing.
 
@@ -35,22 +36,34 @@ Date: {date_long}
 Prepared at: 6:00 AM CT
 Location: Austin, TX
 
+### CRITICAL — 24-HOUR FRESHNESS RULE (MUST FOLLOW)
+
+Today is {date_long}. Yesterday's date is {yesterday}.
+
+**Every single news article MUST have been published on or after {yesterday}.**
+- DISCARD any article older than 24 hours. No exceptions.
+- Check every article's publication date before including it.
+- If you cannot find enough fresh articles for a section, include FEWER items
+  rather than padding with older articles. 1 fresh item is better than 5 stale ones.
+- When searching, restrict results to the last 24 hours.
+
 ### Required sections (in order):
 
 1. **Russia News** (🇷🇺) — At least 5 positive/uplifting/constructive stories from
-   Russia published in the last 24 hours, plus 2-4 neutral factual items.
+   Russia published since {yesterday}, plus 2-4 neutral factual items.
    Combine all into one section. Prioritize positive stories (growth, investment,
    development, cooperation, cultural events, sports, science). Real URLs only.
    Exclude The Moscow Times and all Ukrainian sources (Kyiv Post, Kyiv Independent,
    Ukrainska Pravda, etc.).
 
-2. **St. Petersburg News** (🏛️) — 4-6 items from Saint Petersburg, Russia.
-   Mix English and Russian sources; tag each with an EN or RU badge.
+2. **St. Petersburg News** (🏛️) — 4-6 items from Saint Petersburg, Russia,
+   published since {yesterday}. Mix English and Russian sources; tag each with
+   an EN or RU badge.
 
-3. **Semiconductor & Investor News** (💹)
-   - Sub-section **KLAC (KLA Corporation)** (🔬): 3-5 recent items.
-   - Sub-section **CPO (Co-Packaged Optics)** (💡): 1-2 recent items.
-   - Sub-section **MLCC (Multi-Layer Ceramic Capacitors)** (🔋): 1-2 recent items.
+3. **Semiconductor & Investor News** (💹) — all items published since {yesterday}.
+   - Sub-section **KLAC (KLA Corporation)** (🔬): 3-5 items.
+   - Sub-section **CPO (Co-Packaged Optics)** (💡): 1-2 items.
+   - Sub-section **MLCC (Multi-Layer Ceramic Capacitors)** (🔋): 1-2 items.
 
 ### Styling rules (match exactly):
 - `<meta charset="UTF-8">`, viewport meta, CSP meta:
@@ -66,7 +79,8 @@ Location: Austin, TX
   "The Moscow Times and Ukrainian sources excluded. Deduplicated against 30-day history."
 
 Output ONLY the raw HTML (no markdown fences, no commentary).
-Every news link must be a real, verifiable URL from a genuine publication."""
+Every news link must be a real, verifiable URL from a genuine publication.
+REMINDER: Every article must be from {yesterday} or later. Zero tolerance for stale content."""
 
     response = client.messages.create(
         model="claude-sonnet-4-20250514",
