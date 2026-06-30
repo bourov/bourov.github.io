@@ -34,7 +34,6 @@ def generate_briefing_html():
 
 Date: {date_long}
 Prepared at: 6:00 AM CT
-Location: Austin, TX
 
 ### CRITICAL — 24-HOUR FRESHNESS RULE (MUST FOLLOW)
 
