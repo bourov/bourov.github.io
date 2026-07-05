@@ -36,7 +36,7 @@
     "methodology": "Based on current VIX level, technical indicators, macro conditions, historical base rates, and market structure analysis."
   },
   "metadata": {
-    "generated_at": "2026-07-05T04:03:39-0500",
+    "generated_at": "2026-07-05T11:33:23-0500",
     "analysis_date": "2026-07-05",
     "data_source": "yfinance, weather.gov, FRED, FINRA, CNN Business, web scraping",
     "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. Past performance and historical patterns do not guarantee future results.",
@@ -456,6 +456,114 @@
         "Regulatory arbitrage between bank and non-bank lending"
       ]
     }
+  },
+  "russian_banking_sector": {
+    "name": "Russian Banking Sector Crash Risk",
+    "definition": "Systemic banking crisis: failure or state rescue of one or more systemically important banks, deposit runs/freezes, or emergency CBR intervention beyond routine liquidity support.",
+    "overall_risk_level": "Moderate",
+    "crash_probability": {
+      "1_month": {
+        "probability_pct": 1.4,
+        "confidence": 5,
+        "key_drivers": [
+          "Ruble volatility elevated at 26% annualized",
+          "CBR key rate at 15.0% \u2014 sustained pressure on leveraged borrowers",
+          "NPLs at 5.9% and rising",
+          "Restructured loans at 12.0% of book mask additional stress"
+        ],
+        "interpretation": "Extremely Low 1-month systemic banking crisis risk at 1.4%. Historical base rate adjusted for current conditions (Brent $72.13, key rate 15.0%)."
+      },
+      "3_month": {
+        "probability_pct": 5.5,
+        "confidence": 5,
+        "key_drivers": [
+          "Ruble volatility elevated at 26% annualized",
+          "CBR key rate at 15.0% \u2014 sustained pressure on leveraged borrowers",
+          "NPLs at 5.9% and rising",
+          "Restructured loans at 12.0% of book mask additional stress"
+        ],
+        "interpretation": "Moderate 3-month systemic banking crisis risk at 5.5%. Historical base rate adjusted for current conditions (Brent $72.13, key rate 15.0%)."
+      },
+      "methodology": "Historical base rate for post-Soviet systemic banking crises (~one per 6 years, war-economy regime) adjusted for oil price vs fiscal breakeven, ruble depreciation/volatility, CBR key rate, NPL and restructured-loan levels, capital buffers, and corporate credit growth."
+    },
+    "summary": "1-month crash probability 1.4%, 3-month 5.5%. Sector profit 3.0T RUB trailing (declining from 2024 record of ~3.8T RUB); 74% of sector assets state-owned.",
+    "indicators": {
+      "brent_vs_breakeven": {
+        "name": "Brent vs Fiscal Breakeven",
+        "current_value": 72.13,
+        "unit": "$/bbl",
+        "stress_score": 35.7,
+        "risk_level": "Low",
+        "interpretation": "Brent at $72.13 vs ~$60 fiscal breakeven (Urals trades at a discount on top). Above breakeven \u2014 oil revenues covering the fiscal base.",
+        "as_of_date": "2026-07-03"
+      },
+      "usdrub": {
+        "name": "USD/RUB Exchange Rate",
+        "current_value": 76.825,
+        "unit": "RUB",
+        "chg_3m_pct": -2.19,
+        "vol_30d_annualized_pct": 25.7,
+        "stress_score": 8.0,
+        "risk_level": "Low",
+        "interpretation": "USD/RUB at 76.825, -2.19% over 3 months, 25.7% annualized volatility. Stable-to-strengthening ruble relieves near-term deposit pressure.",
+        "as_of_date": "2026-07-05"
+      },
+      "cbr_key_rate": {
+        "name": "CBR Key Rate",
+        "current_value": 15.0,
+        "unit": "%",
+        "stress_score": 53.8,
+        "risk_level": "Moderate",
+        "interpretation": "Key rate at 15.0% (peak 21.0% in 2024-10). Restrictive \u2014 sustained pressure on leveraged corporate borrowers and bank margins.",
+        "as_of_date": "2026-06-06"
+      },
+      "npl_ratio": {
+        "name": "Non-Performing Loans",
+        "current_value": 5.9,
+        "unit": "%",
+        "corporate_pct": 4.8,
+        "retail_pct": 5.9,
+        "restructured_share_pct": 12.0,
+        "stress_score": 41.4,
+        "risk_level": "Elevated",
+        "interpretation": "NPLs at 4.8% corporate / 5.9% retail, with 12.0% of the book restructured \u2014 restructurings mask stress that reported NPLs understate.",
+        "as_of_date": "2026-Q1"
+      },
+      "capital_adequacy": {
+        "name": "Capital Adequacy (N1.0)",
+        "current_value": 12.1,
+        "unit": "%",
+        "regulatory_min": 8.0,
+        "stress_score": 38.0,
+        "risk_level": "Moderate",
+        "interpretation": "Sector N1.0 at 12.1% vs 8.0% minimum \u2014 a 4.1pp buffer. Thin loss-absorption room if NPLs migrate.",
+        "as_of_date": "2026-Q1"
+      },
+      "credit_growth": {
+        "name": "Corporate Credit Growth",
+        "current_value": 10.5,
+        "unit": "% YoY",
+        "retail_growth_yoy_pct": 4.0,
+        "stress_score": 0,
+        "risk_level": "Low",
+        "interpretation": "Corporate credit +10.5% YoY, retail +4.0% YoY. Slowing but positive \u2014 soft-landing path.",
+        "as_of_date": "2026-Q1"
+      }
+    },
+    "structural_factors": [
+      "War-economy credit allocation: subsidized/directed lending builds assets whose quality is untested in a downturn",
+      "Sanctions isolation: no access to Western capital markets or correspondent banking limits external liquidity backstops",
+      "Restructured loans at 12.0% of the book \u2014 extend-and-pretend masks true asset quality",
+      "Concentration: 74% state-owned share means sovereign and banking risk are effectively merged"
+    ],
+    "mitigating_factors": [
+      "Demonstrated state backstop: 2014-15 and 2022 stress episodes were contained via capital controls, emergency rates, and recapitalization",
+      "Closed-loop system: capital controls and sanctions ironically trap deposits onshore, limiting classic capital-flight dynamics",
+      "Sector still profitable (3.0T RUB trailing) \u2014 losses are absorbable at current levels",
+      "CBR retains full policy freedom \u2014 no external anchor constrains emergency response"
+    ],
+    "data_caveat": "CBR suspended much of its detailed disclosure after 2022. Sector statistics are partial, lagged, and possibly flattering; probabilities carry structurally lower confidence than the US model.",
+    "as_of_date": "2026-07-05"
   },
   "overall_assessment": {
     "overall_crash_risk_level": "MODERATE",
