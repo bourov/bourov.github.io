@@ -1,0 +1,642 @@
+{
+  "crash_probability": {
+    "5_day": {
+      "probability_pct": 0.2,
+      "confidence": 8,
+      "key_drivers": [
+        "CAPE at 39.93 \u2014 near historical extremes (dot-com peak was 44.2)",
+        "Buffett Indicator at 219.0% \u2014 significantly overvalued",
+        "Only 57.0% of S&P 500 above 200dma \u2014 breadth divergence",
+        "Margin debt growing 53% YoY \u2014 elevated leverage"
+      ],
+      "interpretation": "Extremely Low 5-day crash risk at 0.2%. Historical base rate adjusted for current VIX (20.66), RSI (30.32), CAPE (39.93)."
+    },
+    "20_day": {
+      "probability_pct": 3.4,
+      "confidence": 8,
+      "key_drivers": [
+        "CAPE at 39.93 \u2014 near historical extremes (dot-com peak was 44.2)",
+        "Buffett Indicator at 219.0% \u2014 significantly overvalued",
+        "Only 57.0% of S&P 500 above 200dma \u2014 breadth divergence",
+        "Margin debt growing 53% YoY \u2014 elevated leverage"
+      ],
+      "interpretation": "Low 20-day crash risk at 3.4%. Historical base rate adjusted for current VIX (20.66), RSI (30.32), CAPE (39.93)."
+    },
+    "60_day": {
+      "probability_pct": 26.6,
+      "confidence": 8,
+      "key_drivers": [
+        "CAPE at 39.93 \u2014 near historical extremes (dot-com peak was 44.2)",
+        "Buffett Indicator at 219.0% \u2014 significantly overvalued",
+        "Only 57.0% of S&P 500 above 200dma \u2014 breadth divergence",
+        "Margin debt growing 53% YoY \u2014 elevated leverage"
+      ],
+      "interpretation": "High 60-day crash risk at 26.6%. Historical base rate adjusted for current VIX (20.66), RSI (30.32), CAPE (39.93)."
+    },
+    "methodology": "Based on current VIX level, technical indicators, macro conditions, historical base rates, and market structure analysis."
+  },
+  "metadata": {
+    "generated_at": "2026-07-29T20:47:20-0500",
+    "analysis_date": "2026-07-29",
+    "data_source": "yfinance, weather.gov, FRED, FINRA, CNN Business, web scraping",
+    "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. Past performance and historical patterns do not guarantee future results.",
+    "dashboard_version": "1.0"
+  },
+  "sentiment_indicators": {
+    "vix": {
+      "name": "CBOE Volatility Index (VIX)",
+      "current_value": 20.66,
+      "risk_level": "Elevated",
+      "interpretation": "VIX at 20.66 indicates moderate anxiety. Near the long-term average of ~20.",
+      "historical_average": 19.5,
+      "unit": "",
+      "normal_range": "12-20",
+      "range_52w": {
+        "high": 31.05,
+        "low": 13.47
+      },
+      "as_of_date": "2026-07-29"
+    },
+    "put_call_ratio": {
+      "name": "CBOE Equity Put/Call Ratio",
+      "current_value": 0.6,
+      "risk_level": "Low",
+      "interpretation": "Put/call ratio at 0.6 indicates bullish sentiment and low hedging.",
+      "historical_average": 0.82,
+      "unit": "",
+      "normal_range": "0.7-1.2",
+      "as_of_date": "2026-07-29",
+      "sub_metrics": {
+        "equity_pcr": 0.6,
+        "index_pcr": 0.78,
+        "total_pcr": 0.66
+      }
+    },
+    "fear_greed_index": {
+      "name": "CNN Fear & Greed Index",
+      "current_value": 32,
+      "risk_level": "Elevated",
+      "interpretation": "Fear & Greed at 32 in 'Fear' zone. Cautious sentiment \u2014 no extreme signal.",
+      "historical_average": 50,
+      "unit": "",
+      "normal_range": "25-75",
+      "current_category": "Fear",
+      "as_of_date": "2026-07-29",
+      "recent_history": {
+        "1_week_ago": 32,
+        "1_month_ago": 32
+      }
+    }
+  },
+  "dalio_bubble_indicator": {
+    "name": "Dalio-Style Bubble Indicator",
+    "composite_score": 66.5,
+    "composite_reading": "Bubble",
+    "risk_level": "Elevated",
+    "unit": "0-100",
+    "interpretation": "Composite bubble score at 66.5/100 (Bubble). Ray Dalio's framework scores 6 dimensions: prices vs traditional measures, unsustainable conditions, new buyer entry, bullish sentiment, leverage, and forward purchases. Current level is in bubble territory.",
+    "as_of_date": "2026-07-29",
+    "gauges": {
+      "prices_vs_traditional_measures": {
+        "score": 88.5,
+        "reading": "Extreme Bubble",
+        "description": "How high are prices relative to traditional measures (CAPE, Buffett Indicator)?"
+      },
+      "unsustainable_conditions": {
+        "score": 95.0,
+        "reading": "Extreme Bubble",
+        "description": "Are prices discounting unsustainable conditions (equity risk premium)?"
+      },
+      "new_buyer_entry": {
+        "score": 24.8,
+        "reading": "Normal",
+        "description": "How many new buyers have entered the market (retail participation proxy)?"
+      },
+      "bullish_sentiment": {
+        "score": 2.7,
+        "reading": "Depressed",
+        "description": "How broadly bullish is sentiment (Fear & Greed, RSI)?"
+      },
+      "leverage_purchases": {
+        "score": 100.0,
+        "reading": "Extreme Bubble",
+        "description": "Are purchases being financed by high leverage (margin debt)?"
+      },
+      "forward_purchases": {
+        "score": 87.8,
+        "reading": "Extreme Bubble",
+        "description": "Have buyers made extended forward purchases (capex, forward speculation)?"
+      }
+    },
+    "historical_comparisons": {
+      "1929_peak": 100,
+      "2000_dot_com_peak": 100,
+      "2021_meme_stock_era": 73,
+      "current": 66.5
+    },
+    "methodology": "Rules-based proxy of Ray Dalio's 6-gauge bubble framework. Each gauge scores 0-100 using CAPE, Buffett Indicator, equity risk premium, Fear & Greed Index, RSI, and margin debt metrics. Composite is equal-weighted average.",
+    "source_note": "Rules-based proxy \u2014 not Bridgewater's proprietary indicator. Inspired by Dalio's publicly described 6-gauge framework."
+  },
+  "valuation_indicators": {
+    "shiller_cape": {
+      "name": "Shiller CAPE Ratio (Cyclically Adjusted P/E)",
+      "current_value": 39.93,
+      "historical_mean": 17.1,
+      "risk_level": "High",
+      "interpretation": "CAPE at 39.93 is near historical extremes. Long-term mean is 17.1. Previous readings above 38 preceded the 1929 crash and 2000 dot-com bust.",
+      "unit": "x",
+      "historical_context": {
+        "all_time_high": 44.2,
+        "all_time_high_date": "December 1999",
+        "current_vs_mean_pct": 134
+      },
+      "implied_future_return": "1.0% real (based on excess CAPE yield)"
+    },
+    "buffett_indicator": {
+      "name": "Buffett Indicator (Total Market Cap / GDP)",
+      "current_value": 219.0,
+      "risk_level": "High",
+      "interpretation": "At 219.0%, the Buffett Indicator is well above the playing with fire threshold. Historical average is ~90%.",
+      "unit": "%",
+      "normal_range": "75-120%",
+      "historical_average": 90,
+      "warren_buffett_zones": {
+        "significantly_undervalued": "<50%",
+        "undervalued": "50-75%",
+        "fair_value": "75-115%",
+        "overvalued": "115-150%",
+        "significantly_overvalued": ">150%"
+      }
+    }
+  },
+  "macro_indicators": {
+    "yield_curve_10y2y": {
+      "name": "10-Year minus 2-Year Treasury Spread",
+      "current_value": 0.54,
+      "risk_level": "Low",
+      "interpretation": "Yield curve positive at +0.54% \u2014 no immediate recession signal. 10Y yield at 4.622%.",
+      "unit": "%",
+      "normal_range": "0.5-2.0%",
+      "historical_average": 0.93,
+      "as_of_date": "2026-07-29",
+      "inversion_check": {
+        "currently_inverted": false,
+        "last_inversion_date": "2024-09-15",
+        "days_since_uninversion": 682
+      },
+      "recession_signal": "No active signal \u2014 prior inversion effects may still be lagging",
+      "recent_values": {
+        "1_week_ago": 0.56,
+        "1_month_ago": 0.59,
+        "1_year_ago": 0.44
+      }
+    }
+  },
+  "technical_indicators": {
+    "sp500_technicals": {
+      "name": "S&P 500 Technical Analysis",
+      "current_price": 7316.15,
+      "overall_risk_level": "Moderate",
+      "overall_interpretation": "S&P 500 at 7316.15. RSI 30 neutral. Golden Cross intact. Price -2.0% above 50dma, 4.3% above 200dma.",
+      "as_of_date": "2026-07-29",
+      "sub_indicators": {
+        "price_vs_50dma": {
+          "value": -2.03,
+          "unit": "%",
+          "interpretation": "Price -2.0% above 50-day MA (7468)",
+          "risk_level": "Elevated"
+        },
+        "price_vs_200dma": {
+          "value": 4.29,
+          "unit": "%",
+          "interpretation": "Price 4.3% above 200-day MA (7016)",
+          "risk_level": "Low"
+        },
+        "golden_cross": {
+          "value": 1,
+          "unit": "",
+          "status": true,
+          "risk_level": "Low",
+          "interpretation": "Golden Cross active \u2014 bullish"
+        },
+        "rsi_assessment": {
+          "value": 30.3,
+          "unit": "",
+          "zone": "Oversold",
+          "interpretation": "RSI at 30.3 \u2014 oversold, potential bounce",
+          "risk_level": "Low"
+        },
+        "drawdown_assessment": {
+          "value": 3.86,
+          "unit": "%",
+          "current_drawdown_pct": 3.86,
+          "interpretation": "3.9% below ATH",
+          "risk_level": "Low"
+        }
+      }
+    }
+  },
+  "market_breadth": {
+    "sp500_above_50dma": {
+      "name": "S&P 500 Stocks Above 50-Day Moving Average",
+      "current_value": 62.0,
+      "risk_level": "Moderate",
+      "interpretation": "62.0% of S&P 500 stocks above their 50-day MA. Adequate breadth.",
+      "unit": "% of S&P 500",
+      "normal_range": "50-80%",
+      "historical_average": 60,
+      "as_of_date": "2026-07-29"
+    },
+    "sp500_above_200dma": {
+      "name": "S&P 500 Stocks Above 200-Day Moving Average (S5TH)",
+      "current_value": 57.0,
+      "risk_level": "Moderate",
+      "interpretation": "57.0% of S&P 500 stocks above their 200-day MA. Breadth divergence emerging \u2014 index may be driven by narrow leadership.",
+      "unit": "% of S&P 500",
+      "normal_range": "50-75%",
+      "historical_average": 57,
+      "as_of_date": "2026-07-29"
+    },
+    "advance_decline_ratio": {
+      "name": "NYSE Advance/Decline Ratio",
+      "current_value": 1.63,
+      "risk_level": "Low",
+      "interpretation": "A/D ratio at 1.63 \u2014 broad participation.",
+      "unit": "",
+      "normal_range": "0.8-1.5",
+      "historical_average": 1.1,
+      "as_of_date": "2026-07-29"
+    },
+    "overall_breadth_assessment": {
+      "risk_level": "Moderate",
+      "interpretation": "Divergent breadth \u2014 57.0% above 200dma, 62.0% above 50dma."
+    }
+  },
+  "leverage_indicators": {
+    "finra_margin_debt": {
+      "name": "FINRA Margin Debt",
+      "current_value": 1300,
+      "unit": "$B",
+      "risk_level": "High",
+      "interpretation": "Margin debt at $1300B (53% YoY growth). Record levels create unprecedented forced-selling risk. Margin debt/GDP at 4.6% vs 50-year median of 2.1%.",
+      "as_of_date": "2026-04-30",
+      "historical_context": {
+        "all_time_high": 1300,
+        "all_time_high_date": "2026-04-30",
+        "current_vs_mean_pct": 72,
+        "growth_yoy_pct": 53,
+        "consecutive_monthly_increases": 8
+      },
+      "relative_metrics": {
+        "margin_debt_to_gdp_pct": 4.6,
+        "margin_debt_to_gdp_50y_median": 2.1
+      },
+      "risks": [
+        "Record absolute level creates forced-selling risk during drawdowns",
+        "53% YoY growth rate far exceeds historical norms",
+        "Margin debt/GDP at 4.6% vs 50-year median of 2.1%"
+      ],
+      "regulatory_note": "FINRA publishes margin statistics with a one-month lag."
+    }
+  },
+  "private_credit_indicators": {
+    "overview": {
+      "risk_level": "HIGH",
+      "as_of_date": "2026-07-29",
+      "interpretation": "Private credit has grown to a $1.7T market. Rising defaults (6.0%), widespread PIK usage, and bank interconnectedness create contagion channels.",
+      "market_size_trillion": 1.7,
+      "growth_from_2020": "133% growth from $0.73T in 2020",
+      "projected_2029": "$2.6 trillion (Preqin estimate)"
+    },
+    "default_rates": {
+      "name": "Default Rate",
+      "current_value": 6.0,
+      "unit": "%",
+      "risk_level": "High",
+      "interpretation": "Private credit default rate at 6.0% (cyclical high). Including distressed exchanges, effective rate is higher. Historical average is 3.2%.",
+      "historical_average": 3.2,
+      "normal_range": "2.0-4.0%",
+      "as_of_date": "2026-04-30",
+      "breakdown": {
+        "including_lmes": 8.5,
+        "software_sector_projected": 9.2,
+        "small_issuers_under_25m_ebitda": 10.5,
+        "automotive_sector": 7.8
+      }
+    },
+    "borrower_health": {
+      "name": "Borrower Health",
+      "negative_fcf_pct": 42,
+      "unit": "%",
+      "risk_level": "Elevated",
+      "interpretation": "42% of private credit borrowers have negative free cash flow, up from 30% in 2021. Interest coverage ratio at 1.4x vs 2.8x for public borrowers.",
+      "as_of_date": "2026-Q1",
+      "prior_value_2021": 30,
+      "interest_coverage_ratio": 1.4,
+      "public_borrower_icr": 2.8
+    },
+    "pik_usage": {
+      "name": "PIK Interest Usage",
+      "risk_level": "Elevated",
+      "interpretation": "PIK interest compounds debt loads and defers stress, creating risk if refinancing conditions deteriorate.",
+      "warning_threshold": ">15% of deals using PIK features",
+      "trend": "Increasing \u2014 PIK usage rising as borrowers face refinancing walls in 2026-2027",
+      "mechanisms": [
+        "PIK toggle allows borrowers to capitalize interest rather than paying cash",
+        "Defers cash flow stress but increases total debt burden over time",
+        "Masks deteriorating credit quality until maturity or refinancing"
+      ]
+    },
+    "liquidity_risk": {
+      "name": "Liquidity Risk",
+      "risk_level": "Elevated",
+      "interpretation": "Illiquid private credit creates mismatch risk in open-ended fund structures.",
+      "gated_funds": [
+        "Multiple interval funds have extended redemption queues to 6+ months",
+        "BDC secondary market discounts widening to 8-12% of NAV",
+        "Tender offer completion rates declining as fund managers manage outflows"
+      ],
+      "evergreen_fund_aum": "$180B in semi-liquid structures",
+      "risks": [
+        "Liquidity mismatch between fund redemption terms and underlying loan duration",
+        "Fire-sale risk if multiple funds face simultaneous redemption pressure",
+        "NAV uncertainty due to infrequent mark-to-market of private loans"
+      ]
+    },
+    "bank_interconnectedness": {
+      "name": "Bank Exposure to Private Credit",
+      "risk_level": "Elevated",
+      "interpretation": "Top US banks have ~$0.45T in private credit-related exposures, creating contagion channels.",
+      "total_ndfi_exposure_trillion": 0.45,
+      "growth_since_2010": "~3x increase from $150B",
+      "bank_commitments_to_pc_funds": "$120B+ in unfunded commitments",
+      "regulatory_response": "Fed and OCC increasing scrutiny of bank-NBFI linkages",
+      "major_exposures": {
+        "wells_fargo": {
+          "ndfi_portfolio": "$85B",
+          "private_credit": "$15B direct lending"
+        },
+        "jpmorgan": {
+          "ndfi_exposure": "$110B",
+          "private_credit": "$20B+ direct lending platform"
+        },
+        "citigroup": {
+          "ndfi_loans": "$65B",
+          "private_credit_warehouse": "$8B"
+        },
+        "goldman_sachs": {
+          "other_collateral_lending": "$45B",
+          "target_pc_platform": "$300B AUM target"
+        }
+      }
+    },
+    "shadow_defaults": {
+      "name": "Shadow Defaults",
+      "description": "Distressed exchanges and extend-and-pretend restructurings mask true default rates.",
+      "estimated_shadow_default_rate_pct": 4.7,
+      "risk_level": "Elevated",
+      "interpretation": "Shadow default rate estimated at 4.7% including distressed exchanges. Over one-third of restructured loans eventually hard-default within 2 years.",
+      "mechanisms": [
+        "Distressed exchanges swap debt for equity or extend maturities",
+        "Amend-and-extend transactions push maturities out 1-2 years",
+        "PIK conversions capitalize unpaid interest, increasing debt loads"
+      ]
+    },
+    "sector_vulnerabilities": {
+      "sectors": [
+        {
+          "name": "Software & Technology",
+          "exposure_pct": 28,
+          "risk": "Revenue growth deceleration; high leverage multiples",
+          "projected_default_rate": 9.2,
+          "distressed_loans": 15
+        },
+        {
+          "name": "Healthcare Services",
+          "exposure_pct": 18,
+          "risk": "Labor costs and reimbursement pressures",
+          "projected_default_rate": 5.8,
+          "distressed_loans": 10
+        },
+        {
+          "name": "Automotive & Industrial",
+          "exposure_pct": 12,
+          "risk": "Tariff exposure; EV transition costs",
+          "projected_default_rate": 7.8,
+          "distressed_loans": 8
+        },
+        {
+          "name": "Consumer Services",
+          "exposure_pct": 10,
+          "risk": "Weakening consumer sentiment",
+          "projected_default_rate": 6.5,
+          "distressed_loans": 7
+        }
+      ],
+      "risk_level": "Elevated"
+    },
+    "systemic_risk_assessment": {
+      "level": "ELEVATED",
+      "overall_risk": "ELEVATED",
+      "interpretation": "Private credit at $1.7T with 6.0% defaults and rising bank interconnectedness create ELEVATED systemic risk.",
+      "comparison_to_2008": "Unlike 2008, private credit is less leveraged and more distributed, but opacity and illiquidity create similar information asymmetry risks.",
+      "crash_transmission_channels": [
+        "Bank warehouse lending losses triggering credit tightening",
+        "Forced selling from gated funds creating valuation cascades",
+        "Margin calls on leveraged investors with private credit collateral"
+      ],
+      "mitigating_factors": [
+        "Private credit less leveraged than pre-2008 structured products",
+        "Distributed ownership reduces single-point-of-failure risk",
+        "Regulatory awareness higher \u2014 Fed actively monitoring NBFI risks"
+      ],
+      "regulatory_gaps": [
+        "Limited transparency into private credit fund valuations",
+        "No standardized stress testing for private credit portfolios",
+        "Regulatory arbitrage between bank and non-bank lending"
+      ]
+    }
+  },
+  "russian_banking_sector": {
+    "name": "Russian Banking Sector Crash Risk",
+    "definition": "Systemic banking crisis: failure or state rescue of one or more systemically important banks, deposit runs/freezes, or emergency CBR intervention beyond routine liquidity support.",
+    "overall_risk_level": "Moderate",
+    "crash_probability": {
+      "1_month": {
+        "probability_pct": 1.4,
+        "confidence": 5,
+        "key_drivers": [
+          "CBR key rate at 15.0% \u2014 sustained pressure on leveraged borrowers",
+          "NPLs at 5.9% and rising",
+          "Restructured loans at 12.0% of book mask additional stress"
+        ],
+        "interpretation": "Extremely Low 1-month systemic banking crisis risk at 1.4%. Historical base rate adjusted for current conditions (Brent $89.79, key rate 15.0%)."
+      },
+      "3_month": {
+        "probability_pct": 5.1,
+        "confidence": 5,
+        "key_drivers": [
+          "CBR key rate at 15.0% \u2014 sustained pressure on leveraged borrowers",
+          "NPLs at 5.9% and rising",
+          "Restructured loans at 12.0% of book mask additional stress"
+        ],
+        "interpretation": "Moderate 3-month systemic banking crisis risk at 5.1%. Historical base rate adjusted for current conditions (Brent $89.79, key rate 15.0%)."
+      },
+      "methodology": "Historical base rate for post-Soviet systemic banking crises (~one per 6 years, war-economy regime) adjusted for oil price vs fiscal breakeven, ruble depreciation/volatility, CBR key rate, NPL and restructured-loan levels, capital buffers, and corporate credit growth."
+    },
+    "summary": "1-month crash probability 1.4%, 3-month 5.1%. Sector profit 3.0T RUB trailing (declining from 2024 record of ~3.8T RUB); 74% of sector assets state-owned.",
+    "indicators": {
+      "brent_vs_breakeven": {
+        "name": "Brent vs Fiscal Breakeven",
+        "current_value": 89.79,
+        "unit": "$/bbl",
+        "stress_score": 0.4,
+        "risk_level": "Low",
+        "interpretation": "Brent at $89.79 vs ~$60 fiscal breakeven (Urals trades at a discount on top). Above breakeven \u2014 oil revenues covering the fiscal base.",
+        "as_of_date": "2026-07-29"
+      },
+      "usdrub": {
+        "name": "USD/RUB Exchange Rate",
+        "current_value": 78.746,
+        "unit": "RUB",
+        "chg_3m_pct": 5.03,
+        "vol_30d_annualized_pct": 16.8,
+        "stress_score": 28.7,
+        "risk_level": "Moderate",
+        "interpretation": "USD/RUB at 78.746, +5.03% over 3 months, 16.8% annualized volatility. Mild depreciation \u2014 manageable.",
+        "as_of_date": "2026-07-29"
+      },
+      "cbr_key_rate": {
+        "name": "CBR Key Rate",
+        "current_value": 15.0,
+        "unit": "%",
+        "stress_score": 53.8,
+        "risk_level": "Moderate",
+        "interpretation": "Key rate at 15.0% (peak 21.0% in 2024-10). Restrictive \u2014 sustained pressure on leveraged corporate borrowers and bank margins.",
+        "as_of_date": "2026-06-06"
+      },
+      "npl_ratio": {
+        "name": "Non-Performing Loans",
+        "current_value": 5.9,
+        "unit": "%",
+        "corporate_pct": 4.8,
+        "retail_pct": 5.9,
+        "restructured_share_pct": 12.0,
+        "stress_score": 41.4,
+        "risk_level": "Elevated",
+        "interpretation": "NPLs at 4.8% corporate / 5.9% retail, with 12.0% of the book restructured \u2014 restructurings mask stress that reported NPLs understate.",
+        "as_of_date": "2026-Q1"
+      },
+      "capital_adequacy": {
+        "name": "Capital Adequacy (N1.0)",
+        "current_value": 12.1,
+        "unit": "%",
+        "regulatory_min": 8.0,
+        "stress_score": 38.0,
+        "risk_level": "Moderate",
+        "interpretation": "Sector N1.0 at 12.1% vs 8.0% minimum \u2014 a 4.1pp buffer. Thin loss-absorption room if NPLs migrate.",
+        "as_of_date": "2026-Q1"
+      },
+      "credit_growth": {
+        "name": "Corporate Credit Growth",
+        "current_value": 10.5,
+        "unit": "% YoY",
+        "retail_growth_yoy_pct": 4.0,
+        "stress_score": 0,
+        "risk_level": "Low",
+        "interpretation": "Corporate credit +10.5% YoY, retail +4.0% YoY. Slowing but positive \u2014 soft-landing path.",
+        "as_of_date": "2026-Q1"
+      }
+    },
+    "structural_factors": [
+      "War-economy credit allocation: subsidized/directed lending builds assets whose quality is untested in a downturn",
+      "Sanctions isolation: no access to Western capital markets or correspondent banking limits external liquidity backstops",
+      "Restructured loans at 12.0% of the book \u2014 extend-and-pretend masks true asset quality",
+      "Concentration: 74% state-owned share means sovereign and banking risk are effectively merged"
+    ],
+    "mitigating_factors": [
+      "Demonstrated state backstop: 2014-15 and 2022 stress episodes were contained via capital controls, emergency rates, and recapitalization",
+      "Closed-loop system: capital controls and sanctions ironically trap deposits onshore, limiting classic capital-flight dynamics",
+      "Sector still profitable (3.0T RUB trailing) \u2014 losses are absorbable at current levels",
+      "CBR retains full policy freedom \u2014 no external anchor constrains emergency response"
+    ],
+    "data_caveat": "CBR suspended much of its detailed disclosure after 2022. Sector statistics are partial, lagged, and possibly flattering; probabilities carry structurally lower confidence than the US model.",
+    "as_of_date": "2026-07-29"
+  },
+  "overall_assessment": {
+    "overall_crash_risk_level": "MODERATE",
+    "confidence": 6,
+    "risk_categories": {
+      "near_term_stress": {
+        "level": "Moderate",
+        "description": "VIX at 20.66, RSI at 30. Some near-term stress signals."
+      },
+      "valuation_vulnerability": {
+        "level": "High",
+        "description": "CAPE at 39.93, Buffett Indicator at 219.0%. Extreme valuations create high vulnerability."
+      },
+      "technical_regime": {
+        "level": "Low",
+        "description": "RSI 30, S&P at 7316.15. Neutral technical posture."
+      },
+      "market_structure": {
+        "level": "Elevated",
+        "description": "Margin debt $1300B (+53% YoY), private credit defaults at 6.0%."
+      },
+      "macro_environment": {
+        "level": "Low",
+        "description": "Yield curve positive at +0.54%. No active recession signal."
+      }
+    },
+    "key_warnings": [
+      "CAPE at 39.93 \u2014 near dot-com peak levels",
+      "Buffett Indicator at 219.0% \u2014 well above playing with fire threshold",
+      "Margin debt at record $1300B with 53% YoY growth",
+      "Only 57.0% of S&P 500 above 200dma \u2014 breadth divergence",
+      "Private credit defaults at 6.0% cyclical high"
+    ],
+    "mitigating_factors": [
+      "Yield curve positive \u2014 no active recession signal",
+      "Corporate earnings growth remains positive",
+      "AI/semiconductor capex cycle providing fundamental support",
+      "Fed maintaining optionality \u2014 neither hiking nor signaling policy error"
+    ],
+    "scenario_analysis": {
+      "base_case": {
+        "probability": 55,
+        "outlook": "Gradual advance with periodic pullbacks. Market supported by earnings growth and eventual Fed easing.",
+        "triggers": [
+          "Continued AI capex spending",
+          "Earnings growth sustaining multiples",
+          "Geopolitical de-escalation"
+        ]
+      },
+      "correction_case": {
+        "probability": 33,
+        "outlook": "10-19% correction triggered by valuation reset or exogenous shock.",
+        "triggers": [
+          "Fed hawkish surprise",
+          "Mega-cap earnings miss",
+          "Margin call cascade",
+          "Geopolitical escalation"
+        ]
+      },
+      "crash_case": {
+        "probability": 12,
+        "outlook": "20%+ drawdown from convergence of multiple risk factors.",
+        "triggers": [
+          "Margin debt unwind + private credit crisis",
+          "Major geopolitical event",
+          "AI capex reversal"
+        ]
+      }
+    },
+    "recommendation_framework": {
+      "conservative_investors": "Maintain elevated cash allocation (15-25%). Focus on quality dividend stocks. Treasury bills offering 4%+ provide risk-free alternative.",
+      "moderate_investors": "Rebalance to target allocation. Trim positions above fair value. Use protective puts on concentrated positions.",
+      "aggressive_investors": "Ride momentum with defined risk management. Set trailing stops at 8-10%. Avoid adding leverage at current valuations."
+    },
+    "historical_context": "Current market combines extreme valuations (CAPE 39.93, Buffett 219.0%) with moderate volatility (VIX 20.66) and record leverage ($1300B margin debt).",
+    "disclaimer": "This assessment is for informational purposes only and does not constitute investment advice. Always consult a qualified financial advisor."
+  }
+}

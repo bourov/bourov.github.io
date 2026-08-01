@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Basis — portfolio returns</title>
+
+<!-- iOS home-screen / PWA -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Basis" />
+<meta name="theme-color" content="#0D1614" />
+<link rel="apple-touch-icon" href="data:image/png;base64,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" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230D1614'/><path d='M16 6 L26 16 L16 26 L6 16 Z' fill='none' stroke='%23C6A15B' stroke-width='2.4'/><path d='M16 12 L20 16 L16 20 L12 16 Z' fill='%23C6A15B'/></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+<style>
+  :root{
+    --ink:#0D1614; --surface:#14211E; --surface-2:#182A26;
+    --line:rgba(234,242,238,.08); --line-2:rgba(234,242,238,.14);
+    --text:#EAF2EE; --muted:#7E9188; --faint:#54655F;
+    --pos:#5FBF9B; --neg:#E08A7A; --brass:#C6A15B; --brass-dim:#8f7440;
+    --sans:'Space Grotesk',system-ui,-apple-system,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,'SF Mono',monospace;
+    --r:16px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--ink); color:var(--text); font-family:var(--sans);
+    font-size:15px; line-height:1.4; -webkit-font-smoothing:antialiased;
+    padding-top:env(safe-area-inset-top); padding-bottom:env(safe-area-inset-bottom);
+  }
+  .num{font-family:var(--mono); font-variant-numeric:tabular-nums; font-feature-settings:"tnum" 1}
+  .pos{color:var(--pos)} .neg{color:var(--neg)} .muted{color:var(--muted)}
+  button{font-family:inherit; cursor:pointer; border:none; background:none; color:inherit}
+  :focus-visible{outline:2px solid var(--brass); outline-offset:2px; border-radius:6px}
+  input{font-family:var(--mono)}
+
+  .wrap{max-width:600px; margin:0 auto; padding:0 18px 64px}
+
+  /* header */
+  .top{
+    position:sticky; top:0; z-index:20; background:rgba(13,22,20,.82);
+    backdrop-filter:blur(14px) saturate(1.2); -webkit-backdrop-filter:blur(14px) saturate(1.2);
+    border-bottom:1px solid var(--line);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:calc(14px + env(safe-area-inset-top)) 18px 14px; margin:0 -18px 22px;
+  }
+  .brand{display:flex; align-items:center; gap:11px}
+  .mark{width:26px; height:26px; flex:0 0 auto}
+  .wordmark{font-weight:600; letter-spacing:.14em; font-size:15px}
+  .wordmark small{color:var(--brass); font-weight:500}
+  .top-actions{display:flex; gap:8px}
+  .icon-btn{
+    width:38px; height:38px; border-radius:11px; border:1px solid var(--line-2);
+    background:var(--surface); display:grid; place-items:center; color:var(--muted);
+    transition:.16s;
+  }
+  .icon-btn:hover{color:var(--text); border-color:var(--brass-dim)}
+  .icon-btn svg{width:17px; height:17px}
+  .icon-btn.spin svg{animation:spin .9s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* hero */
+  .hero-label{font-size:11.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--faint); margin-bottom:9px}
+  .hero-val{font-family:var(--mono); font-weight:600; font-size:clamp(38px,12vw,54px); letter-spacing:-.02em; line-height:1}
+  .hero-sub{display:flex; align-items:center; gap:12px; margin-top:14px; flex-wrap:wrap}
+  .delta{
+    display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-weight:600;
+    font-size:15px; padding:5px 11px; border-radius:9px; background:var(--surface);
+    border:1px solid var(--line-2);
+  }
+  .delta.pos{color:var(--pos); border-color:rgba(95,191,155,.28); background:rgba(95,191,155,.08)}
+  .delta.neg{color:var(--neg); border-color:rgba(224,138,122,.28); background:rgba(224,138,122,.08)}
+  .delta .arw{font-size:12px}
+  .asof{font-size:12px; color:var(--faint)}
+
+  /* horizon pills */
+  .pills{display:flex; gap:6px; overflow-x:auto; margin:24px 0 8px; padding-bottom:4px; scrollbar-width:none}
+  .pills::-webkit-scrollbar{display:none}
+  .pill{
+    flex:0 0 auto; padding:8px 14px; border-radius:999px; font-size:12.5px; font-weight:600;
+    letter-spacing:.04em; color:var(--muted); border:1px solid var(--line-2); background:var(--surface);
+    transition:.15s; font-family:var(--mono);
+  }
+  .pill:hover{color:var(--text)}
+  .pill.on{background:var(--brass); color:#1a1206; border-color:var(--brass)}
+
+  .custom-range{display:none; gap:10px; margin:6px 0 2px; align-items:center}
+  .custom-range.show{display:flex}
+  .custom-range input{
+    background:var(--surface); border:1px solid var(--line-2); color:var(--text);
+    border-radius:9px; padding:8px 10px; font-size:13px; color-scheme:dark; flex:1; min-width:0;
+  }
+  .custom-range span{color:var(--faint); font-size:12px}
+
+  /* chart */
+  .chart-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--r);
+    padding:16px 14px 10px; margin-top:14px; position:relative; min-height:230px;
+  }
+  .chart-wrap{position:relative; height:210px}
+  .chart-empty{
+    position:absolute; inset:0; display:grid; place-items:center; text-align:center;
+    color:var(--faint); font-size:13px; padding:24px;
+  }
+
+  /* stats grid */
+  .stats{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px}
+  .stat{background:var(--surface); border:1px solid var(--line); border-radius:13px; padding:14px 15px}
+  .stat .k{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); margin-bottom:7px}
+  .stat .v{font-family:var(--mono); font-weight:600; font-size:20px; letter-spacing:-.01em}
+
+  /* section */
+  .sec-head{display:flex; align-items:center; justify-content:space-between; margin:30px 0 12px}
+  .sec-title{font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--faint)}
+  .add-btn{
+    font-size:12.5px; font-weight:600; color:var(--brass); padding:7px 13px; border-radius:9px;
+    border:1px solid var(--brass-dim); background:rgba(198,161,91,.06); transition:.15s;
+  }
+  .add-btn:hover{background:rgba(198,161,91,.14)}
+
+  /* holdings */
+  .holding{
+    display:flex; align-items:center; gap:14px; padding:15px 16px; background:var(--surface);
+    border:1px solid var(--line); border-radius:13px; margin-bottom:9px; width:100%; text-align:left;
+    transition:.15s;
+  }
+  .holding:hover{border-color:var(--line-2); background:var(--surface-2)}
+  .h-tkr{font-family:var(--mono); font-weight:700; font-size:15px; letter-spacing:.02em; min-width:62px}
+  .h-mid{flex:1; min-width:0}
+  .h-shares{font-family:var(--mono); font-size:12.5px; color:var(--muted)}
+  .h-unavail{font-size:11.5px; color:var(--neg); margin-top:2px}
+  .h-right{text-align:right; flex:0 0 auto}
+  .h-val{font-family:var(--mono); font-weight:600; font-size:15px}
+  .h-ret{font-family:var(--mono); font-size:12.5px; margin-top:2px}
+
+  .empty{
+    text-align:center; padding:44px 20px; border:1px dashed var(--line-2); border-radius:var(--r);
+    background:var(--surface); color:var(--muted);
+  }
+  .empty h3{font-family:var(--sans); font-weight:600; color:var(--text); margin:0 0 8px; font-size:17px}
+  .empty p{margin:0 0 18px; font-size:13.5px; line-height:1.5}
+
+  .note{font-size:11.5px; color:var(--faint); margin-top:18px; line-height:1.5; text-align:center}
+  .note a{color:var(--brass-dim)}
+
+  /* modal / sheet */
+  .scrim{
+    position:fixed; inset:0; background:rgba(4,8,7,.62); backdrop-filter:blur(3px);
+    z-index:40; display:none; align-items:flex-end; justify-content:center;
+  }
+  .scrim.show{display:flex}
+  .sheet{
+    width:100%; max-width:600px; background:var(--surface-2); border:1px solid var(--line-2);
+    border-bottom:none; border-radius:22px 22px 0 0; padding:22px 20px calc(26px + env(safe-area-inset-bottom));
+    animation:rise .22s cubic-bezier(.2,.7,.3,1);
+  }
+  @media(min-width:640px){ .scrim{align-items:center} .sheet{border-radius:22px; border-bottom:1px solid var(--line-2); margin-bottom:0} }
+  @keyframes rise{from{transform:translateY(28px); opacity:.4}to{transform:none; opacity:1}}
+  .sheet-grab{width:38px; height:4px; border-radius:2px; background:var(--line-2); margin:0 auto 18px}
+  .sheet h2{font-family:var(--sans); font-weight:600; font-size:18px; margin:0 0 18px}
+  .field{margin-bottom:16px}
+  .field label{display:block; font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:7px}
+  .field input{
+    width:100%; background:var(--ink); border:1px solid var(--line-2); color:var(--text);
+    border-radius:11px; padding:13px 14px; font-size:15px;
+  }
+  .field input::placeholder{color:var(--faint)}
+  .field .hint{font-size:11.5px; color:var(--faint); margin-top:6px; line-height:1.5}
+  .field .hint a{color:var(--brass-dim)}
+  .row2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  .btn{
+    display:block; width:100%; padding:14px; border-radius:12px; font-weight:600; font-size:15px;
+    background:var(--brass); color:#1a1206; transition:.15s; text-align:center;
+  }
+  .btn:hover{filter:brightness(1.06)}
+  .btn.ghost{background:transparent; color:var(--muted); border:1px solid var(--line-2); margin-top:10px}
+  .btn.danger{background:transparent; color:var(--neg); border:1px solid rgba(224,138,122,.3); margin-top:10px}
+  .toggle-row{display:flex; align-items:center; justify-content:space-between; padding:4px 0 16px}
+  .toggle-row .tl{font-size:13.5px}
+  .toggle-row .tl small{display:block; color:var(--faint); font-size:11.5px; margin-top:3px}
+  .sw{width:46px; height:27px; border-radius:99px; background:var(--line-2); position:relative; transition:.18s; flex:0 0 auto}
+  .sw.on{background:var(--brass)}
+  .sw::after{content:""; position:absolute; top:3px; left:3px; width:21px; height:21px; border-radius:50%; background:#EAF2EE; transition:.18s}
+  .sw.on::after{transform:translateX(19px)}
+
+  .toast{
+    position:fixed; left:50%; transform:translateX(-50%); bottom:calc(22px + env(safe-area-inset-bottom));
+    background:var(--surface-2); border:1px solid var(--line-2); color:var(--text);
+    padding:11px 18px; border-radius:12px; font-size:13px; z-index:60; opacity:0; pointer-events:none;
+    transition:.25s; max-width:90%; text-align:center;
+  }
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(0)}
+  .toast.err{border-color:rgba(224,138,122,.4); color:var(--neg)}
+
+  .progress{font-size:12px; color:var(--brass); font-family:var(--mono); margin-top:2px; min-height:16px}
+  @media(prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 5 L27 16 L16 27 L5 16 Z" fill="none" stroke="#C6A15B" stroke-width="2.2"/>
+        <path d="M16 11 L21 16 L16 21 L11 16 Z" fill="#C6A15B"/>
+      </svg>
+      <span class="wordmark">BASIS <small>·</small></span>
+    </div>
+    <div class="top-actions">
+      <button class="icon-btn" id="refreshBtn" title="Refresh prices" aria-label="Refresh prices">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+      </button>
+      <button class="icon-btn" id="settingsBtn" title="Settings" aria-label="Settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section>
+    <div class="hero-label">Portfolio value</div>
+    <div class="hero-val num" id="heroVal">—</div>
+    <div class="hero-sub">
+      <span class="delta" id="heroDelta" style="display:none"></span>
+      <span class="asof" id="asOf"></span>
+    </div>
+    <div class="progress" id="progress"></div>
+  </section>
+
+  <!-- HORIZON -->
+  <div class="pills" id="pills">
+    <button class="pill" data-h="1W">1W</button>
+    <button class="pill" data-h="1M">1M</button>
+    <button class="pill on" data-h="3M">3M</button>
+    <button class="pill" data-h="6M">6M</button>
+    <button class="pill" data-h="YTD">YTD</button>
+    <button class="pill" data-h="1Y">1Y</button>
+    <button class="pill" data-h="MAX">MAX</button>
+    <button class="pill" data-h="CUSTOM">Custom</button>
+  </div>
+  <div class="custom-range" id="customRange">
+    <input type="date" id="dFrom" aria-label="From date" />
+    <span>→</span>
+    <input type="date" id="dTo" aria-label="To date" />
+  </div>
+
+  <!-- CHART -->
+  <div class="chart-card">
+    <div class="chart-wrap"><canvas id="chart"></canvas></div>
+    <div class="chart-empty" id="chartEmpty">Add holdings and refresh to chart your returns.</div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat"><div class="k">Market value</div><div class="v num" id="sVal">—</div></div>
+    <div class="stat"><div class="k">Cost basis</div><div class="v num" id="sCost">—</div></div>
+    <div class="stat"><div class="k">Total return</div><div class="v num" id="sRetAbs">—</div></div>
+    <div class="stat"><div class="k">Total return %</div><div class="v num" id="sRetPct">—</div></div>
+  </div>
+
+  <!-- HOLDINGS -->
+  <div class="sec-head">
+    <span class="sec-title">Holdings</span>
+    <button class="add-btn" id="addBtn">+ Add holding</button>
+  </div>
+  <div id="holdingsList"></div>
+  <div class="empty" id="emptyState">
+    <h3>No holdings yet</h3>
+    <p>Add the stocks and ETFs you own with your average cost, then refresh to see live value, returns, and charts.</p>
+    <button class="btn" id="emptyAdd" style="max-width:220px;margin:0 auto">Add your first holding</button>
+  </div>
+
+  <p class="note">
+    Prices from Alpha Vantage daily close · for personal tracking, not investment advice.<br>
+    Returns use current share counts against your entered cost basis.
+  </p>
+</div>
+
+<!-- SETTINGS SHEET -->
+<div class="scrim" id="settingsScrim">
+  <div class="sheet" role="dialog" aria-label="Settings">
+    <div class="sheet-grab"></div>
+    <h2>Settings</h2>
+    <div class="field">
+      <label for="apiKeyInput">Alpha Vantage API key</label>
+      <input id="apiKeyInput" type="text" placeholder="paste your free key" autocomplete="off" spellcheck="false" />
+      <div class="hint">Free key at <a href="https://www.alphavantage.co/support/#api-key" target="_blank" rel="noopener">alphavantage.co</a> — takes 30 seconds. Stored only on this device. Free tier allows 25 price lookups per day.</div>
+    </div>
+    <div class="toggle-row">
+      <div class="tl">Live intraday price<small>Uses an extra lookup per stock. Off = daily close (saves your daily limit).</small></div>
+      <button class="sw" id="liveSw" role="switch" aria-label="Live intraday price"></button>
+    </div>
+    <button class="btn" id="saveSettings">Save</button>
+    <button class="btn danger" id="clearData">Clear all data</button>
+    <button class="btn ghost" id="closeSettings">Close</button>
+  </div>
+</div>
+
+<!-- HOLDING SHEET -->
+<div class="scrim" id="holdScrim">
+  <div class="sheet" role="dialog" aria-label="Holding">
+    <div class="sheet-grab"></div>
+    <h2 id="holdTitle">Add holding</h2>
+    <div class="field">
+      <label for="tkrInput">Ticker symbol</label>
+      <input id="tkrInput" type="text" placeholder="AAPL" autocomplete="off" spellcheck="false" style="text-transform:uppercase" />
+    </div>
+    <div class="row2">
+      <div class="field">
+        <label for="shInput">Shares</label>
+        <input id="shInput" type="number" inputmode="decimal" step="any" min="0" placeholder="10" />
+      </div>
+      <div class="field">
+        <label for="acInput">Avg cost / share</label>
+        <input id="acInput" type="number" inputmode="decimal" step="any" min="0" placeholder="150.00" />
+      </div>
+    </div>
+    <button class="btn" id="saveHold">Save holding</button>
+    <button class="btn danger" id="deleteHold" style="display:none">Delete holding</button>
+    <button class="btn ghost" id="closeHold">Cancel</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ---------- state & persistence ---------- */
+const LS_KEY = 'basis.v1';
+const CACHE_TTL = 12 * 60 * 60 * 1000; // 12h
+let state = { holdings: [], apiKey: '', live: false, series: {}, quotes: {}, lastUpdated: 0 };
+let editingId = null;
+let memoryOnly = false;
+
+function load(){
+  try{
+    const raw = localStorage.getItem(LS_KEY);
+    if(raw) state = Object.assign(state, JSON.parse(raw));
+  }catch(e){ memoryOnly = true; }
+}
+function save(){
+  if(memoryOnly) return;
+  try{ localStorage.setItem(LS_KEY, JSON.stringify(state)); }
+  catch(e){ memoryOnly = true; toast('Storage unavailable — data won\'t persist here', true); }
+}
+
+/* ---------- helpers ---------- */
+const usd = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'});
+const usd0 = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
+const fmtPct = n => (n>=0?'+':'') + n.toFixed(2) + '%';
+function signedUsd(n){ return (n>=0?'+':'−') + '$' + Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+const uid = () => Math.random().toString(36).slice(2,9);
+const $ = id => document.getElementById(id);
+
+let toastTimer;
+function toast(msg, err){
+  const t = $('toast'); t.textContent = msg; t.className = 'toast show' + (err?' err':'');
+  clearTimeout(toastTimer); toastTimer = setTimeout(()=>{ t.className='toast'; }, 3200);
+}
+
+/* ---------- Alpha Vantage ---------- */
+async function fetchDaily(ticker){
+  const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${encodeURIComponent(ticker)}&outputsize=full&apikey=${encodeURIComponent(state.apiKey)}`;
+  const res = await fetch(url);
+  const j = await res.json();
+  if(j['Error Message']) throw { kind:'symbol', msg:`${ticker}: not found` };
+  if(j['Note'] || j['Information']){
+    const info = j['Note'] || j['Information'];
+    if(/premium/i.test(info)) throw { kind:'premium', msg:'This endpoint needs a premium key' };
+    throw { kind:'limit', msg:'Alpha Vantage limit reached — wait a minute or try tomorrow' };
+  }
+  const ts = j['Time Series (Daily)'];
+  if(!ts) throw { kind:'symbol', msg:`${ticker}: no data` };
+  const out = {};
+  for(const d in ts){ out[d] = parseFloat(ts[d]['4. close']); }
+  return out;
+}
+
+async function fetchQuote(ticker){
+  const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${encodeURIComponent(ticker)}&apikey=${encodeURIComponent(state.apiKey)}`;
+  const res = await fetch(url);
+  const j = await res.json();
+  const q = j['Global Quote'];
+  if(!q || !q['05. price']) return null;
+  return parseFloat(q['05. price']);
+}
+
+const sleep = ms => new Promise(r=>setTimeout(r,ms));
+
+async function refreshAll(force){
+  if(!state.apiKey){ openSettings(); toast('Add an Alpha Vantage key first', true); return; }
+  const tickers = [...new Set(state.holdings.map(h=>h.ticker))];
+  if(!tickers.length){ toast('Add a holding first'); return; }
+
+  const btn = $('refreshBtn'); btn.classList.add('spin');
+  const prog = $('progress');
+  let done = 0, fetched = 0, hitLimit = false;
+
+  for(const tk of tickers){
+    const cached = state.series[tk];
+    const fresh = cached && (Date.now() - cached.ts) < CACHE_TTL;
+    done++;
+    if(fresh && !force){ prog.textContent = `${tk} cached · ${done}/${tickers.length}`; continue; }
+    prog.textContent = `Fetching ${tk} · ${done}/${tickers.length}`;
+    try{
+      const data = await fetchDaily(tk);
+      state.series[tk] = { data, ts: Date.now() };
+      if(state.live){
+        await sleep(1300);
+        const lq = await fetchQuote(tk);
+        if(lq!=null) state.quotes[tk] = lq; else delete state.quotes[tk];
+      } else { delete state.quotes[tk]; }
+      fetched++;
+      if(done < tickers.length) await sleep(1300); // stay gentle on rate limit
+    }catch(err){
+      if(err.kind === 'limit' || err.kind === 'premium'){ hitLimit = true; toast(err.msg, true); break; }
+      else { toast(err.msg || `${tk}: failed`, true); }
+    }
+  }
+
+  state.lastUpdated = Date.now();
+  save();
+  btn.classList.remove('spin');
+  prog.textContent = '';
+  render();
+  if(!hitLimit && fetched) toast(`Updated ${fetched} ${fetched===1?'symbol':'symbols'}`);
+  else if(!hitLimit && !fetched) toast('Prices up to date');
+}
+
+/* ---------- computation ---------- */
+function currentPrice(tk){
+  if(state.quotes[tk]!=null) return state.quotes[tk];
+  const s = state.series[tk]; if(!s) return null;
+  const dates = Object.keys(s.data).sort();
+  return dates.length ? s.data[dates[dates.length-1]] : null;
+}
+function prevClose(tk){
+  const s = state.series[tk]; if(!s) return null;
+  const dates = Object.keys(s.data).sort();
+  return dates.length>1 ? s.data[dates[dates.length-2]] : null;
+}
+
+function buildValueSeries(startISO, endISO){
+  const held = state.holdings.filter(h => state.series[h.ticker] && Object.keys(state.series[h.ticker].data).length);
+  if(!held.length) return [];
+  const dateSet = new Set();
+  held.forEach(h => Object.keys(state.series[h.ticker].data).forEach(d => dateSet.add(d)));
+  let dates = [...dateSet].sort();
+  if(startISO) dates = dates.filter(d => d >= startISO);
+  if(endISO) dates = dates.filter(d => d <= endISO);
+  const filled = {};
+  held.forEach(h => {
+    const src = state.series[h.ticker].data; let last=null; const map={};
+    // forward-fill across ALL dates (not just windowed) so window start carries prior price
+    const allDates = [...dateSet].sort();
+    for(const d of allDates){ if(src[d]!=null) last=src[d]; map[d]=last; }
+    filled[h.ticker]=map;
+  });
+  const out=[];
+  for(const d of dates){
+    let v=0, ok=true;
+    for(const h of held){ const p=filled[h.ticker][d]; if(p==null){ok=false;break;} v+=p*h.shares; }
+    if(ok) out.push({date:d, value:+v.toFixed(2)});
+  }
+  return out;
+}
+
+function horizonStart(h){
+  const now = new Date();
+  const d = new Date(now);
+  switch(h){
+    case '1W': d.setDate(d.getDate()-7); break;
+    case '1M': d.setMonth(d.getMonth()-1); break;
+    case '3M': d.setMonth(d.getMonth()-3); break;
+    case '6M': d.setMonth(d.getMonth()-6); break;
+    case '1Y': d.setFullYear(d.getFullYear()-1); break;
+    case 'YTD': return `${now.getFullYear()}-01-01`;
+    case 'MAX': return null;
+    default: return null;
+  }
+  return d.toISOString().slice(0,10);
+}
+
+function costReturns(){
+  let cost=0, val=0, priced=true;
+  for(const h of state.holdings){
+    cost += h.shares * h.avgCost;
+    const p = currentPrice(h.ticker);
+    if(p!=null) val += h.shares * p; else priced=false;
+  }
+  return { cost, val, abs: val-cost, pct: cost>0 ? ((val-cost)/cost)*100 : 0, priced };
+}
+
+/* ---------- chart ---------- */
+let chart;
+function renderChart(series, up){
+  const canvas = $('chart');
+  const empty = $('chartEmpty');
+  if(!series.length){
+    empty.style.display='grid';
+    if(chart){ chart.destroy(); chart=null; }
+    return;
+  }
+  empty.style.display='none';
+  const color = up ? '#5FBF9B' : '#E08A7A';
+  const ctx = canvas.getContext('2d');
+  const grad = ctx.createLinearGradient(0,0,0,210);
+  grad.addColorStop(0, up ? 'rgba(95,191,155,.26)' : 'rgba(224,138,122,.26)');
+  grad.addColorStop(1, 'rgba(20,33,30,0)');
+
+  const labels = series.map(p=>p.date);
+  const data = series.map(p=>p.value);
+  const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  if(chart) chart.destroy();
+  chart = new Chart(ctx, {
+    type:'line',
+    data:{ labels, datasets:[{
+      data, borderColor:color, borderWidth:2, fill:true, backgroundColor:grad,
+      tension:.28, pointRadius:0, pointHoverRadius:5, pointHoverBackgroundColor:color,
+      pointHoverBorderColor:'#0D1614', pointHoverBorderWidth:2,
+    }]},
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      animation: reduce ? false : { duration:600 },
+      interaction:{ mode:'index', intersect:false },
+      plugins:{
+        legend:{display:false},
+        tooltip:{
+          backgroundColor:'#182A26', borderColor:'rgba(234,242,238,.14)', borderWidth:1,
+          titleColor:'#7E9188', bodyColor:'#EAF2EE', padding:11, cornerRadius:10, displayColors:false,
+          titleFont:{family:'Space Grotesk',size:11}, bodyFont:{family:'JetBrains Mono',size:14,weight:'600'},
+          callbacks:{
+            title:(it)=> new Date(it[0].label).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}),
+            label:(it)=> usd.format(it.raw)
+          }
+        }
+      },
+      scales:{
+        x:{ display:false, grid:{display:false} },
+        y:{
+          position:'right',
+          grid:{ color:'rgba(234,242,238,.05)', drawTicks:false },
+          border:{display:false},
+          ticks:{ color:'#54655F', font:{family:'JetBrains Mono',size:10}, maxTicksLimit:5,
+                  callback:v=> usd0.format(v), padding:8 }
+        }
+      }
+    }
+  });
+}
+
+/* ---------- render ---------- */
+let currentH = '3M';
+function render(){
+  const list = $('holdingsList');
+  const empty = $('emptyState');
+
+  // holdings
+  list.innerHTML = '';
+  if(!state.holdings.length){ empty.style.display='block'; }
+  else {
+    empty.style.display='none';
+    for(const h of state.holdings){
+      const price = currentPrice(h.ticker);
+      const el = document.createElement('button');
+      el.className='holding';
+      if(price==null){
+        el.innerHTML = `<span class="h-tkr">${h.ticker}</span>
+          <span class="h-mid"><span class="h-shares">${trimNum(h.shares)} sh · avg $${trimNum(h.avgCost)}</span>
+          <span class="h-unavail">price unavailable — refresh</span></span>
+          <span class="h-right"><span class="h-val num muted">—</span></span>`;
+      } else {
+        const val = h.shares * price;
+        const cost = h.shares * h.avgCost;
+        const ret = val - cost;
+        const pct = cost>0 ? (ret/cost)*100 : 0;
+        const cls = ret>=0?'pos':'neg';
+        el.innerHTML = `<span class="h-tkr">${h.ticker}</span>
+          <span class="h-mid"><span class="h-shares">${trimNum(h.shares)} sh · $${trimNum(price)}</span></span>
+          <span class="h-right">
+            <div class="h-val num">${usd.format(val)}</div>
+            <div class="h-ret num ${cls}">${fmtPct(pct)} · ${signedUsd(ret)}</div>
+          </span>`;
+      }
+      el.addEventListener('click', ()=>openHolding(h.id));
+      list.appendChild(el);
+    }
+  }
+
+  // cost-basis stats
+  const cr = costReturns();
+  if(state.holdings.length && cr.val>0){
+    $('sVal').textContent = usd.format(cr.val);
+    $('sCost').textContent = usd.format(cr.cost);
+    const ra=$('sRetAbs'), rp=$('sRetPct');
+    ra.textContent = signedUsd(cr.abs); ra.className='v num '+(cr.abs>=0?'pos':'neg');
+    rp.textContent = fmtPct(cr.pct); rp.className='v num '+(cr.pct>=0?'pos':'neg');
+    $('heroVal').textContent = usd.format(cr.val);
+  } else {
+    $('sVal').textContent=$('sCost').textContent=$('sRetAbs').textContent=$('sRetPct').textContent='—';
+    $('sRetAbs').className=$('sRetPct').className='v num';
+    $('heroVal').textContent = state.holdings.length ? '—' : '—';
+  }
+
+  // window series + hero delta
+  let startISO, endISO=null;
+  if(currentH==='CUSTOM'){ startISO=$('dFrom').value||null; endISO=$('dTo').value||null; }
+  else startISO = horizonStart(currentH);
+  const series = buildValueSeries(startISO, endISO);
+
+  const hd = $('heroDelta');
+  if(series.length>=2){
+    const a=series[0].value, b=series[series.length-1].value;
+    const abs=b-a, pct=a!==0?(abs/a)*100:0, up=abs>=0;
+    hd.style.display='inline-flex';
+    hd.className='delta '+(up?'pos':'neg');
+    hd.innerHTML = `<span class="arw">${up?'▲':'▼'}</span> ${fmtPct(pct)} <span style="opacity:.6">·</span> ${signedUsd(abs)}`;
+    renderChart(series, up);
+  } else {
+    hd.style.display='none';
+    renderChart(series, true);
+  }
+
+  // as-of
+  const ao=$('asOf');
+  if(state.lastUpdated){
+    const dt=new Date(state.lastUpdated);
+    const src = state.live ? 'live' : 'daily close';
+    ao.textContent = `${src} · updated ${dt.toLocaleDateString('en-US',{month:'short',day:'numeric'})} ${dt.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})}`;
+  } else ao.textContent = state.holdings.length ? 'tap ↻ to fetch prices' : '';
+}
+
+function trimNum(n){
+  const x = +n;
+  if(Number.isInteger(x)) return x.toString();
+  return x.toLocaleString('en-US',{maximumFractionDigits:4});
+}
+
+/* ---------- holding sheet ---------- */
+function openHolding(id){
+  editingId = id || null;
+  const h = id ? state.holdings.find(x=>x.id===id) : null;
+  $('holdTitle').textContent = h ? 'Edit holding' : 'Add holding';
+  $('tkrInput').value = h ? h.ticker : '';
+  $('shInput').value = h ? h.shares : '';
+  $('acInput').value = h ? h.avgCost : '';
+  $('deleteHold').style.display = h ? 'block' : 'none';
+  $('tkrInput').disabled = !!h; // ticker fixed once created (keeps cache clean)
+  showScrim('holdScrim');
+  if(!h) setTimeout(()=>$('tkrInput').focus(), 120);
+}
+function saveHolding(){
+  const tkr = $('tkrInput').value.trim().toUpperCase();
+  const sh = parseFloat($('shInput').value);
+  const ac = parseFloat($('acInput').value);
+  if(!tkr){ toast('Enter a ticker', true); return; }
+  if(!(sh>0)){ toast('Enter share count', true); return; }
+  if(!(ac>=0)){ toast('Enter average cost', true); return; }
+  if(editingId){
+    const h = state.holdings.find(x=>x.id===editingId);
+    h.shares=sh; h.avgCost=ac;
+  } else {
+    if(state.holdings.some(x=>x.ticker===tkr)){ toast(`${tkr} already added — edit it instead`, true); return; }
+    state.holdings.push({ id:uid(), ticker:tkr, shares:sh, avgCost:ac });
+  }
+  save(); hideScrim('holdScrim'); render();
+  const needsFetch = !state.series[tkr];
+  if(needsFetch && state.apiKey) refreshAll(false);
+  else if(needsFetch) toast('Added — add a key & refresh for prices');
+}
+function deleteHolding(){
+  if(!editingId) return;
+  state.holdings = state.holdings.filter(x=>x.id!==editingId);
+  save(); hideScrim('holdScrim'); render();
+}
+
+/* ---------- settings ---------- */
+function openSettings(){
+  $('apiKeyInput').value = state.apiKey || '';
+  $('liveSw').classList.toggle('on', state.live);
+  showScrim('settingsScrim');
+}
+function saveSettings(){
+  const prevLive = state.live;
+  state.apiKey = $('apiKeyInput').value.trim();
+  state.live = $('liveSw').classList.contains('on');
+  save(); hideScrim('settingsScrim'); render();
+  if(state.apiKey && state.holdings.length){
+    if(state.live!==prevLive) refreshAll(true); else refreshAll(false);
+  }
+}
+
+/* ---------- scrim helpers ---------- */
+function showScrim(id){ $(id).classList.add('show'); document.body.style.overflow='hidden'; }
+function hideScrim(id){ $(id).classList.remove('show'); document.body.style.overflow=''; }
+
+/* ---------- events ---------- */
+$('pills').addEventListener('click', e=>{
+  const b = e.target.closest('.pill'); if(!b) return;
+  currentH = b.dataset.h;
+  [...$('pills').children].forEach(p=>p.classList.toggle('on', p===b));
+  $('customRange').classList.toggle('show', currentH==='CUSTOM');
+  if(currentH==='CUSTOM' && !$('dFrom').value){
+    const t=new Date(), f=new Date(); f.setMonth(f.getMonth()-3);
+    $('dFrom').value=f.toISOString().slice(0,10); $('dTo').value=t.toISOString().slice(0,10);
+  }
+  render();
+});
+$('dFrom').addEventListener('change', render);
+$('dTo').addEventListener('change', render);
+
+$('refreshBtn').addEventListener('click', ()=>refreshAll(true));
+$('settingsBtn').addEventListener('click', openSettings);
+$('addBtn').addEventListener('click', ()=>openHolding(null));
+$('emptyAdd').addEventListener('click', ()=>openHolding(null));
+
+$('saveHold').addEventListener('click', saveHolding);
+$('deleteHold').addEventListener('click', deleteHolding);
+$('closeHold').addEventListener('click', ()=>hideScrim('holdScrim'));
+
+$('saveSettings').addEventListener('click', saveSettings);
+$('closeSettings').addEventListener('click', ()=>hideScrim('settingsScrim'));
+$('liveSw').addEventListener('click', ()=>$('liveSw').classList.toggle('on'));
+$('clearData').addEventListener('click', ()=>{
+  if(confirm('Delete all holdings, your key, and cached prices from this device?')){
+    state={ holdings:[], apiKey:'', live:false, series:{}, quotes:{}, lastUpdated:0 };
+    save(); hideScrim('settingsScrim'); render(); toast('Cleared');
+  }
+});
+
+[$('settingsScrim'),$('holdScrim')].forEach(s=>{
+  s.addEventListener('click', e=>{ if(e.target===s) hideScrim(s.id); });
+});
+$('tkrInput').addEventListener('keydown', e=>{ if(e.key==='Enter') $('shInput').focus(); });
+$('acInput').addEventListener('keydown', e=>{ if(e.key==='Enter') saveHolding(); });
+
+/* ---------- boot ---------- */
+load();
+if(memoryOnly) setTimeout(()=>toast('Preview mode: data won\'t persist until hosted', false), 600);
+render();
+// auto-refresh stale caches quietly on open if key present
+if(state.apiKey && state.holdings.length){
+  const anyStale = [...new Set(state.holdings.map(h=>h.ticker))].some(tk=>{
+    const c=state.series[tk]; return !c || (Date.now()-c.ts)>CACHE_TTL;
+  });
+  if(anyStale) refreshAll(false);
+}
+</script>
+</body>
+</html>
